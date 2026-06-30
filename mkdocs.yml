@@ -57,6 +57,8 @@ plugins:
 
 nav:
   - Inicio: index.md
+  - Prólogo: prologo.md
+  - Introducción: introduccion.md
   - Parte I:
       - Primer contacto: parte1/index.md
       - Capítulo 1: parte1/capitulo01.md
@@ -71,7 +73,7 @@ nav:
   - Parte V:
       - Solucionario: parte5/index.md
   - Parte VI:
-      - Recursos profesor: parte6/index.md
+      - Recursos profesor: parte6/index
 
 
 plugins:

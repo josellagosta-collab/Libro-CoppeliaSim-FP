@@ -1,0 +1,12 @@
+id: setJointTargetVelocity
+name: sim.setJointTargetVelocity()
+description: >
+  Establece la velocidad objetivo de una articulación o motor.
+syntax: sim.setJointTargetVelocity(motor, velocidad)
+returns: No devuelve un valor relevante.
+common_errors:
+  - Pasar la rueda en lugar del motor.
+  - Usar una velocidad demasiado alta.
+  - Usar un identificador de objeto incorrecto.
+example: |
+  sim.setJointTargetVelocity(motor_izquierdo, 2)

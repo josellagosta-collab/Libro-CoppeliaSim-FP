@@ -65,6 +65,7 @@ class FPBookPlugin(BasePlugin):
         markdown = self._process_exercises(markdown, chapter)
         markdown = self._process_practices(markdown, chapter)
         markdown = self._process_robots(markdown)
+        markdown = self._process_robots(markdown)
 
         return markdown
 
@@ -349,3 +350,46 @@ class FPBookPlugin(BasePlugin):
     def on_config(self, config):
         self.kb = KnowledgeBase("knowledge")
         return config
+    
+    def _process_python_functions(self, markdown):
+        pattern = re.compile(
+            r"::: python\s*\n"
+            r"id:\s*(.*?)\s*\n"
+            r":::",
+            re.DOTALL,
+        )
+
+    def replace(match):
+        function_id = match.group(1).strip()
+        item = self.kb.get_python_function(function_id)
+
+        if item is None:
+            return f"""
+    <div class="fp-robot-card fp-robot-error">
+    <strong>Función Python no encontrada:</strong> {function_id}
+    </div>
+    """
+
+            errors = "\n".join(
+                f"<li>{error}</li>" for error in item.get("common_errors", [])
+            )
+
+            return f"""
+    <div class="fp-python-card">
+    <div class="fp-python-title">🐍 {item.get("name", function_id)}</div>
+
+    <p>{item.get("description", "")}</p>
+
+    <p><strong>Sintaxis:</strong></p>
+
+    ```python
+    {item.get("syntax", "")}
+    
+   <p><strong>Devuelve:</strong> {item.get("returns", "")}</p> <p><strong>Errores frecuentes:</strong></p> <ul> {errors} </ul> <p><strong>Ejemplo:</strong></p>
+   
+   {item.get("example", "")}
+   
+   
+  </div> """ 
+  return pattern.sub(replace, markdown)
+  

@@ -1,0 +1,12 @@
+id: getObject
+name: sim.getObject()
+description: >
+  Permite obtener la referencia interna de un objeto de la escena a partir de su ruta.
+syntax: sim.getObject('/ruta/del/objeto')
+returns: Identificador interno del objeto dentro de CoppeliaSim.
+common_errors:
+  - Ruta incorrecta del objeto.
+  - El objeto no existe en la escena.
+  - Usar el nombre visible pero no la ruta completa.
+example: |
+  motor_izquierdo = sim.getObject('/PioneerP3DX/leftMotor')

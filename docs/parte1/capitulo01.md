@@ -409,3 +409,4 @@ Durante el resto del libro utilizaremos este entorno para aprender robótica de 
 # Próximo capítulo
 
 En el siguiente capítulo instalaremos y configuraremos correctamente **CoppeliaSim EDU 4.10**, conoceremos la estructura de carpetas del programa y realizaremos la configuración inicial recomendada para seguir el resto del libro.
+

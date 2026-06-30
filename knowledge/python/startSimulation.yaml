@@ -1,0 +1,11 @@
+id: startSimulation
+name: sim.startSimulation()
+description: >
+  Inicia la simulación activa en CoppeliaSim.
+syntax: sim.startSimulation()
+returns: No devuelve un valor relevante.
+common_errors:
+  - Intentar mover motores antes de iniciar la simulación.
+  - Ejecutar varias veces la simulación sin detenerla correctamente.
+example: |
+  sim.startSimulation()

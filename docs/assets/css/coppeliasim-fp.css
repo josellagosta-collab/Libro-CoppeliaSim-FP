@@ -165,3 +165,20 @@
   margin-bottom: 0.8rem;
   color: var(--coppelia-grey-dark);
 }
+
+
+.fp-python-card {
+  border: 1px solid #cfd8dc;
+  border-left: 7px solid #3776ab;
+  border-radius: 12px;
+  padding: 1.2rem;
+  margin: 1.8rem 0;
+  background: rgba(55, 118, 171, 0.06);
+}
+
+.fp-python-title {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #3776ab;
+  margin-bottom: 0.8rem;
+}

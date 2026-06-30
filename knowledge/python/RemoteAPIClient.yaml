@@ -1,0 +1,14 @@
+id: RemoteAPIClient
+name: RemoteAPIClient()
+description: >
+  Crea un cliente de conexión entre un programa Python y CoppeliaSim mediante la Remote API.
+syntax: client = RemoteAPIClient()
+returns: Objeto cliente que permite comunicarse con CoppeliaSim.
+common_errors:
+  - CoppeliaSim no está abierto.
+  - El paquete coppeliasim-zmqremoteapi-client no está instalado.
+  - Ejecutar el script desde un entorno Python incorrecto.
+example: |
+  from coppeliasim_zmqremoteapi_client import RemoteAPIClient
+
+  client = RemoteAPIClient()
