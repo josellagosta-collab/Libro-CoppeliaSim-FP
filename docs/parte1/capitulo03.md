@@ -59,3 +59,10 @@ id: startSimulation
 ::: glossary
 id: robot_diferencial
 :::
+
+::: chapter-cover
+number: 3
+title: La interfaz de CoppeliaSim
+time: 2 horas
+level: Inicial
+:::

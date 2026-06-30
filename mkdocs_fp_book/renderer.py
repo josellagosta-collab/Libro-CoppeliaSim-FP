@@ -8,12 +8,14 @@ from mkdocs_fp_book.renderers.python import PythonRenderer
 from mkdocs_fp_book.renderers.sensor import SensorRenderer
 from mkdocs_fp_book.renderers.command import CommandRenderer
 from mkdocs_fp_book.renderers.glossary import GlossaryRenderer
+from mkdocs_fp_book.renderers.cover import CoverRenderer
 
 class BookRenderer:
     def __init__(self, knowledge_base):
         self.kb = knowledge_base
 
         self.renderers = [
+            CoverRenderer(),
             FigureRenderer(),
             TableRenderer(),
             ExampleRenderer(),

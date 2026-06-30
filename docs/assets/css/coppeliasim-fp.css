@@ -276,3 +276,63 @@
   border-left-color: var(--coppelia-red);
   background: rgba(229, 57, 53, 0.08);
 }
+
+.fp-part-cover {
+  background: linear-gradient(135deg, #0d47a1, #1565c0);
+  color: white;
+  border-radius: 24px;
+  padding: 4rem 3rem;
+  margin: 2rem 0 3rem 0;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+}
+
+.fp-part-number {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.2rem;
+  opacity: 0.85;
+  margin-bottom: 1rem;
+}
+
+.fp-part-title {
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1.05;
+  margin-bottom: 1rem;
+}
+
+.fp-part-subtitle {
+  font-size: 1.25rem;
+  opacity: 0.9;
+}
+
+.fp-chapter-cover {
+  border-left: 8px solid var(--coppelia-blue);
+  background: linear-gradient(90deg, rgba(21,101,192,0.10), rgba(21,101,192,0.02));
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 2rem 0 2.5rem 0;
+}
+
+.fp-chapter-number {
+  font-size: 0.85rem;
+  font-weight: 900;
+  letter-spacing: 0.14rem;
+  color: var(--coppelia-blue-dark);
+  margin-bottom: 0.5rem;
+}
+
+.fp-chapter-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--coppelia-blue-dark);
+  margin-bottom: 1rem;
+}
+
+.fp-chapter-meta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  color: var(--coppelia-grey-dark);
+  font-weight: 700;
+}
