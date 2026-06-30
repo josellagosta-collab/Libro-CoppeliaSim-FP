@@ -5,18 +5,44 @@ site_author: José Aguilera
 theme:
   name: material
   language: es
+  custom_dir: overrides
+  logo: assets/logos/logo.svg
+  favicon: assets/logos/favicon.png
+
+  font:
+    text: Roboto
+    code: JetBrains Mono
+
+  palette:
+    - scheme: default
+      primary: blue
+      accent: indigo
+    - scheme: slate
+      primary: blue
+      accent: indigo
+
   features:
     - navigation.tabs
     - navigation.sections
     - navigation.top
     - search.highlight
     - content.code.copy
+    - content.code.annotate
+
+extra_css:
+  - assets/css/coppeliasim-fp.css
+
+extra_javascript:
+  - assets/js/coppeliasim-fp.js
 
 markdown_extensions:
   - admonition
+  - attr_list
+  - md_in_html
   - tables
   - toc:
       permalink: true
+  - pymdownx.details
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -35,6 +61,7 @@ nav:
       - Primer contacto: parte1/index.md
       - Capítulo 1: parte1/capitulo01.md
       - Capítulo 2: parte1/capitulo02.md
+      - Capítulo 3: parte1/capitulo03.md
   - Parte II:
       - Primer robot: parte2/index.md
   - Parte III:
