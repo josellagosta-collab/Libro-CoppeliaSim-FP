@@ -1,0 +1,19 @@
+id: UltrasonicSensor
+name: Sensor ultrasónico
+type: Sensor de proximidad
+description: >
+  Sensor que mide la distancia aproximada a un obstáculo utilizando una señal simulada.
+  En el Pioneer P3DX se utiliza para detectar paredes, objetos y obstáculos cercanos.
+
+features:
+  - Permite detectar obstáculos
+  - No proporciona imagen, solo distancia o detección
+  - Es útil para navegación básica
+  - Se puede usar para evitar colisiones
+
+used_in:
+  - practica07
+  - practica08
+
+teacher_note: >
+  Es ideal para explicar que un robot no ve el mundo como una persona: solo recibe datos numéricos de sus sensores.

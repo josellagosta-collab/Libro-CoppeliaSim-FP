@@ -47,3 +47,7 @@ id: PioneerP3DX
 ::: python
 id: getObject
 :::
+
+::: sensor
+id: UltrasonicSensor
+:::
