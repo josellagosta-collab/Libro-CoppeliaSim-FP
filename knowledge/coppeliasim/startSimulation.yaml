@@ -1,0 +1,22 @@
+id: startSimulation
+name: sim.startSimulation()
+type: Comando de simulación
+description: >
+  Inicia la simulación activa en CoppeliaSim. A partir de este momento
+  comienza a avanzar el tiempo simulado y se activan scripts, sensores,
+  motores y el motor físico.
+
+syntax: sim.startSimulation()
+
+common_errors:
+  - Intentar controlar motores antes de iniciar la simulación.
+  - Ejecutar varias veces la simulación sin detenerla correctamente.
+  - No esperar unos instantes a que la simulación arranque.
+
+used_in:
+  - practica01
+  - practica02
+
+teacher_note: >
+  Conviene explicar que iniciar la simulación no es lo mismo que conectar Python:
+  primero Python se conecta al simulador y después se ordena iniciar la escena.

@@ -90,7 +90,6 @@
   margin-top: 0.5rem;
 }
 
-/* Portadas de partes */
 .portada-parte {
   background: linear-gradient(135deg, #0d47a1, #1565c0);
   color: white;
@@ -105,7 +104,6 @@
   border: none;
 }
 
-/* Código */
 .md-typeset code {
   border-radius: 4px;
 }
@@ -128,10 +126,6 @@
   color: white;
 }
 
-
-## 2. Añade estilo al CSS
-
-```css
 .fp-example-caption {
   font-size: 0.9rem;
   font-weight: 700;
@@ -211,4 +205,39 @@
   background: rgba(21, 101, 192, 0.08);
   border-radius: 6px;
   margin-top: 1rem;
+}
+
+.fp-command-card {
+  border: 1px solid #cfd8dc;
+  border-left: 7px solid #6a1b9a;
+  border-radius: 12px;
+  padding: 1.2rem;
+  margin: 1.8rem 0;
+  background: rgba(106, 27, 154, 0.06);
+}
+
+.fp-command-title {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #6a1b9a;
+}
+
+.fp-command-subtitle {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--coppelia-grey-dark);
+  margin-bottom: 0.8rem;
+}
+
+.fp-command-note {
+  border-left: 4px solid var(--coppelia-blue);
+  padding: 0.7rem 1rem;
+  background: rgba(21, 101, 192, 0.08);
+  border-radius: 6px;
+  margin-top: 1rem;
+}
+
+.fp-command-error {
+  border-left-color: var(--coppelia-red);
+  background: rgba(229, 57, 53, 0.08);
 }

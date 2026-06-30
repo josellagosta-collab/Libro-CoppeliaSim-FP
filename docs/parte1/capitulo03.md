@@ -51,3 +51,7 @@ id: getObject
 ::: sensor
 id: UltrasonicSensor
 :::
+
+::: command
+id: startSimulation
+:::

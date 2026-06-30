@@ -6,6 +6,7 @@ from mkdocs_fp_book.renderers.practice import PracticeRenderer
 from mkdocs_fp_book.renderers.robot import RobotRenderer
 from mkdocs_fp_book.renderers.python import PythonRenderer
 from mkdocs_fp_book.renderers.sensor import SensorRenderer
+from mkdocs_fp_book.renderers.command import CommandRenderer
 
 class BookRenderer:
     def __init__(self, knowledge_base):
@@ -20,6 +21,7 @@ class BookRenderer:
             RobotRenderer(self.kb),
             PythonRenderer(self.kb),
             SensorRenderer(self.kb),
+            CommandRenderer(self.kb),
         ]
 
     def render(self, markdown, page):
