@@ -1,0 +1,2 @@
+[mkdocs.plugins]
+fp_book = mkdocs_fp_book.plugin:FPBookPlugin

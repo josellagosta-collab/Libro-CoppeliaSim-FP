@@ -1,0 +1,22 @@
+id: PioneerP3DX
+name: Pioneer P3DX
+type: Robot móvil diferencial
+manufacturer: Adept MobileRobots
+description: >
+  Robot móvil diferencial muy utilizado en investigación y docencia.
+  En CoppeliaSim resulta ideal para aprender movimiento, sensores y control básico con Python.
+
+features:
+  - Dos ruedas motrices
+  - Rueda loca trasera
+  - 16 sensores ultrasónicos
+  - Modelo sencillo para primeras prácticas
+  - Compatible con control mediante Python
+
+used_in:
+  - practica01
+  - practica02
+  - practica03
+
+teacher_note: >
+  Es un robot ideal para empezar porque permite explicar avance, retroceso y giro usando únicamente dos motores.

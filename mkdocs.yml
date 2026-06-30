@@ -72,3 +72,11 @@ nav:
       - Solucionario: parte5/index.md
   - Parte VI:
       - Recursos profesor: parte6/index.md
+
+
+plugins:
+  - search
+  - mermaid2
+  - fp_book
+  - minify:
+      minify_html: true
