@@ -241,3 +241,38 @@
   border-left-color: var(--coppelia-red);
   background: rgba(229, 57, 53, 0.08);
 }
+
+.fp-glossary-card {
+  border: 1px solid #cfd8dc;
+  border-left: 7px solid #f9a825;
+  border-radius: 12px;
+  padding: 1.2rem;
+  margin: 1.8rem 0;
+  background: rgba(249, 168, 37, 0.08);
+}
+
+.fp-glossary-title {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #f9a825;
+}
+
+.fp-glossary-subtitle {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--coppelia-grey-dark);
+  margin-bottom: 0.8rem;
+}
+
+.fp-glossary-note {
+  border-left: 4px solid var(--coppelia-blue);
+  padding: 0.7rem 1rem;
+  background: rgba(21, 101, 192, 0.08);
+  border-radius: 6px;
+  margin-top: 1rem;
+}
+
+.fp-glossary-error {
+  border-left-color: var(--coppelia-red);
+  background: rgba(229, 57, 53, 0.08);
+}

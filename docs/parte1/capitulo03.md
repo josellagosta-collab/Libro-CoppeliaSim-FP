@@ -55,3 +55,7 @@ id: UltrasonicSensor
 ::: command
 id: startSimulation
 :::
+
+::: glossary
+id: robot_diferencial
+:::

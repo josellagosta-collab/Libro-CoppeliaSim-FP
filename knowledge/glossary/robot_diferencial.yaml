@@ -1,0 +1,16 @@
+id: robot_diferencial
+term: Robot diferencial
+category: Robótica móvil
+definition: >
+  Robot móvil que se desplaza mediante dos ruedas motrices independientes.
+  Para avanzar, ambas ruedas giran en el mismo sentido. Para girar, las ruedas
+  giran a velocidades distintas o incluso en sentidos opuestos.
+
+related:
+  - PioneerP3DX
+  - setJointTargetVelocity
+  - motor
+
+teacher_note: >
+  Es uno de los conceptos más importantes de la primera parte del curso.
+  Conviene explicarlo con un dibujo en la pizarra antes de programarlo.
