@@ -66,3 +66,21 @@ title: La interfaz de CoppeliaSim
 time: 2 horas
 level: Inicial
 :::
+
+::: objectives
+title: Objetivos del capítulo
+content:
+
+Al finalizar este capítulo serás capaz de:
+
+- Identificar las zonas principales de la interfaz.
+- Localizar el árbol de objetos.
+- Entender la diferencia entre escena, modelo y objeto.
+:::
+
+::: summary
+title: Resumen del capítulo
+content:
+
+En este capítulo hemos aprendido a reconocer las partes principales de CoppeliaSim y a movernos por la interfaz.
+:::

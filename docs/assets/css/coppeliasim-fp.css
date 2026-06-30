@@ -336,3 +336,36 @@
   color: var(--coppelia-grey-dark);
   font-weight: 700;
 }
+
+.fp-objectives,
+.fp-summary {
+  border: 1px solid #cfd8dc;
+  border-radius: 14px;
+  padding: 1.2rem;
+  margin: 1.8rem 0;
+}
+
+.fp-objectives {
+  border-left: 7px solid #1565c0;
+  background: rgba(21, 101, 192, 0.06);
+}
+
+.fp-summary {
+  border-left: 7px solid #43a047;
+  background: rgba(67, 160, 71, 0.06);
+}
+
+.fp-objectives-title,
+.fp-summary-title {
+  font-size: 1.15rem;
+  font-weight: 900;
+  margin-bottom: 0.8rem;
+}
+
+.fp-objectives-title {
+  color: #1565c0;
+}
+
+.fp-summary-title {
+  color: #43a047;
+}
