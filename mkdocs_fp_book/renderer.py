@@ -10,6 +10,7 @@ from mkdocs_fp_book.renderers.command import CommandRenderer
 from mkdocs_fp_book.renderers.glossary import GlossaryRenderer
 from mkdocs_fp_book.renderers.cover import CoverRenderer
 from mkdocs_fp_book.renderers.learning import LearningRenderer
+from mkdocs_fp_book.renderers.callout import CalloutRenderer
 
 class BookRenderer:
     def __init__(self, knowledge_base):
@@ -18,6 +19,7 @@ class BookRenderer:
         self.renderers = [
             CoverRenderer(),
             LearningRenderer(),
+            CalloutRenderer(),
             FigureRenderer(),
             TableRenderer(),
             ExampleRenderer(),

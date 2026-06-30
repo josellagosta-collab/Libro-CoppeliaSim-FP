@@ -369,3 +369,47 @@
 .fp-summary-title {
   color: #43a047;
 }
+
+.fp-teacher,
+.fp-common-error,
+.fp-challenge {
+  border: 1px solid #cfd8dc;
+  border-radius: 14px;
+  padding: 1.1rem 1.2rem;
+  margin: 1.5rem 0;
+}
+
+.fp-teacher {
+  border-left: 7px solid #1565c0;
+  background: rgba(21, 101, 192, 0.06);
+}
+
+.fp-common-error {
+  border-left: 7px solid #e53935;
+  background: rgba(229, 57, 53, 0.07);
+}
+
+.fp-challenge {
+  border-left: 7px solid #43a047;
+  background: rgba(67, 160, 71, 0.07);
+}
+
+.fp-teacher-title,
+.fp-common-error-title,
+.fp-challenge-title {
+  font-size: 1.08rem;
+  font-weight: 900;
+  margin-bottom: 0.7rem;
+}
+
+.fp-teacher-title {
+  color: #1565c0;
+}
+
+.fp-common-error-title {
+  color: #e53935;
+}
+
+.fp-challenge-title {
+  color: #43a047;
+}
