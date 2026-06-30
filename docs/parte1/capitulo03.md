@@ -39,3 +39,7 @@ content:
 3. Busca la carpeta **robots**.
 4. Identifica un robot móvil.
 :::
+
+::: robot
+id: PioneerP3DX
+:::
