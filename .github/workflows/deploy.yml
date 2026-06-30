@@ -23,7 +23,7 @@ jobs:
 
       - name: Instalar MkDocs
         run: |
-          pip install mkdocs mkdocs-material
+          pip install mkdocs mkdocs-material mkdocs-mermaid2-plugin
 
       - name: Publicar en GitHub Pages
         run: |
