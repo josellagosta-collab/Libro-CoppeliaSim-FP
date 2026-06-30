@@ -4,6 +4,7 @@ from mkdocs_fp_book.renderers.example import ExampleRenderer
 from mkdocs_fp_book.renderers.exercise import ExerciseRenderer
 from mkdocs_fp_book.renderers.practice import PracticeRenderer
 from mkdocs_fp_book.renderers.robot import RobotRenderer
+from mkdocs_fp_book.renderers.python import PythonRenderer
 
 
 class BookRenderer:
@@ -18,6 +19,7 @@ class BookRenderer:
             ExerciseRenderer(),
             PracticeRenderer(),
             RobotRenderer(self.kb),
+            PythonRenderer(self.kb),
         ]
 
     def render(self, markdown, page):

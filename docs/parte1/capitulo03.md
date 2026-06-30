@@ -43,3 +43,7 @@ content:
 ::: robot
 id: PioneerP3DX
 :::
+
+::: python
+id: getObject
+:::

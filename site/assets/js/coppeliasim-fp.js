@@ -1,0 +1,1 @@
+console.log("CoppeliaSim FP Theme cargado");

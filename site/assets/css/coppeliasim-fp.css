@@ -1,0 +1,184 @@
+:root {
+  --coppelia-blue: #1565c0;
+  --coppelia-blue-dark: #0d47a1;
+  --coppelia-grey-light: #eceff1;
+  --coppelia-grey-dark: #37474f;
+  --coppelia-yellow: #ffb300;
+  --coppelia-green: #43a047;
+  --coppelia-red: #e53935;
+}
+
+/* Encabezados */
+.md-typeset h1 {
+  color: var(--coppelia-blue-dark);
+  font-weight: 800;
+}
+
+.md-typeset h2 {
+  color: var(--coppelia-blue);
+  border-bottom: 2px solid var(--coppelia-grey-light);
+  padding-bottom: 0.2rem;
+}
+
+/* Bloques destacados */
+.md-typeset .admonition.profesor,
+.md-typeset details.profesor {
+  border-color: var(--coppelia-blue);
+}
+
+.md-typeset .profesor > .admonition-title,
+.md-typeset .profesor > summary {
+  background-color: rgba(21, 101, 192, 0.12);
+}
+
+.md-typeset .profesor > .admonition-title::before,
+.md-typeset .profesor > summary::before {
+  background-color: var(--coppelia-blue);
+  -webkit-mask-image: var(--md-admonition-icon--tip);
+          mask-image: var(--md-admonition-icon--tip);
+}
+
+.md-typeset .admonition.industria,
+.md-typeset details.industria {
+  border-color: var(--coppelia-grey-dark);
+}
+
+.md-typeset .industria > .admonition-title,
+.md-typeset .industria > summary {
+  background-color: rgba(55, 71, 79, 0.12);
+}
+
+.md-typeset .industria > .admonition-title::before,
+.md-typeset .industria > summary::before {
+  background-color: var(--coppelia-grey-dark);
+  -webkit-mask-image: var(--md-admonition-icon--note);
+          mask-image: var(--md-admonition-icon--note);
+}
+
+.md-typeset .admonition.error,
+.md-typeset details.error {
+  border-color: var(--coppelia-red);
+}
+
+.md-typeset .error > .admonition-title,
+.md-typeset .error > summary {
+  background-color: rgba(229, 57, 53, 0.12);
+}
+
+.md-typeset .error > .admonition-title::before,
+.md-typeset .error > summary::before {
+  background-color: var(--coppelia-red);
+  -webkit-mask-image: var(--md-admonition-icon--warning);
+          mask-image: var(--md-admonition-icon--warning);
+}
+
+/* Figuras */
+.figure {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.figure img {
+  border: 1px solid #cfd8dc;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.figure-caption {
+  font-size: 0.85rem;
+  color: var(--coppelia-grey-dark);
+  margin-top: 0.5rem;
+}
+
+/* Portadas de partes */
+.portada-parte {
+  background: linear-gradient(135deg, #0d47a1, #1565c0);
+  color: white;
+  border-radius: 18px;
+  padding: 3rem;
+  margin: 2rem 0;
+}
+
+.portada-parte h1,
+.portada-parte h2 {
+  color: white;
+  border: none;
+}
+
+/* Código */
+.md-typeset code {
+  border-radius: 4px;
+}
+
+.fp-table-caption {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--coppelia-blue-dark);
+  margin-top: 1.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.md-typeset table:not([class]) {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--coppelia-blue-dark);
+  color: white;
+}
+
+
+## 2. Añade estilo al CSS
+
+```css
+.fp-example-caption {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--coppelia-green);
+  margin-top: 1.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.fp-exercise,
+.fp-practice {
+  border: 1px solid #cfd8dc;
+  border-left: 6px solid var(--coppelia-blue);
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  margin: 1.5rem 0;
+  background: rgba(21, 101, 192, 0.04);
+}
+
+.fp-exercise-title,
+.fp-practice-title {
+  font-weight: 800;
+  color: var(--coppelia-blue-dark);
+  margin-bottom: 0.6rem;
+}
+
+.fp-practice-meta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  margin-bottom: 0.8rem;
+  color: var(--coppelia-grey-dark);
+}
+
+
+.fp-python-card {
+  border: 1px solid #cfd8dc;
+  border-left: 7px solid #3776ab;
+  border-radius: 12px;
+  padding: 1.2rem;
+  margin: 1.8rem 0;
+  background: rgba(55, 118, 171, 0.06);
+}
+
+.fp-python-title {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #3776ab;
+  margin-bottom: 0.8rem;
+}
