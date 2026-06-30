@@ -1,0 +1,47 @@
+name: Generar PDF y Word
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar Pandoc y LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-latex-extra
+
+      - name: Crear carpeta output
+        run: mkdir -p output
+
+      - name: Generar PDF
+        run: |
+          pandoc \
+            docs/index.md \
+            docs/parte1/index.md \
+            docs/parte1/capitulo01.md \
+            -o output/CoppeliaSim_FP.pdf \
+            --toc \
+            --pdf-engine=xelatex
+
+      - name: Generar Word
+        run: |
+          pandoc \
+            docs/index.md \
+            docs/parte1/index.md \
+            docs/parte1/capitulo01.md \
+            -o output/CoppeliaSim_FP.docx \
+            --toc
+
+      - name: Subir artefactos
+        uses: actions/upload-artifact@v4
+        with:
+          name: libro-coppeliasim
+          path: output/

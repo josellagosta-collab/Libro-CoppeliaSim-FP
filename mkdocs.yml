@@ -1,0 +1,46 @@
+site_name: CoppeliaSim 4.10 con Python
+site_description: Manual de Robótica y Simulación para Formación Profesional
+site_author: José Aguilera
+
+theme:
+  name: material
+  language: es
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid_custom
+
+plugins:
+  - search
+  - mermaid2
+  - minify:
+      minify_html: true
+
+nav:
+  - Inicio: index.md
+  - Parte I:
+      - Primer contacto: parte1/index.md
+      - Capítulo 1: parte1/capitulo01.md
+  - Parte II:
+      - Primer robot: parte2/index.md
+  - Parte III:
+      - Python y CoppeliaSim: parte3/index.md
+  - Parte IV:
+      - Curso práctico: parte4/index.md
+  - Parte V:
+      - Solucionario: parte5/index.md
+  - Parte VI:
+      - Recursos profesor: parte6/index.md

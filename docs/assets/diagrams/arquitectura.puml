@@ -1,0 +1,10 @@
+@startuml
+actor Alumno
+participant Python
+participant CoppeliaSim
+participant Robot
+
+Alumno -> Python : Ejecuta programa
+Python -> CoppeliaSim : RemoteAPIClient
+CoppeliaSim -> Robot : Controla motores
+@enduml
