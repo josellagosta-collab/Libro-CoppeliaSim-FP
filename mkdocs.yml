@@ -5,7 +5,7 @@ site_author: José Aguilera
 theme:
   name: material
   language: es
-  custom_dir: overrides
+  #custom_dir: overrides
   logo: assets/logos/logo.svg
   favicon: assets/logos/favicon.png
 
@@ -42,6 +42,7 @@ markdown_extensions:
   - tables
   - toc:
       permalink: true
+      toc_depth: 2-4
   - pymdownx.details
   - pymdownx.superfences:
       custom_fences:
@@ -52,6 +53,7 @@ markdown_extensions:
 plugins:
   - search
   - mermaid2
+  - fp_book
   - minify:
       minify_html: true
 
@@ -73,12 +75,16 @@ nav:
   - Parte V:
       - Solucionario: parte5/index.md
   - Parte VI:
-      - Recursos profesor: parte6/index
+      - Recursos profesor: parte6/index.md
 
+  - Editorial:
+      - Inicio: editorial/index.md
+      - Design System: editorial/design-system.md
+      - Colores: editorial/colores.md
+      - Tipografía: editorial/tipografia.md
+      - Iconografía: editorial/iconografia.md
+      - Figuras: editorial/figuras.md
+      - Diagramas: editorial/diagramas.md
+      - Componentes: editorial/componentes.md
+      - Plantillas: editorial/plantillas.md
 
-plugins:
-  - search
-  - mermaid2
-  - fp_book
-  - minify:
-      minify_html: true
