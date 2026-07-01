@@ -11,6 +11,7 @@ from mkdocs_fp_book.renderers.glossary import GlossaryRenderer
 from mkdocs_fp_book.renderers.cover import CoverRenderer
 from mkdocs_fp_book.renderers.learning import LearningRenderer
 from mkdocs_fp_book.renderers.callout import CalloutRenderer
+from mkdocs_fp_book.renderers.smartlink import SmartLinkRenderer
 
 class BookRenderer:
     def __init__(self, knowledge_base):
@@ -30,6 +31,7 @@ class BookRenderer:
             SensorRenderer(self.kb),
             CommandRenderer(self.kb),
             GlossaryRenderer(self.kb),
+            SmartLinkRenderer(self.kb),
         ]
 
     def render(self, markdown, page):

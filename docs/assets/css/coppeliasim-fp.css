@@ -413,3 +413,27 @@
 .fp-challenge-title {
   color: #43a047;
 }
+
+.md-typeset .admonition.teacher {
+  border-color: #1565c0;
+}
+
+.md-typeset .admonition.teacher > .admonition-title {
+  background-color: rgba(21, 101, 192, 0.12);
+}
+
+.md-typeset .admonition.common-error {
+  border-color: #e53935;
+}
+
+.md-typeset .admonition.common-error > .admonition-title {
+  background-color: rgba(229, 57, 53, 0.12);
+}
+
+.md-typeset .admonition.challenge {
+  border-color: #43a047;
+}
+
+.md-typeset .admonition.challenge > .admonition-title {
+  background-color: rgba(67, 160, 71, 0.12);
+}

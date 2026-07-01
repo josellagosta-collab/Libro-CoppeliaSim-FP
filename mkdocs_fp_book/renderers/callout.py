@@ -1,4 +1,5 @@
 import re
+import textwrap
 
 
 class CalloutRenderer:
@@ -6,7 +7,7 @@ class CalloutRenderer:
         markdown = self._render_simple_block(
             markdown,
             block_name="teacher",
-            css_class="fp-teacher",
+            admonition_type="teacher",
             icon="👨‍🏫",
             default_title="Consejo para el profesor",
         )
@@ -14,7 +15,7 @@ class CalloutRenderer:
         markdown = self._render_simple_block(
             markdown,
             block_name="common-error",
-            css_class="fp-common-error",
+            admonition_type="common-error",
             icon="⚠️",
             default_title="Error frecuente",
         )
@@ -22,14 +23,14 @@ class CalloutRenderer:
         markdown = self._render_simple_block(
             markdown,
             block_name="challenge",
-            css_class="fp-challenge",
+            admonition_type="challenge",
             icon="🚀",
             default_title="Reto",
         )
 
         return markdown
 
-    def _render_simple_block(self, markdown, block_name, css_class, icon, default_title):
+    def _render_simple_block(self, markdown, block_name, admonition_type, icon, default_title):
         pattern = re.compile(
             rf"::: {block_name}\s*\n"
             r"(.*?)\n:::",
@@ -50,15 +51,12 @@ class CalloutRenderer:
             if content.startswith("content:"):
                 content = content.replace("content:", "", 1).strip()
 
-            return f"""
-<div class="{css_class}">
-  <div class="{css_class}-title">{icon} {title}</div>
-  <div class="{css_class}-content" markdown="1">
+            indented_content = textwrap.indent(content, "    ")
 
-{content}
+            return f'''
+!!! {admonition_type} "{icon} {title}"
 
-  </div>
-</div>
-"""
+{indented_content}
+'''
 
         return pattern.sub(replace, markdown)
