@@ -8,6 +8,14 @@ theme:
   #custom_dir: overrides
   logo: assets/logos/logo.svg
   favicon: assets/logos/favicon.png
+  features:
+    - navigation.footer
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
 
   font:
     text: Roboto
@@ -21,13 +29,6 @@ theme:
       primary: blue
       accent: indigo
 
-  features:
-    - navigation.tabs
-    - navigation.sections
-    - navigation.top
-    - search.highlight
-    - content.code.copy
-    - content.code.annotate
 
 extra_css:
   - assets/css/coppeliasim-fp.css
@@ -66,6 +67,8 @@ nav:
       - Capítulo 1: parte1/capitulo01.md
       - Capítulo 2: parte1/capitulo02.md
       - Capítulo 3: parte1/capitulo03.md
+      - Capítulo 4: parte1/capitulo04.md
+      - Capítulo 5: parte1/capitulo05.md
   - Parte II:
       - Primer robot: parte2/index.md
   - Parte III:
