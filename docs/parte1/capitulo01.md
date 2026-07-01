@@ -72,7 +72,7 @@ En robótica, un simulador puede reproducir:
 Todo ello dentro de un entorno tridimensional en el que es posible interactuar exactamente igual que se haría en una instalación real.
 
 ::: figure
-image: ../assets/cap01/simulacion_vs_realidad.png
+image: ../assets/cap01/png/robot_real_vs_virtual.png
 caption: Comparación entre una instalación física y su representación virtual.
 :::
 
@@ -101,7 +101,7 @@ En otras palabras, CoppeliaSim permite construir un **laboratorio de robótica v
 En ese laboratorio podremos experimentar con total libertad, probar ideas, cometer errores y aprender sin riesgo para las personas ni para el material.
 
 ::: figure
-image: ../assets/cap01/coppeliasim_ecosistema.png
+image: ../assets/cap01/png/integracion.png
 caption: CoppeliaSim permite integrar robots, sensores, cámaras, cintas transportadoras y otros elementos dentro de una misma simulación.
 :::
 
@@ -712,7 +712,7 @@ Se desplazan por el suelo utilizando ruedas, orugas o patas y son ideales para a
 - localización.
 
 ::: figure
-image: ../assets/cap01/mobile_robots.png
+image: ../assets/cap01/png/robots_copellian.png
 caption: Ejemplos de robots móviles disponibles en CoppeliaSim.
 :::
 
@@ -745,7 +745,7 @@ Entre otras aplicaciones encontramos:
 - inspección.
 
 ::: figure
-image: ../assets/cap01/industrial_robot.png
+image: ../assets/cap01/png/brazo_robotico.png
 caption: Simulación de un brazo robótico industrial.
 :::
 
