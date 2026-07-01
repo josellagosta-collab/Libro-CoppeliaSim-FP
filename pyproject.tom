@@ -1,0 +1,14 @@
+[project]
+name = "mkdocs-fp-book"
+version = "0.1.0"
+description = "Plugin personalizado para el libro de CoppeliaSim FP"
+dependencies = [
+    "mkdocs>=1.6.1"
+]
+
+[project.entry-points."mkdocs.plugins"]
+fp_book = "mkdocs_fp_book.plugin:FpBookPlugin"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
