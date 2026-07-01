@@ -1,0 +1,7 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'>
+<defs><style>
+.blue{fill:#1565C0}.dark{fill:#0D47A1}.green{fill:#43A047}.teal{fill:#00897B}.purple{fill:#6A1B9A}.yellow{fill:#F9A825}.red{fill:#E53935}.grey{fill:#ECEFF1}.black{fill:#37474F}
+.stroke{stroke:#37474F;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;fill:none}.stroke-blue{stroke:#1565C0;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.text{font-family:Arial,sans-serif;font-weight:700;fill:#37474F}
+</style></defs>
+<rect class='black' x='122' y='394' width='268' height='54' rx='18'/><circle class='blue' cx='180' cy='360' r='54'/><path class='stroke-blue' d='M212 320l96-108'/><circle class='green' cx='320' cy='200' r='42'/><path class='stroke-blue' d='M350 170l68-58'/><circle class='yellow' cx='430' cy='100' r='28'/><path class='stroke' d='M448 84l32-20M448 116l32 20'/></svg>

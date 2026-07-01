@@ -18,6 +18,7 @@ Al finalizar este capítulo serás capaz de:
 - Identificar el papel de CoppeliaSim en la Formación Profesional y en la Industria 4.0.
 :::
 
+
 # Capítulo 1 · ¿Qué es CoppeliaSim?
 
 ## ¿Serías capaz de programar un robot de 50.000 € sin haberlo probado antes?
@@ -915,4 +916,292 @@ CoppeliaSim no es únicamente un simulador para mover robots.
 Es una plataforma completa que permite diseñar, programar, probar e integrar sistemas robóticos de muy distinta naturaleza.
 
 Dominar esta herramienta significa adquirir una base sólida sobre la que construir proyectos cada vez más complejos.
+:::
+
+---
+
+# 1.6 ¿Por qué utilizar un simulador antes que un robot real?
+
+Cuando un estudiante comienza a aprender robótica suele pensar que lo ideal sería trabajar desde el primer día con un robot físico.
+
+Aunque esta idea resulta muy atractiva, la realidad es que la inmensa mayoría de proyectos profesionales comienzan precisamente al contrario: utilizando un simulador.
+
+La simulación no pretende sustituir al robot real, sino preparar el trabajo que posteriormente se realizará sobre él.
+
+En otras palabras, el simulador es un entorno seguro donde experimentar, equivocarse y aprender.
+
+---
+
+## Aprender sin miedo a romper nada
+
+Todos los alumnos cometen errores durante las primeras prácticas.
+
+Es completamente normal.
+
+Por ejemplo:
+
+- invertir el sentido de giro de un motor;
+- mover un robot demasiado rápido;
+- provocar una colisión;
+- escribir un algoritmo incorrecto;
+- enviar órdenes equivocadas.
+
+En un robot real, estos errores pueden provocar averías, roturas o incluso situaciones de riesgo.
+
+En un simulador, el peor resultado posible consiste en reiniciar la escena y volver a empezar.
+
+Esta libertad favorece enormemente el aprendizaje.
+
+::: common-error
+content:
+
+Muchos estudiantes intentan evitar cualquier error.
+
+Explícales que equivocarse forma parte del proceso de aprendizaje.
+
+En un simulador, los errores son una oportunidad para comprender mejor el funcionamiento del sistema.
+:::
+
+---
+
+## Reducir costes
+
+Un robot industrial puede costar decenas o incluso cientos de miles de euros.
+
+A ello debemos añadir:
+
+- herramientas;
+- mantenimiento;
+- formación;
+- espacio físico;
+- elementos de seguridad.
+
+Con un simulador, todos los alumnos pueden disponer de su propio laboratorio virtual utilizando un ordenador convencional.
+
+---
+
+## Trabajar desde cualquier lugar
+
+Una de las mayores ventajas de CoppeliaSim es que no depende del laboratorio del centro.
+
+El alumno puede continuar las prácticas:
+
+- en casa;
+- en la biblioteca;
+- durante las prácticas en empresa;
+- desde un ordenador personal.
+
+Esto favorece enormemente el aprendizaje autónomo.
+
+---
+
+## Preparar el trabajo real
+
+En muchas empresas, los programas que finalmente controlarán un robot industrial se desarrollan inicialmente sobre un modelo virtual.
+
+Solo cuando el comportamiento es correcto se transfieren al robot físico.
+
+Este procedimiento reduce:
+
+- tiempos de parada;
+- costes;
+- riesgos;
+- errores de puesta en marcha.
+
+La simulación forma parte del flujo normal de trabajo de numerosos proyectos industriales.
+
+---
+
+# 1.7 CoppeliaSim en la Formación Profesional
+
+Uno de los objetivos de este libro es acercar la robótica profesional a las aulas de Formación Profesional.
+
+Durante los próximos capítulos utilizaremos CoppeliaSim como hilo conductor para aprender conceptos que posteriormente podrán aplicarse sobre robots reales.
+
+Las prácticas han sido diseñadas pensando en un aula de FP.
+
+Comenzaremos con actividades muy sencillas y, progresivamente, incorporaremos nuevas tecnologías.
+
+Al finalizar el libro habremos trabajado con:
+
+- programación en Python;
+- sensores virtuales;
+- visión artificial;
+- OpenCV;
+- Node-RED;
+- MQTT;
+- Inteligencia Artificial;
+- gemelos digitales.
+
+Todo ello utilizando un único entorno de simulación.
+
+::: teacher
+content:
+
+No intentes explicar todas las posibilidades de CoppeliaSim durante las primeras semanas.
+
+Permite que el alumnado descubra nuevas funcionalidades conforme avance el curso.
+
+La motivación aumenta cuando cada capítulo incorpora una novedad.
+:::
+
+---
+
+# 1.8 Comparación con otros simuladores
+
+Actualmente existen numerosos simuladores robóticos.
+
+Cada uno responde a necesidades diferentes.
+
+::: table
+caption: Comparación general entre algunos simuladores robóticos.
+content:
+
+| Simulador | Principal ámbito de uso |
+|------------|------------------------|
+| CoppeliaSim | Docencia, investigación e integración |
+| Gazebo | ROS y robótica móvil |
+| Isaac Sim | Inteligencia Artificial y NVIDIA |
+| Webots | Educación e investigación |
+| RoboDK | Robótica industrial offline |
+:::
+
+No existe un simulador "mejor" que todos los demás.
+
+La elección depende del tipo de proyecto.
+
+En este libro utilizaremos CoppeliaSim porque ofrece un excelente equilibrio entre facilidad de aprendizaje, potencia y posibilidades de integración.
+
+---
+
+::: summary
+title: Resumen del capítulo
+
+content:
+
+En este primer capítulo hemos descubierto qué es un simulador robótico y por qué constituye una herramienta fundamental en el desarrollo de sistemas automatizados.
+
+También hemos conocido qué es CoppeliaSim, cómo ha evolucionado a lo largo del tiempo y cuáles son sus principales ámbitos de aplicación.
+
+A partir del siguiente capítulo comenzaremos a preparar nuestro entorno de trabajo instalando el software y realizando la configuración inicial.
+:::
+
+---
+
+# Ejercicios
+
+::: exercise
+title: Comprensión
+
+content:
+
+Responde a las siguientes preguntas.
+
+1. ¿Qué es un simulador robótico?
+
+2. ¿Qué ventajas ofrece respecto a un robot físico?
+
+3. ¿Qué tipos de robots pueden simularse con CoppeliaSim?
+
+4. ¿Por qué es tan utilizado en universidades?
+
+5. ¿Qué tecnologías estudiaremos durante este libro?
+:::
+
+---
+
+::: exercise
+title: Investigación
+
+content:
+
+Busca información sobre otro simulador robótico diferente de CoppeliaSim.
+
+Elabora una ficha indicando:
+
+- nombre;
+- empresa desarrolladora;
+- aplicaciones principales;
+- ventajas;
+- inconvenientes.
+
+Finalmente, compara tus resultados con CoppeliaSim.
+:::
+
+---
+
+::: practice
+title: Primer contacto con CoppeliaSim
+
+difficulty: Muy baja
+
+time: 20 minutos
+
+content:
+
+En esta primera práctica no programaremos ningún robot.
+
+El objetivo consiste simplemente en conocer el simulador.
+
+1. Abre CoppeliaSim.
+2. Observa la ventana principal.
+3. Localiza el árbol de la escena.
+4. Explora el Model Browser.
+5. Identifica los controles de simulación.
+6. Cierra el programa.
+
+No te preocupes si todavía no entiendes todas las opciones.
+
+Durante los próximos capítulos iremos descubriendo cada una de ellas con detalle.
+:::
+
+---
+
+::: challenge
+title: Un laboratorio del futuro
+
+content:
+
+Imagina que debes diseñar un laboratorio de robótica para un centro de Formación Profesional.
+
+Dispones de un presupuesto limitado.
+
+¿Qué equipamiento comprarías?
+
+¿Qué papel tendría CoppeliaSim dentro del laboratorio?
+
+Justifica tu propuesta.
+:::
+
+---
+
+# Para el profesor
+
+::: teacher
+title: Organización de la sesión
+
+content:
+
+**Duración recomendada**
+
+2 sesiones de 55 minutos.
+
+**Material necesario**
+
+- Ordenadores con CoppeliaSim instalado.
+- Proyector.
+- Conexión a Internet.
+- Este libro.
+
+**Objetivo principal**
+
+Que el alumnado comprenda qué es un simulador y por qué va a utilizarlo durante el curso.
+
+No es necesario explicar todavía el funcionamiento interno de CoppeliaSim.
+
+Es preferible despertar la curiosidad y generar expectativas sobre las prácticas que se realizarán en los siguientes capítulos.
+
+Finaliza la sesión mostrando algunos ejemplos espectaculares de robots simulados.
+
+Los alumnos comprenderán que todo lo que han visto será capaz de realizarlo por sí mismos a medida que avance el curso.
 :::

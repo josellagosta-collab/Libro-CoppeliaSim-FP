@@ -1,0 +1,7 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'>
+<defs><style>
+.blue{fill:#1565C0}.dark{fill:#0D47A1}.green{fill:#43A047}.teal{fill:#00897B}.purple{fill:#6A1B9A}.yellow{fill:#F9A825}.red{fill:#E53935}.grey{fill:#ECEFF1}.black{fill:#37474F}
+.stroke{stroke:#37474F;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;fill:none}.stroke-blue{stroke:#1565C0;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.text{font-family:Arial,sans-serif;font-weight:700;fill:#37474F}
+</style></defs>
+<circle class='blue' cx='256' cy='256' r='56'/><circle class='green' cx='120' cy='150' r='38'/><circle class='yellow' cx='392' cy='150' r='38'/><circle class='purple' cx='120' cy='362' r='38'/><circle class='teal' cx='392' cy='362' r='38'/><path class='stroke-blue' d='M154 176l70 54M358 176l-70 54M154 336l70-54M358 336l-70-54'/><text class='text' x='220' y='266' font-size='32'>MQTT</text></svg>
