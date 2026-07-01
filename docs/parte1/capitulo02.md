@@ -149,7 +149,7 @@ El objetivo de este punto es confirmar que el simulador está instalado y listo 
 
 ---
 
-# 2.7 Organización de las carpetas de trabajo
+## 2.7 Organización de las carpetas de trabajo
 
 Uno de los errores más habituales cuando se comienza a utilizar CoppeliaSim consiste en guardar todas las escenas en cualquier carpeta del ordenador.
 
@@ -199,7 +199,7 @@ Más adelante ahorrarás mucho tiempo cuando tengas que revisar las prácticas d
 
 ---
 
-# 2.8 La primera escena
+## 2.8 La primera escena
 
 Al abrir CoppeliaSim aparecerá una escena completamente vacía.
 
@@ -222,7 +222,7 @@ Durante las primeras prácticas trabajaremos siempre sobre escenas muy sencillas
 
 ---
 
-# 2.9 Guardar correctamente una escena
+## 2.9 Guardar correctamente una escena
 
 Guardar una escena en CoppeliaSim resulta muy parecido a guardar un documento en cualquier otra aplicación.
 
@@ -253,7 +253,7 @@ Haz siempre una copia antes de comenzar cualquier modificación.
 
 ---
 
-# 2.10 Tipos de archivos de CoppeliaSim
+## 2.10 Tipos de archivos de CoppeliaSim
 
 CoppeliaSim utiliza distintos tipos de archivos dependiendo de la información que contienen.
 
@@ -274,7 +274,7 @@ Más adelante aprenderemos a crear nuestros propios modelos reutilizables utiliz
 
 ---
 
-# 2.11 Preparando el entorno para Python
+## 2.11 Preparando el entorno para Python
 
 Aunque todavía no escribiremos ningún programa, conviene preparar desde el principio una carpeta específica para el código fuente.
 
@@ -299,7 +299,7 @@ De esta forma será muy sencillo localizar el código correspondiente a cada pr�
 
 ---
 
-# 2.12 Verificación del entorno
+## 2.12 Verificación del entorno
 
 Antes de continuar con el siguiente capítulo realiza la siguiente comprobación.
 
@@ -338,7 +338,7 @@ Una buena organización desde el principio facilitará enormemente el trabajo en
 
 ---
 
-# Para el profesor
+## Para el profesor
 
 ::: teacher
 title: Organización recomendada
@@ -358,3 +358,137 @@ content:
 
 No avances al capítulo siguiente hasta comprobar que todos los equipos funcionan correctamente.
 :::
+
+---
+
+## Conceptos clave
+
+Antes de continuar con el siguiente capítulo, asegúrate de comprender los siguientes conceptos.
+
+::: table
+caption: Conceptos fundamentales del capítulo.
+content:
+
+| Concepto | Definición breve |
+|-----------|------------------|
+| Instalación | Proceso mediante el cual se prepara un programa para su utilización. |
+| CoppeliaSim EDU | Versión de CoppeliaSim destinada al aprendizaje y la docencia. |
+| Escena | Archivo que contiene el entorno completo de simulación. |
+| Modelo | Conjunto de objetos reutilizables que pueden insertarse en una escena. |
+| Proyecto | Organización de escenas, modelos y programas relacionados con una práctica. |
+| Carpeta de trabajo | Directorio donde almacenaremos todas las prácticas del libro. |
+| Python | Lenguaje de programación que utilizaremos para controlar los robots. |
+| Entorno de trabajo | Conjunto de herramientas necesarias para desarrollar las prácticas. |
+| Copia de seguridad | Duplicado de los archivos importantes para evitar pérdidas de información. |
+| Organización de archivos | Estructura lógica de carpetas y documentos de un proyecto. |
+:::
+
+---
+
+## En este capítulo has aprendido
+
+Al finalizar este capítulo ya eres capaz de:
+
+- ✅ Descargar CoppeliaSim desde la página oficial.
+- ✅ Instalar correctamente el simulador.
+- ✅ Crear una estructura organizada para tus proyectos.
+- ✅ Guardar escenas de forma adecuada.
+- ✅ Diferenciar entre escenas y modelos.
+- ✅ Preparar el entorno que utilizarás durante todo el libro.
+
+Aunque todavía no hemos comenzado a programar, ya dispones de un entorno de trabajo correctamente preparado.
+
+Esto te permitirá concentrarte en el aprendizaje sin tener que preocuparte por problemas de organización.
+
+---
+
+## Autoevaluación
+
+Responde a las siguientes preguntas antes de continuar.
+
+1. ¿Qué versión de CoppeliaSim utilizaremos durante el libro?
+2. ¿Qué diferencia existe entre una escena y un modelo?
+3. ¿Por qué es recomendable organizar las prácticas en carpetas independientes?
+4. ¿Qué extensión tienen normalmente las escenas de CoppeliaSim?
+5. ¿Dónde guardarás los programas Python de las prácticas?
+
+Si puedes responder correctamente a estas cuestiones, estás preparado para comenzar a trabajar con el simulador.
+
+---
+
+## Práctica guiada
+
+::: practice
+title: Preparación del entorno de trabajo
+
+difficulty: Muy baja
+
+time: 20 minutos
+
+content:
+
+Realiza las siguientes tareas:
+
+1. Comprueba que CoppeliaSim se abre correctamente.
+2. Crea la carpeta principal **CoppeliaSim-FP**.
+3. Crea todas las subcarpetas propuestas en este capítulo.
+4. Abre una escena vacía.
+5. Guárdala con el nombre **Practica01_PrimerProyecto.ttt** dentro de la carpeta correspondiente.
+6. Cierra el programa y vuelve a abrir la escena para comprobar que se ha guardado correctamente.
+
+Al finalizar esta práctica tendrás preparado el entorno que utilizarás durante todo el libro.
+:::
+
+---
+
+## Reto
+
+::: challenge
+title: Organiza tu laboratorio virtual
+
+content:
+
+Imagina que dentro de unos meses habrás realizado más de cincuenta prácticas diferentes.
+
+Diseña una estructura de carpetas que te permita localizar rápidamente cualquier escena, programa Python o recurso utilizado durante el curso.
+
+Compárala con la propuesta de este libro e identifica qué ventajas e inconvenientes presenta cada una.
+:::
+
+---
+
+## Para el profesor
+
+::: teacher
+title: Organización de la sesión
+
+content:
+
+**Duración recomendada**
+
+Una sesión de 55 minutos.
+
+**Objetivos de la sesión**
+
+- Verificar que todos los equipos disponen de CoppeliaSim correctamente instalado.
+- Comprobar que el alumnado ha creado la estructura de carpetas propuesta.
+- Resolver posibles incidencias relacionadas con la instalación o los permisos de escritura.
+
+**Observaciones**
+
+No es necesario explicar todavía el funcionamiento detallado de la interfaz del simulador.
+
+Es suficiente con que todos los alumnos sean capaces de abrir una escena, guardarla y localizar posteriormente el archivo generado.
+
+De este modo, el siguiente capítulo podrá dedicarse íntegramente a conocer el entorno de trabajo sin interrupciones por problemas de instalación.
+:::
+
+---
+
+## Próximo capítulo
+
+En el siguiente capítulo conoceremos la interfaz de CoppeliaSim con detalle.
+
+Aprenderás a identificar cada una de las zonas de trabajo del simulador, navegar por el espacio tridimensional, utilizar el árbol de la escena y localizar las herramientas que emplearemos durante el resto del libro.
+
+Al finalizar el próximo capítulo serás capaz de moverte con soltura por el entorno de simulación y comenzarás a trabajar con tu primer robot virtual.

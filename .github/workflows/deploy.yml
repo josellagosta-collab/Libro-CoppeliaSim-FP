@@ -14,17 +14,21 @@ jobs:
 
     steps:
       - name: Descargar repositorio
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Instalar Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.x'
 
-      - name: Instalar MkDocs
+      - name: Instalar dependencias
         run: |
-          pip install mkdocs mkdocs-material mkdocs-mermaid2-plugin
+          python -m pip install --upgrade pip
+          pip install mkdocs mkdocs-material mkdocs-mermaid2-plugin mkdocs-minify-plugin
+          pip install -e .
+
+      - name: Comprobar sitio
+        run: mkdocs build --strict
 
       - name: Publicar en GitHub Pages
-        run: |
-          mkdocs gh-deploy --force
+        run: mkdocs gh-deploy --force
