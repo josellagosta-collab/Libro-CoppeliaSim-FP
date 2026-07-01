@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <defs>
+    <style>
+      .title{font-family:Segoe UI,Arial,sans-serif;font-size:42px;font-weight:800;fill:#0D47A1}
+      .subtitle{font-family:Segoe UI,Arial,sans-serif;font-size:24px;font-weight:500;fill:#37474F}
+      .label{font-family:Segoe UI,Arial,sans-serif;font-size:34px;font-weight:900;fill:#263238}
+      .small{font-family:Segoe UI,Arial,sans-serif;font-size:22px;font-weight:600;fill:#455A64}
+      .grid{stroke:#CFD8DC;stroke-width:2}
+      .axis-x{stroke:#E53935;stroke-width:9;stroke-linecap:round}
+      .axis-y{stroke:#43A047;stroke-width:9;stroke-linecap:round}
+      .axis-z{stroke:#1565C0;stroke-width:9;stroke-linecap:round}
+      .panel{fill:#FFFFFF;stroke:#D6DCE5;stroke-width:4}
+      .origin{fill:#263238}
+    </style>
+    <marker id="arrowX" markerWidth="14" markerHeight="14" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#E53935"/>
+    </marker>
+    <marker id="arrowY" markerWidth="14" markerHeight="14" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#43A047"/>
+    </marker>
+    <marker id="arrowZ" markerWidth="14" markerHeight="14" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#1565C0"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000000" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+
+  <rect x="34" y="34" width="1332" height="832" rx="28" class="panel" filter="url(#shadow)"/>
+
+  <text x="80" y="105" class="title">Sistema de coordenadas XYZ</text>
+  <text x="80" y="145" class="subtitle">Referencia cartesiana tridimensional utilizada para situar objetos en CoppeliaSim.</text>
+
+  <g transform="translate(700,545)">
+    <g opacity="0.85">
+      <line x1="-420" y1="160" x2="220" y2="-210" class="grid"/>
+      <line x1="-360" y1="190" x2="280" y2="-180" class="grid"/>
+      <line x1="-300" y1="220" x2="340" y2="-150" class="grid"/>
+      <line x1="-240" y1="250" x2="400" y2="-120" class="grid"/>
+      <line x1="-180" y1="280" x2="460" y2="-90" class="grid"/>
+      <line x1="-120" y1="310" x2="520" y2="-60" class="grid"/>
+      <line x1="-60" y1="340" x2="580" y2="-30" class="grid"/>
+      <line x1="0" y1="370" x2="640" y2="0" class="grid"/>
+      <line x1="-420" y1="160" x2="0" y2="370" class="grid"/>
+      <line x1="-340" y1="115" x2="80" y2="325" class="grid"/>
+      <line x1="-260" y1="70" x2="160" y2="280" class="grid"/>
+      <line x1="-180" y1="25" x2="240" y2="235" class="grid"/>
+      <line x1="-100" y1="-20" x2="320" y2="190" class="grid"/>
+      <line x1="-20" y1="-65" x2="400" y2="145" class="grid"/>
+      <line x1="60" y1="-110" x2="480" y2="100" class="grid"/>
+      <line x1="140" y1="-155" x2="560" y2="55" class="grid"/>
+      <line x1="220" y1="-210" x2="640" y2="0" class="grid"/>
+    </g>
+
+    <circle cx="0" cy="0" r="11" class="origin"/>
+    <text x="-92" y="34" class="small">Origen (0,0,0)</text>
+
+    <line x1="0" y1="0" x2="455" y2="0" class="axis-x" marker-end="url(#arrowX)"/>
+    <line x1="0" y1="0" x2="-300" y2="178" class="axis-y" marker-end="url(#arrowY)"/>
+    <line x1="0" y1="0" x2="0" y2="-340" class="axis-z" marker-end="url(#arrowZ)"/>
+
+    <text x="485" y="10" class="label" fill="#E53935">X</text>
+    <text x="-345" y="210" class="label" fill="#43A047">Y</text>
+    <text x="-10" y="-370" class="label" fill="#1565C0">Z</text>
+
+    <line x1="110" y1="-260" x2="350" y2="-310" stroke="#90A4AE" stroke-width="4" stroke-linecap="round"/>
+    <rect x="360" y="-350" width="310" height="86" rx="14" fill="#F5F9FF" stroke="#D6DCE5" stroke-width="3"/>
+    <text x="385" y="-316" class="small">Z indica la altura</text>
+    <text x="385" y="-286" class="small">respecto al plano.</text>
+  </g>
+
+  <rect x="80" y="760" width="1240" height="58" rx="12" fill="#F5F9FF" stroke="#D6DCE5" stroke-width="3"/>
+  <text x="110" y="797" class="small">En robots móviles trabajaremos sobre todo con X e Y para la posición, y con el giro alrededor de Z para la orientación.</text>
+</svg>

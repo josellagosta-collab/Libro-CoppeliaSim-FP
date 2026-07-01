@@ -369,7 +369,7 @@ Cinco minutos de práctica aquí evitarán muchas dificultades en capítulos pos
 
 ---
 
-## 3.6 El árbol de la escena
+## 3.5 El árbol de la escena
 
 A la izquierda de la interfaz encontramos uno de los paneles más importantes de CoppeliaSim: el **árbol de la escena** (*Scene Hierarchy*).
 
@@ -483,7 +483,7 @@ Con el tiempo resulta muy difícil recordar qué representa cada uno de ellos.
 
 ---
 
-## 3.7 Primera exploración
+## 3.6 Primera exploración
 
 Ha llegado el momento de explorar el simulador por tu cuenta.
 
@@ -498,7 +498,7 @@ Simplemente familiarízate con:
 
 En el próximo apartado aprenderemos a utilizar la **biblioteca de modelos**, una de las características más potentes de CoppeliaSim y el lugar desde el que incorporaremos nuestros primeros robots virtuales.
 
-## 3.8 La biblioteca de modelos
+## 3.7 La biblioteca de modelos
 
 Uno de los aspectos que distingue a CoppeliaSim de otros simuladores es la enorme cantidad de modelos listos para utilizar que incorpora.
 
@@ -593,7 +593,7 @@ Iremos descubriéndolos poco a poco.
 
 ---
 
-## 3.9 Los controles de simulación
+## 3.8 Los controles de simulación
 
 Una vez creada una escena necesitamos ponerla en funcionamiento.
 
@@ -663,7 +663,7 @@ Este comportamiento es completamente normal y facilita repetir las simulaciones.
 
 ---
 
-## 3.10 Personalizando el entorno de trabajo
+## 3.9 Personalizando el entorno de trabajo
 
 Cada usuario tiene una forma diferente de trabajar.
 
@@ -682,7 +682,7 @@ Más adelante aprenderemos a personalizar el entorno para trabajar de una forma 
 
 ---
 
-## 3.11 Primer contacto con el simulador
+## 3.10 Primer contacto con el simulador
 
 Ya conoces los principales elementos de la interfaz de CoppeliaSim.
 

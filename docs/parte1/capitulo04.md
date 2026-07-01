@@ -103,8 +103,8 @@ En la vista tridimensional observarás un plano de referencia y un sistema de ej
 Estos elementos nos ayudan a orientarnos y a colocar correctamente los objetos.
 
 ::: figure
-image: ../assets/cap04/escena_vacia.png
-caption: Escena vacía al crear un nuevo proyecto en CoppeliaSim.
+image: ../assets/cap04/annotated/escena_vacia.png
+caption: Escena vacía recién creada en CoppeliaSim EDU 4.10.0.
 :::
 
 Durante las siguientes prácticas iremos incorporando nuevos elementos hasta construir una simulación completa.
@@ -126,8 +126,8 @@ Cada objeto posee una posición expresada mediante estas tres coordenadas.
 Comprender este sistema resultará fundamental cuando comencemos a programar movimientos mediante Python.
 
 ::: figure
-image: ../assets/cap04/ejes_xyz.png
-caption: Sistema de coordenadas utilizado por CoppeliaSim.
+image: ../assets/cap04/svg/sistema_xyz.svg
+caption: Sistema de coordenadas XYZ utilizado para situar objetos en CoppeliaSim.
 :::
 
 No es necesario memorizar todavía el significado exacto de cada eje.
@@ -160,8 +160,8 @@ No vamos a construirlo pieza a pieza. Aprovecharemos uno de los modelos incluido
 De esta forma podremos centrarnos en aprender cómo funciona un robot antes de estudiar su construcción interna.
 
 ::: figure
-image: ../assets/cap04/model_browser_robot.png
-caption: Selección de un robot desde la biblioteca de modelos.
+image: ../assets/cap04/annotated/insertar_pioneer.png
+caption: Selección del robot Pioneer P3DX desde la biblioteca de modelos.
 :::
 
 Para insertar el robot sigue estos pasos:
@@ -175,6 +175,20 @@ Para insertar el robot sigue estos pasos:
 Si todo ha ido correctamente, el robot aparecerá inmediatamente en la escena.
 
 Además, observarás que también se ha añadido una nueva entrada en el árbol de la escena.
+
+
+### El robot ya forma parte de la escena
+
+Una vez soltamos el modelo sobre la vista tridimensional, el robot pasa a formar parte de la escena.
+
+Observa que el **Pioneer P3DX** aparece tanto en la **vista tridimensional** como en el **árbol de la escena**. Esto significa que ya puede seleccionarse, desplazarse y configurarse como cualquier otro objeto del simulador.
+
+::: figure
+image: ../assets/cap04/annotated/pioneer_insertado.png
+caption: Robot Pioneer P3DX insertado en una escena de CoppeliaSim.
+:::
+
+A partir de este momento podremos modificar sus propiedades, cambiar su posición y utilizarlo en nuestras simulaciones.
 
 ---
 
@@ -348,10 +362,18 @@ Entre otras tareas:
 
 En una escena sencilla apenas percibiremos cambios, pero en simulaciones complejas este proceso controla cientos de elementos simultáneamente.
 
+### Ejecutar una simulación
+
+Una vez colocado el robot en la escena, podemos iniciar la simulación pulsando el botón **Play** de la barra de herramientas.
+
 ::: figure
-image: ../assets/cap04/play_stop.png
-caption: Inicio y detención de una simulación mediante los controles principales.
+image: ../assets/cap04/annotated/simulacion_ejecucion.png
+caption: Simulación en ejecución con el robot Pioneer P3DX.
 :::
+
+Mientras la simulación está activa, CoppeliaSim ejecuta continuamente el motor físico, actualiza la posición de los objetos y procesa los scripts asociados a cada modelo.
+
+Durante este libro iniciarás y detendrás simulaciones constantemente, por lo que conviene familiarizarse desde el principio con este funcionamiento.
 
 ---
 
