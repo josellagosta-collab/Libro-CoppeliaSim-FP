@@ -76,7 +76,7 @@ Aunque durante las primeras prácticas utilizaremos principalmente los botones d
 La barra de menús se encuentra en la parte superior de la ventana principal y agrupa las funciones del programa por categorías.
 
 ::: figure
-image: ../assets/cap03/barra_menus_anotada.png
+image: ../assets/cap03/annotated/barra_menus.png
 caption: Barra de menús de CoppeliaSim EDU 4.10.0.
 :::
 
@@ -213,31 +213,33 @@ Justo debajo de la barra de menús encontramos la barra de herramientas principa
 Su objetivo consiste en proporcionar acceso rápido a las funciones que utilizaremos con mayor frecuencia.
 
 ::: figure
-image: ../assets/cap03/barra_herramientas_anotada.png
+image: ../assets/cap03/annotated/barra_herramientas.png
 caption: Barra de herramientas principal de CoppeliaSim.
 :::
 
-Los botones más importantes durante las primeras prácticas son los siguientes.
+Los botones visibles en esta versión no deben memorizarse uno a uno desde el primer día. Es más útil entenderlos por grupos funcionales.
 
 ::: table
-caption: Botones principales de la barra de herramientas.
+caption: Grupos principales de la barra de herramientas.
 content:
 
-| Botón | Función |
-|--------|---------|
-| Nuevo | Crea una escena vacía. |
-| Abrir | Abre una escena existente. |
-| Guardar | Guarda la escena actual. |
-| Play | Inicia la simulación. |
-| Pause | Pausa la simulación. |
-| Stop | Detiene la simulación. |
-| Model Browser | Muestra la biblioteca de modelos. |
-| Scene Hierarchy | Activa el árbol de la escena. |
+| Grupo | Iconos aproximados | Función |
+|--------|--------------------|---------|
+| Manipulación de objetos | Trasladar, rotar, subir/bajar | Permiten mover y orientar objetos dentro de la escena. |
+| Cámara y navegación | Cámara, zoom, giro de vista, panorámica | Permiten cambiar el punto de vista sin modificar la escena. |
+| Edición básica | Deshacer, rehacer, guardar | Ayudan a corregir acciones y conservar el trabajo. |
+| Motor físico | Selector Bullet 2.78 | Permite elegir el motor físico usado en la simulación. |
+| Simulación | Play, Pause, Stop | Inician, pausan y detienen la simulación. |
+| Herramientas auxiliares | Iconos de propiedades, visualización y ventanas | Permiten acceder a opciones avanzadas que se estudiarán más adelante. |
 :::
 
-No intentes memorizar todos los iconos.
+Durante las primeras prácticas utilizaremos sobre todo tres grupos:
 
-En muy pocas prácticas terminarás identificándolos de forma natural.
+- **manipulación de objetos**, para colocar robots y elementos en la escena;
+- **cámara y navegación**, para observar correctamente la simulación;
+- **controles de simulación**, para iniciar, pausar y detener el funcionamiento del entorno.
+
+No intentes memorizar todos los iconos. En pocas prácticas terminarás identificando de forma natural aquellos que realmente necesitas.
 
 ::: teacher
 content:
@@ -263,22 +265,28 @@ El objetivo de esta primera toma de contacto no consiste en dominar todas las fu
 
 En el siguiente apartado aprenderemos a utilizar la zona más importante de todo el simulador: **la vista tridimensional**, donde construiremos y controlaremos nuestros robots virtuales.
 
-## 3.5 La vista tridimensional
+### La vista tridimensional (Viewport)
 
-La **vista tridimensional (3D View)** es el corazón de CoppeliaSim.
+La **vista tridimensional**, también conocida como **Viewport**, es el área principal de trabajo de CoppeliaSim.
 
-Es el área donde se representan todos los elementos de la simulación y donde pasaremos la mayor parte del tiempo mientras trabajemos con el programa.
+En ella podrás:
 
-Cada robot, sensor, cámara, objeto o mecanismo que creemos aparecerá dentro de esta ventana.
+- visualizar la escena desde cualquier ángulo;
+- seleccionar objetos;
+- mover y rotar robots;
+- comprobar el resultado de las simulaciones;
+- interactuar con todos los elementos del entorno.
+
+Durante el resto del libro trabajarás principalmente sobre esta ventana.
 
 ::: figure
-image: ../assets/cap03/vista3d_anotada.png
-caption: Vista tridimensional de CoppeliaSim.
+image: ../assets/cap03/annotated/vista_3d.png
+caption: Vista tridimensional (Viewport) de CoppeliaSim EDU 4.10.0.
 :::
 
-Al principio puede resultar extraño trabajar en un espacio tridimensional utilizando únicamente el ratón. Sin embargo, tras unos minutos de práctica descubrirás que el manejo resulta muy intuitivo.
+En la esquina inferior derecha aparece un pequeño indicador que muestra la orientación de los ejes **X**, **Y** y **Z**.
 
-Antes de comenzar a construir robots es imprescindible aprender a desplazarse correctamente por la escena.
+Este sistema de coordenadas será fundamental cuando aprendamos a posicionar y orientar robots en el espacio durante el Capítulo 5.
 
 ---
 
@@ -368,8 +376,8 @@ A la izquierda de la interfaz encontramos uno de los paneles más importantes de
 Este panel muestra todos los objetos que forman parte de la simulación.
 
 ::: figure
-image: ../assets/cap03/arbol_escena_anotado.png
-caption: Árbol de la escena con varios objetos organizados jerárquicamente.
+image: ../assets/cap03/annotated/arbol_escena.png
+caption: Árbol de la escena con los objetos principales de la simulación.
 :::
 
 Cada línea del árbol representa un objeto distinto.
@@ -499,8 +507,8 @@ En lugar de construir todos los objetos desde cero, podemos reutilizar robots, s
 Esta colección recibe el nombre de **Model Browser**.
 
 ::: figure
-image: ../assets/cap03/model_browser_anotado.png
-caption: Biblioteca de modelos de CoppeliaSim.
+image: ../assets/cap03/annotated/model_browser.png
+caption: Biblioteca de modelos con robots móviles disponibles.
 :::
 
 La biblioteca está organizada por categorías, lo que facilita localizar rápidamente el elemento que necesitamos.
@@ -590,11 +598,6 @@ Iremos descubriéndolos poco a poco.
 Una vez creada una escena necesitamos ponerla en funcionamiento.
 
 Para ello utilizaremos los controles de simulación.
-
-::: figure
-image: ../assets/cap03/controles_simulacion_anotados.png
-caption: Controles principales de la simulación.
-:::
 
 Estos botones permiten controlar la ejecución de la escena.
 
