@@ -61,8 +61,8 @@ En realidad, durante las primeras prácticas utilizaremos únicamente una peque�
 La figura siguiente muestra la distribución general de la interfaz.
 
 ::: figure
-image: ../assets/cap03/interfaz_general_anotada.png
-caption: Interfaz principal de CoppeliaSim EDU 4.10.0 con las principales zonas de trabajo numeradas.
+image: ../assets/cap03/annotated/interfaz_general.png
+caption: Interfaz principal de CoppeliaSim EDU 4.10.0.
 :::
 
 A lo largo de este capítulo aprenderemos qué función desempeña cada una de estas zonas y cuándo utilizarlas.
