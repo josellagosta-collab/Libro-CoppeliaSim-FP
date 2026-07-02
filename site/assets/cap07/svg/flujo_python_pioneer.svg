@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="950" viewBox="0 0 1600 950">
+<defs>
+<style>
+.title{font-family:Segoe UI,Arial,sans-serif;font-size:44px;font-weight:900;fill:#0D47A1}
+.subtitle{font-family:Segoe UI,Arial,sans-serif;font-size:25px;font-weight:600;fill:#37474F}
+.section{font-family:Segoe UI,Arial,sans-serif;font-size:30px;font-weight:900;fill:#263238}
+.label{font-family:Segoe UI,Arial,sans-serif;font-size:24px;font-weight:800;fill:#263238}
+.small{font-family:Segoe UI,Arial,sans-serif;font-size:21px;font-weight:600;fill:#455A64}
+.code{font-family:Consolas,monospace;font-size:22px;font-weight:700;fill:#263238}
+.panel{fill:#FFFFFF;stroke:#D6DCE5;stroke-width:4}
+.box-python{fill:#E8F5E9;stroke:#43A047;stroke-width:4}
+.box-api{fill:#FFF8E1;stroke:#F5C242;stroke-width:4}
+.box-sim{fill:#E3F2FD;stroke:#1565C0;stroke-width:4}
+.box-robot{fill:#FCE4EC;stroke:#D84343;stroke-width:4}
+.arrow{stroke:#1565C0;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.return{stroke:#43A047;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.robot-body{fill:#D84343;stroke:#263238;stroke-width:4}
+.robot-top{fill:#263238}
+.wheel{fill:#212121}
+.wheel-inner{fill:#D7B46A}
+.note{fill:#F5F9FF;stroke:#D6DCE5;stroke-width:3}
+</style>
+<marker id="arrowBlue" markerWidth="14" markerHeight="14" refX="9" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L10,5 L0,10 Z" fill="#1565C0"/></marker>
+<marker id="arrowGreen" markerWidth="14" markerHeight="14" refX="9" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L10,5 L0,10 Z" fill="#43A047"/></marker>
+<filter id="shadow" x="-10%" y="-10%" width="120%" height="120%"><feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="#000000" flood-opacity="0.13"/></filter>
+</defs>
+<rect x="35" y="35" width="1530" height="880" rx="30" class="panel" filter="url(#shadow)"/>
+<text x="75" y="110" class="title">Control del Pioneer P3DX mediante Python</text>
+<text x="75" y="152" class="subtitle">Un programa externo obtiene la referencia del robot, consulta sus propiedades y modifica su posición.</text>
+<rect x="95" y="250" width="300" height="250" rx="24" class="box-python"/>
+<text x="130" y="310" class="section">Python</text><text x="130" y="350" class="small">Programa del usuario</text>
+<rect x="125" y="390" width="240" height="70" rx="12" fill="#FFFFFF" stroke="#A5D6A7" stroke-width="3"/><text x="145" y="433" class="code">conexion.py</text>
+<rect x="475" y="250" width="300" height="250" rx="24" class="box-api"/>
+<text x="510" y="310" class="section">API remota</text><text x="510" y="350" class="small">ZeroMQ</text>
+<rect x="505" y="390" width="240" height="70" rx="12" fill="#FFFFFF" stroke="#F5C242" stroke-width="3"/><text x="525" y="433" class="code">RemoteAPIClient</text>
+<rect x="855" y="250" width="300" height="250" rx="24" class="box-sim"/>
+<text x="890" y="310" class="section">CoppeliaSim</text><text x="890" y="350" class="small">Escena activa</text>
+<rect x="885" y="390" width="240" height="70" rx="12" fill="#FFFFFF" stroke="#90CAF9" stroke-width="3"/><text x="905" y="433" class="code">sim</text>
+<rect x="1235" y="250" width="270" height="250" rx="24" class="box-robot"/>
+<text x="1270" y="310" class="section">Pioneer P3DX</text><text x="1270" y="350" class="small">Objeto de la escena</text>
+<g transform="translate(1368,430) scale(0.65)">
+<rect x="-90" y="-50" width="180" height="100" rx="24" class="robot-body"/><ellipse cx="0" cy="-58" rx="110" ry="30" class="robot-top"/>
+<circle cx="-62" cy="58" r="28" class="wheel"/><circle cx="-62" cy="58" r="14" class="wheel-inner"/>
+<circle cx="62" cy="58" r="28" class="wheel"/><circle cx="62" cy="58" r="14" class="wheel-inner"/>
+</g>
+<path d="M395 370 H475" class="arrow" marker-end="url(#arrowBlue)"/>
+<path d="M775 370 H855" class="arrow" marker-end="url(#arrowBlue)"/>
+<path d="M1155 370 H1235" class="arrow" marker-end="url(#arrowBlue)"/>
+<path d="M1235 520 C1050 640 700 640 395 520" class="return" marker-end="url(#arrowGreen)"/>
+<text x="408" y="340" class="label">1. Petición</text><text x="790" y="340" class="label">2. Orden</text><text x="1175" y="340" class="label">3. Acción</text><text x="710" y="655" class="label">4. Respuesta / resultado</text>
+<rect x="160" y="600" width="1280" height="120" rx="18" fill="#FFFFFF" stroke="#D6DCE5" stroke-width="3"/>
+<text x="200" y="646" class="code">robot = sim.getObject('/PioneerP3DX')</text>
+<text x="200" y="686" class="code">posicion = sim.getObjectPosition(robot)</text>
+<text x="790" y="646" class="code">sim.setObjectPosition(robot, -1, [1.5, 0.0, 0.1388])</text>
+<rect x="95" y="770" width="1410" height="76" rx="18" class="note"/>
+<text x="130" y="802" class="label">Idea clave</text>
+<text x="130" y="833" class="small">Python no manipula la escena directamente: envía órdenes a CoppeliaSim, y el simulador aplica los cambios sobre el robot.</text>
+<text x="80" y="900" class="small">Figura 7.7. Flujo de control del Pioneer P3DX mediante Python y la API remota ZeroMQ.</text>
+</svg>

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="950" viewBox="0 0 1600 950">
+<defs>
+<style>
+.title{font-family:Segoe UI,Arial,sans-serif;font-size:44px;font-weight:900;fill:#0D47A1}
+.subtitle{font-family:Segoe UI,Arial,sans-serif;font-size:25px;font-weight:600;fill:#37474F}
+.label{font-family:Segoe UI,Arial,sans-serif;font-size:25px;font-weight:800;fill:#263238}
+.small{font-family:Segoe UI,Arial,sans-serif;font-size:22px;font-weight:600;fill:#455A64}
+.panel{fill:#FFFFFF;stroke:#D6DCE5;stroke-width:4}
+.grid{stroke:#DDE3EA;stroke-width:2}
+.robot-body{fill:#D84343;stroke:#263238;stroke-width:4}
+.robot-top{fill:#263238}
+.wheel{fill:#212121}
+.wheel-inner{fill:#D7B46A}
+.blue{stroke:#1565C0;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.green{stroke:#43A047;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.orange{stroke:#F9A825;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.dash{stroke:#607D8B;stroke-width:4;stroke-dasharray:12 10}
+.note{fill:#F5F9FF;stroke:#D6DCE5;stroke-width:3}
+</style>
+<marker id="arrowBlue" markerWidth="14" markerHeight="14" refX="9" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L10,5 L0,10 Z" fill="#1565C0"/></marker>
+<marker id="arrowGreen" markerWidth="14" markerHeight="14" refX="9" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L10,5 L0,10 Z" fill="#43A047"/></marker>
+<marker id="arrowOrange" markerWidth="14" markerHeight="14" refX="9" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L10,5 L0,10 Z" fill="#F9A825"/></marker>
+<filter id="shadow" x="-10%" y="-10%" width="120%" height="120%"><feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="#000000" flood-opacity="0.13"/></filter>
+</defs>
+<rect x="35" y="35" width="1530" height="880" rx="30" class="panel" filter="url(#shadow)"/>
+<text x="75" y="110" class="title">Rotación manual del Pioneer P3DX</text>
+<text x="75" y="152" class="subtitle">Cambiar la orientación del robot no modifica su posición sobre el plano.</text>
+<g transform="translate(210,260)">
+<g opacity="0.9">
+<line x1="0" y1="0" x2="1180" y2="0" class="grid"/><line x1="0" y1="90" x2="1180" y2="90" class="grid"/><line x1="0" y1="180" x2="1180" y2="180" class="grid"/><line x1="0" y1="270" x2="1180" y2="270" class="grid"/><line x1="0" y1="360" x2="1180" y2="360" class="grid"/><line x1="0" y1="450" x2="1180" y2="450" class="grid"/><line x1="0" y1="540" x2="1180" y2="540" class="grid"/>
+<line x1="0" y1="0" x2="0" y2="540" class="grid"/><line x1="130" y1="0" x2="130" y2="540" class="grid"/><line x1="260" y1="0" x2="260" y2="540" class="grid"/><line x1="390" y1="0" x2="390" y2="540" class="grid"/><line x1="520" y1="0" x2="520" y2="540" class="grid"/><line x1="650" y1="0" x2="650" y2="540" class="grid"/><line x1="780" y1="0" x2="780" y2="540" class="grid"/><line x1="910" y1="0" x2="910" y2="540" class="grid"/><line x1="1040" y1="0" x2="1040" y2="540" class="grid"/><line x1="1170" y1="0" x2="1170" y2="540" class="grid"/>
+</g>
+<circle cx="590" cy="270" r="170" fill="#FFFFFF" opacity="0.65" stroke="#F9A825" stroke-width="5"/>
+<path d="M590 105 A165 165 0 0 1 755 270" class="orange" marker-end="url(#arrowOrange)"/>
+<path d="M755 270 A165 165 0 0 1 590 435" class="orange" marker-end="url(#arrowOrange)" opacity="0.65"/>
+<line x1="590" y1="40" x2="590" y2="500" class="dash"/>
+<line x1="360" y1="270" x2="820" y2="270" class="dash"/>
+<g transform="translate(590,270)">
+<rect x="-90" y="-50" width="180" height="100" rx="24" class="robot-body"/>
+<ellipse cx="0" cy="-58" rx="110" ry="30" class="robot-top"/>
+<circle cx="-62" cy="58" r="28" class="wheel"/><circle cx="-62" cy="58" r="14" class="wheel-inner"/>
+<circle cx="62" cy="58" r="28" class="wheel"/><circle cx="62" cy="58" r="14" class="wheel-inner"/>
+<path d="M0 -115 L135 -115" class="blue" marker-end="url(#arrowBlue)"/>
+</g>
+<g transform="translate(590,270) rotate(90)" opacity="0.45">
+<rect x="-90" y="-50" width="180" height="100" rx="24" class="robot-body"/>
+<ellipse cx="0" cy="-58" rx="110" ry="30" class="robot-top"/>
+<circle cx="-62" cy="58" r="28" class="wheel"/><circle cx="-62" cy="58" r="14" class="wheel-inner"/>
+<circle cx="62" cy="58" r="28" class="wheel"/><circle cx="62" cy="58" r="14" class="wheel-inner"/>
+<path d="M0 -115 L135 -115" class="green" marker-end="url(#arrowGreen)"/>
+</g>
+<text x="805" y="250" class="label">Giro sobre el eje Z</text>
+<text x="805" y="285" class="small">La posición central se mantiene.</text>
+</g>
+<rect x="95" y="760" width="1410" height="82" rx="18" class="note"/>
+<text x="130" y="795" class="label">Idea clave</text>
+<text x="130" y="828" class="small">Rotar el Pioneer P3DX cambia la dirección hacia la que apunta, pero no lo desplaza sobre el plano de trabajo.</text>
+<text x="80" y="900" class="small">Figura 7.6. Rotación manual del Pioneer P3DX sobre el eje Z.</text>
+</svg>
