@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="950" viewBox="0 0 1600 950">
+  <defs>
+    <style>
+      .title{font-family:Segoe UI,Arial,sans-serif;font-size:42px;font-weight:900;fill:#0D47A1}
+      .subtitle{font-family:Segoe UI,Arial,sans-serif;font-size:24px;font-weight:600;fill:#37474F}
+      .section-blue{font-family:Segoe UI,Arial,sans-serif;font-size:32px;font-weight:900;fill:#1565C0}
+      .section-green{font-family:Segoe UI,Arial,sans-serif;font-size:32px;font-weight:900;fill:#2E7D32}
+      .label{font-family:Segoe UI,Arial,sans-serif;font-size:24px;font-weight:800;fill:#263238}
+      .small{font-family:Segoe UI,Arial,sans-serif;font-size:21px;font-weight:600;fill:#455A64}
+      .coord{font-family:Consolas,monospace;font-size:22px;font-weight:700;fill:#263238}
+      .panel{fill:#FFFFFF;stroke:#D6DCE5;stroke-width:4}
+      .blue-panel{fill:#F4F8FF;stroke:#90CAF9;stroke-width:3}
+      .green-panel{fill:#F4FFF6;stroke:#A5D6A7;stroke-width:3}
+      .grid{stroke:#DDE3EA;stroke-width:2}
+      .move-arrow{stroke:#1565C0;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;fill:none}
+      .turn-arrow{stroke:#43A047;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;fill:none}
+      .dash-blue{stroke:#1565C0;stroke-width:3;stroke-dasharray:9 8}
+      .dash-green{stroke:#43A047;stroke-width:3;stroke-dasharray:9 8}
+      .robot-body{fill:#D84343;stroke:#263238;stroke-width:4}
+      .robot-top{fill:#263238}
+      .wheel{fill:#212121}
+      .wheel-inner{fill:#D7B46A}
+    </style>
+    <marker id="arrowBlue" markerWidth="14" markerHeight="14" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#1565C0"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="14" markerHeight="14" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#43A047"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="#000000" flood-opacity="0.13"/>
+    </filter>
+  </defs>
+
+  <rect x="35" y="35" width="1530" height="880" rx="30" class="panel" filter="url(#shadow)"/>
+  <text x="75" y="105" class="title">Traslación y rotación de un objeto</text>
+  <text x="75" y="145" class="subtitle">Trasladar cambia la posición. Rotar cambia la orientación.</text>
+
+  <rect x="70" y="185" width="1460" height="315" rx="24" class="blue-panel"/>
+  <text x="100" y="235" class="section-blue">A) Traslación: cambia la posición</text>
+  <text x="100" y="272" class="small">El robot se desplaza sobre el plano, pero mantiene la misma orientación.</text>
+
+  <g transform="translate(470,315)">
+    <line x1="-70" y1="90" x2="760" y2="90" class="grid"/>
+    <line x1="-70" y1="40" x2="760" y2="40" class="grid"/>
+    <line x1="-70" y1="-10" x2="760" y2="-10" class="grid"/>
+    <line x1="-70" y1="-60" x2="760" y2="-60" class="grid"/>
+    <line x1="-30" y1="-90" x2="-30" y2="130" class="grid"/>
+    <line x1="90" y1="-90" x2="90" y2="130" class="grid"/>
+    <line x1="210" y1="-90" x2="210" y2="130" class="grid"/>
+    <line x1="330" y1="-90" x2="330" y2="130" class="grid"/>
+    <line x1="450" y1="-90" x2="450" y2="130" class="grid"/>
+    <line x1="570" y1="-90" x2="570" y2="130" class="grid"/>
+    <line x1="690" y1="-90" x2="690" y2="130" class="grid"/>
+
+    <line x1="0" y1="0" x2="600" y2="0" class="dash-blue"/>
+    <path d="M85 -68 C210 -145 405 -145 535 -68" class="move-arrow" marker-end="url(#arrowBlue)"/>
+
+    <g transform="translate(0,0)">
+      <rect x="-60" y="-35" width="120" height="70" rx="18" class="robot-body"/>
+      <ellipse cx="0" cy="-42" rx="78" ry="22" class="robot-top"/>
+      <circle cx="-43" cy="38" r="22" class="wheel"/>
+      <circle cx="-43" cy="38" r="11" class="wheel-inner"/>
+      <circle cx="43" cy="38" r="22" class="wheel"/>
+      <circle cx="43" cy="38" r="11" class="wheel-inner"/>
+      <path d="M0 -80 L70 -120" class="move-arrow" marker-end="url(#arrowBlue)"/>
+      <text x="-75" y="92" class="coord">(0.0, 0.0)</text>
+    </g>
+
+    <g transform="translate(300,0)">
+      <rect x="-60" y="-35" width="120" height="70" rx="18" class="robot-body"/>
+      <ellipse cx="0" cy="-42" rx="78" ry="22" class="robot-top"/>
+      <circle cx="-43" cy="38" r="22" class="wheel"/>
+      <circle cx="-43" cy="38" r="11" class="wheel-inner"/>
+      <circle cx="43" cy="38" r="22" class="wheel"/>
+      <circle cx="43" cy="38" r="11" class="wheel-inner"/>
+      <path d="M0 -80 L70 -120" class="move-arrow" marker-end="url(#arrowBlue)"/>
+      <text x="-75" y="92" class="coord">(1.5, 0.0)</text>
+    </g>
+
+    <g transform="translate(600,0)">
+      <rect x="-60" y="-35" width="120" height="70" rx="18" class="robot-body"/>
+      <ellipse cx="0" cy="-42" rx="78" ry="22" class="robot-top"/>
+      <circle cx="-43" cy="38" r="22" class="wheel"/>
+      <circle cx="-43" cy="38" r="11" class="wheel-inner"/>
+      <circle cx="43" cy="38" r="22" class="wheel"/>
+      <circle cx="43" cy="38" r="11" class="wheel-inner"/>
+      <path d="M0 -80 L70 -120" class="move-arrow" marker-end="url(#arrowBlue)"/>
+      <text x="-75" y="92" class="coord">(3.0, 0.0)</text>
+    </g>
+  </g>
+
+  <rect x="100" y="410" width="330" height="58" rx="12" fill="#FFFFFF" stroke="#90CAF9" stroke-width="3"/>
+  <text x="125" y="447" class="label">La orientación permanece igual</text>
+
+  <rect x="70" y="535" width="1460" height="315" rx="24" class="green-panel"/>
+  <text x="100" y="585" class="section-green">B) Rotación: cambia la orientación</text>
+  <text x="100" y="622" class="small">El robot gira sobre sí mismo, pero permanece en la misma posición.</text>
+
+  <g transform="translate(470,675)">
+    <line x1="-70" y1="90" x2="760" y2="90" class="grid"/>
+    <line x1="-70" y1="40" x2="760" y2="40" class="grid"/>
+    <line x1="-70" y1="-10" x2="760" y2="-10" class="grid"/>
+    <line x1="-70" y1="-60" x2="760" y2="-60" class="grid"/>
+    <line x1="0" y1="-110" x2="0" y2="120" class="dash-green"/>
+    <line x1="300" y1="-110" x2="300" y2="120" class="dash-green"/>
+    <line x1="600" y1="-110" x2="600" y2="120" class="dash-green"/>
+
+    <g transform="translate(0,0)">
+      <rect x="-60" y="-35" width="120" height="70" rx="18" class="robot-body"/>
+      <ellipse cx="0" cy="-42" rx="78" ry="22" class="robot-top"/>
+      <circle cx="-43" cy="38" r="22" class="wheel"/>
+      <circle cx="-43" cy="38" r="11" class="wheel-inner"/>
+      <circle cx="43" cy="38" r="22" class="wheel"/>
+      <circle cx="43" cy="38" r="11" class="wheel-inner"/>
+      <path d="M0 -82 L92 -82" class="move-arrow" marker-end="url(#arrowBlue)"/>
+      <text x="-50" y="92" class="coord">0°</text>
+    </g>
+
+    <g transform="translate(300,0) rotate(90)">
+      <rect x="-60" y="-35" width="120" height="70" rx="18" class="robot-body"/>
+      <ellipse cx="0" cy="-42" rx="78" ry="22" class="robot-top"/>
+      <circle cx="-43" cy="38" r="22" class="wheel"/>
+      <circle cx="-43" cy="38" r="11" class="wheel-inner"/>
+      <circle cx="43" cy="38" r="22" class="wheel"/>
+      <circle cx="43" cy="38" r="11" class="wheel-inner"/>
+      <path d="M0 -82 L92 -82" class="move-arrow" marker-end="url(#arrowBlue)"/>
+    </g>
+    <text x="255" y="92" class="coord">90°</text>
+
+    <g transform="translate(600,0) rotate(180)">
+      <rect x="-60" y="-35" width="120" height="70" rx="18" class="robot-body"/>
+      <ellipse cx="0" cy="-42" rx="78" ry="22" class="robot-top"/>
+      <circle cx="-43" cy="38" r="22" class="wheel"/>
+      <circle cx="-43" cy="38" r="11" class="wheel-inner"/>
+      <circle cx="43" cy="38" r="22" class="wheel"/>
+      <circle cx="43" cy="38" r="11" class="wheel-inner"/>
+      <path d="M0 -82 L92 -82" class="move-arrow" marker-end="url(#arrowBlue)"/>
+    </g>
+    <text x="550" y="92" class="coord">180°</text>
+
+    <path d="M180 -115 A95 95 0 0 1 250 -45" class="turn-arrow" marker-end="url(#arrowGreen)"/>
+    <path d="M480 -115 A95 95 0 0 1 550 -45" class="turn-arrow" marker-end="url(#arrowGreen)"/>
+  </g>
+
+  <rect x="100" y="770" width="330" height="58" rx="12" fill="#FFFFFF" stroke="#A5D6A7" stroke-width="3"/>
+  <text x="125" y="807" class="label">La posición permanece igual</text>
+
+  <text x="80" y="900" class="small">Figura 5.3. Traslación y rotación de un objeto: diferencia entre cambiar de posición y cambiar de orientación.</text>
+</svg>

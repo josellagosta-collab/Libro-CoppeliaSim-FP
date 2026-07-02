@@ -83,7 +83,7 @@ Cuando un objeto está seleccionado aparecerá resaltado tanto en la vista 3D co
 Esta doble representación facilita enormemente el trabajo.
 
 ::: figure
-image: ../assets/cap05/seleccion_objetos.png
+image: ../assets/cap05/annotated/seleccion_objetos.png
 caption: Selección de un objeto desde la vista tridimensional y desde el árbol de la escena.
 :::
 
@@ -104,7 +104,7 @@ Durante este capítulo utilizaremos exclusivamente las operaciones de traslació
 Más adelante aprenderemos otras transformaciones más avanzadas.
 
 ::: figure
-image: ../assets/cap05/herramientas_transformacion.png
+image: ../assets/cap05/annotated/herramientas_transformacion.png
 caption: Herramientas de transformación disponibles en CoppeliaSim.
 :::
 
@@ -147,8 +147,8 @@ Por ejemplo:
 En todos estos casos la posición es la misma, pero la orientación cambia.
 
 ::: figure
-image: ../assets/cap05/rotacion_robot.png
-caption: El mismo robot con diferentes orientaciones sobre una misma posición.
+image: ../assets/cap05/svg/traslacion_rotacion.svg
+caption: Traslación y rotación de un objeto: diferencia entre cambiar de posición y cambiar de orientación.
 :::
 
 ---
@@ -180,8 +180,8 @@ Podemos imaginarlo como el mapa general de toda la escena.
 Cada objeto dispone de unas coordenadas únicas respecto a este origen.
 
 ::: figure
-image: ../assets/cap05/coordenadas_globales.png
-caption: Sistema de coordenadas global utilizado por CoppeliaSim.
+image: ../assets/cap05/svg/coordenadas_globales.svg
+caption: Sistema de coordenadas global utilizado para localizar objetos dentro de una escena.
 :::
 
 Cuando indiquemos que un robot se encuentra en una determinada posición, normalmente estaremos haciendo referencia a este sistema global.
@@ -221,7 +221,7 @@ Si el robot gira, sus ejes locales también giran.
 Este concepto resulta fundamental cuando programemos movimientos relativos.
 
 ::: figure
-image: ../assets/cap05/coordenadas_locales.png
+image: ../assets/cap05/svg/coordenadas_locales.svg
 caption: Sistema de coordenadas local asociado al robot.
 :::
 
@@ -301,7 +301,7 @@ Este método garantiza una colocación mucho más precisa que el desplazamiento 
 En simulaciones complejas esta precisión resulta imprescindible.
 
 ::: figure
-image: ../assets/cap05/propiedades_posicion.png
+image: ../assets/cap05/annotated/propiedades_posicion.png
 caption: Edición manual de la posición y orientación de un objeto mediante el panel de propiedades.
 :::
 
@@ -387,8 +387,8 @@ Ahora ocurre exactamente lo contrario:
 Este sencillo ejercicio resume los dos conceptos fundamentales estudiados en este capítulo.
 
 ::: figure
-image: ../assets/cap05/posicion_orientacion.png
-caption: Comparación entre un cambio de posición y un cambio de orientación.
+image: ../assets/cap05/svg/posicion_orientacion.svg
+caption: Diferencia entre posición y orientación de un robot móvil.
 :::
 
 ---

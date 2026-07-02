@@ -77,7 +77,7 @@ Podemos imaginarla como una conversación.
 Este proceso ocurre en unas pocas milésimas de segundo.
 
 ::: figure
-image: ../assets/cap06/python_coppeliasim_comunicacion.svg
+image: ../assets/cap06/svg/python_coppeliasim_comunicacion.svg
 caption: Comunicación entre Python y CoppeliaSim mediante la API remota ZeroMQ.
 :::
 
@@ -85,7 +85,7 @@ caption: Comunicación entre Python y CoppeliaSim mediante la API remota ZeroMQ.
 
 ## 6.2 Preparando el entorno de trabajo
 
-Antes de escribir nuestro primer programa prepararemos un entorno de trabajo específico para Python.
+Antes de escribir nuestro primer programa prepararemos un entorno de trabajo específico para Python en VS Code.
 
 Dentro de la carpeta principal del curso crea el siguiente directorio:
 
