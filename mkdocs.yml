@@ -5,14 +5,15 @@ site_author: José Aguilera
 theme:
   name: material
   language: es
-  #custom_dir: overrides
+  # custom_dir: overrides
   logo: assets/logos/logo.svg
   favicon: assets/logos/favicon.png
   features:
     - navigation.footer
     - navigation.tabs
-    - navigation.sections
     - navigation.top
+    - navigation.expand
+    - navigation.indexes
     - search.highlight
     - content.code.copy
     - content.code.annotate
@@ -28,7 +29,6 @@ theme:
     - scheme: slate
       primary: blue
       accent: indigo
-
 
 extra_css:
   - assets/css/coppeliasim-fp.css
@@ -62,26 +62,16 @@ nav:
   - Inicio: index.md
   - Prólogo: prologo.md
   - Introducción: introduccion.md
-  - Parte I:
-      - Primer contacto: parte1/index.md
-      - Capítulo 1: parte1/capitulo01.md
-      - Capítulo 2: parte1/capitulo02.md
-      - Capítulo 3: parte1/capitulo03.md
-      - Capítulo 4: parte1/capitulo04.md
-      - Capítulo 5: parte1/capitulo05.md
-      - Capítulo 6: parte1/capitulo06.md
 
-  - Parte II:
-      - Primer robot: parte2/index.md
-  - Parte III:
-      - Python y CoppeliaSim: parte3/index.md
-  - Parte IV:
-      - Curso práctico: parte4/index.md
-  - Parte V:
-      - Solucionario: parte5/index.md
-  - Parte VI:
-      - Recursos profesor: parte6/index.md
-
+  - Parte I. Fundamentos:
+      - Presentación: parte1/index.md
+      - "Capítulo 1. ¿Por qué aprender robótica mediante simulación?": parte1/capitulo01.md
+      - "Capítulo 2. Instalación y configuración inicial": parte1/capitulo02.md
+      - "Capítulo 3. Conociendo la interfaz de CoppeliaSim": parte1/capitulo03.md
+      - "Capítulo 4. Creando nuestra primera simulación": parte1/capitulo04.md
+      - "Capítulo 5. Manipulación de objetos y sistemas de coordenadas": parte1/capitulo05.md
+      - "Capítulo 6. Primera conexión entre Python y CoppeliaSim": parte1/capitulo06.md
+  
   - Editorial:
       - Inicio: editorial/index.md
       - Design System: editorial/design-system.md
@@ -92,4 +82,3 @@ nav:
       - Diagramas: editorial/diagramas.md
       - Componentes: editorial/componentes.md
       - Plantillas: editorial/plantillas.md
-
