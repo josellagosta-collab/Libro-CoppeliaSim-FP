@@ -55,6 +55,11 @@ Aunque externamente pueda parecer un robot muy sencillo, en realidad integra tod
 
 Esto lo convierte en un excelente punto de partida para aprender robótica.
 
+::: figure
+image: ../assets/cap07/annotated/pioneer_p3dx.png
+caption: Robot móvil Pioneer P3DX en CoppeliaSim.
+:::
+
 ### Un robot de tracción diferencial
 
 El Pioneer P3DX pertenece a la familia de los **robots de tracción diferencial**.
@@ -88,6 +93,11 @@ Los cálculos matemáticos se estudiarán más adelante.
 ### Componentes principales
 
 Aunque veremos el robot con mucho más detalle en capítulos posteriores, es conveniente identificar desde este momento sus elementos más importantes.
+
+::: figure
+image: ../assets/cap07/annotated/componentes_pioneer.png
+caption: Componentes principales del robot Pioneer P3DX.
+:::
 
 El Pioneer P3DX está formado por:
 
@@ -358,6 +368,11 @@ Por este motivo conviene dedicar unos minutos a explorar su estructura.
 
 Si desplegamos el Pioneer P3DX en el árbol de la escena observaremos que aparecen numerosos elementos.
 
+::: figure
+image: ../assets/cap07/annotated/arbol_pioneer_p3d.png
+caption: Estructura jerárquica del Pioneer P3DX en el árbol de la escena de CoppeliaSim.
+:::
+
 No todos tienen la misma importancia.
 
 Algunos representan componentes físicos visibles, mientras que otros únicamente sirven para organizar la simulación o facilitar el funcionamiento interno del robot.
@@ -403,6 +418,11 @@ En los próximos capítulos aprenderemos a controlar directamente estas articula
 ### Los sensores
 
 Al observar el modelo también encontraremos diferentes sensores distribuidos alrededor del robot.
+
+::: figure
+image: ../assets/cap07/annotated/sensores_pioneer_p3dx.png
+caption: Distribución aproximada de los sensores ultrasónicos del Pioneer P3DX.
+:::
 
 Estos dispositivos permiten detectar información del entorno.
 
@@ -522,6 +542,11 @@ Por ejemplo:
 Durante la mayor parte del libro únicamente modificaremos la posición sobre el plano de trabajo.
 
 En consecuencia, los movimientos se realizarán principalmente sobre los ejes **X** e **Y**.
+
+::: figure
+image: ../assets/cap07/annotated/manipulacion_manual.png
+caption: Manipulación manual del Pioneer P3DX mediante la herramienta de traslación.
+:::
 
 ::: common-error
 content:
