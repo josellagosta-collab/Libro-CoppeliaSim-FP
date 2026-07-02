@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="950" viewBox="0 0 1600 950">
+  <defs>
+    <style>
+      .title{font-family:Segoe UI,Arial,sans-serif;font-size:44px;font-weight:900;fill:#0D47A1}
+      .subtitle{font-family:Segoe UI,Arial,sans-serif;font-size:25px;font-weight:600;fill:#37474F}
+      .section{font-family:Segoe UI,Arial,sans-serif;font-size:31px;font-weight:900;fill:#263238}
+      .label{font-family:Segoe UI,Arial,sans-serif;font-size:25px;font-weight:800;fill:#263238}
+      .small{font-family:Segoe UI,Arial,sans-serif;font-size:21px;font-weight:600;fill:#455A64}
+      .coord{font-family:Consolas,monospace;font-size:23px;font-weight:700;fill:#263238}
+      .panel{fill:#FFFFFF;stroke:#D6DCE5;stroke-width:4}
+      .left-panel{fill:#F4F8FF;stroke:#90CAF9;stroke-width:3}
+      .right-panel{fill:#FFF8E1;stroke:#F5C242;stroke-width:3}
+      .grid{stroke:#DDE3EA;stroke-width:2}
+      .dash-blue{stroke:#1565C0;stroke-width:4;stroke-dasharray:10 8}
+      .dash-yellow{stroke:#F9A825;stroke-width:4;stroke-dasharray:10 8}
+      .arrow-blue{stroke:#1565C0;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;fill:none}
+      .arrow-yellow{stroke:#F9A825;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;fill:none}
+      .robot-body{fill:#D84343;stroke:#263238;stroke-width:4}
+      .robot-top{fill:#263238}
+      .wheel{fill:#212121}
+      .wheel-inner{fill:#D7B46A}
+      .point{fill:#FFFFFF;stroke:#263238;stroke-width:4}
+      .info{fill:#F5F9FF;stroke:#D6DCE5;stroke-width:3}
+    </style>
+    <marker id="arrowBlue" markerWidth="14" markerHeight="14" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#1565C0"/>
+    </marker>
+    <marker id="arrowYellow" markerWidth="14" markerHeight="14" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#F9A825"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="#000000" flood-opacity="0.13"/>
+    </filter>
+  </defs>
+
+  <rect x="35" y="35" width="1530" height="880" rx="30" class="panel" filter="url(#shadow)"/>
+  <text x="75" y="110" class="title">Posición frente a orientación</text>
+  <text x="75" y="152" class="subtitle">La posición indica dónde está el robot. La orientación indica hacia dónde apunta.</text>
+
+  <!-- Left panel: same orientation, different positions -->
+  <rect x="75" y="200" width="700" height="500" rx="24" class="left-panel"/>
+  <text x="110" y="255" class="section">Misma orientación, distinta posición</text>
+  <text x="110" y="292" class="small">Los robots apuntan en la misma dirección, pero se encuentran en lugares diferentes.</text>
+
+  <g transform="translate(160,390)">
+    <g opacity="0.9">
+      <line x1="0" y1="0" x2="540" y2="0" class="grid"/>
+      <line x1="0" y1="70" x2="540" y2="70" class="grid"/>
+      <line x1="0" y1="140" x2="540" y2="140" class="grid"/>
+      <line x1="0" y1="210" x2="540" y2="210" class="grid"/>
+      <line x1="0" y1="280" x2="540" y2="280" class="grid"/>
+      <line x1="0" y1="0" x2="0" y2="280" class="grid"/>
+      <line x1="90" y1="0" x2="90" y2="280" class="grid"/>
+      <line x1="180" y1="0" x2="180" y2="280" class="grid"/>
+      <line x1="270" y1="0" x2="270" y2="280" class="grid"/>
+      <line x1="360" y1="0" x2="360" y2="280" class="grid"/>
+      <line x1="450" y1="0" x2="450" y2="280" class="grid"/>
+      <line x1="540" y1="0" x2="540" y2="280" class="grid"/>
+    </g>
+
+    <line x1="135" y1="110" x2="405" y2="110" class="dash-blue"/>
+
+    <g transform="translate(135,110)">
+      <circle cx="0" cy="0" r="12" class="point"/>
+      <g transform="rotate(0)">
+        <rect x="-55" y="-32" width="110" height="64" rx="16" class="robot-body"/>
+        <ellipse cx="0" cy="-38" rx="70" ry="20" class="robot-top"/>
+        <circle cx="-38" cy="38" r="18" class="wheel"/>
+        <circle cx="-38" cy="38" r="9" class="wheel-inner"/>
+        <circle cx="38" cy="38" r="18" class="wheel"/>
+        <circle cx="38" cy="38" r="9" class="wheel-inner"/>
+        <path d="M0 -78 L88 -78" class="arrow-blue" marker-end="url(#arrowBlue)"/>
+      </g>
+      <text x="-70" y="105" class="coord">P1 = (x1, y1)</text>
+    </g>
+
+    <g transform="translate(405,110)">
+      <circle cx="0" cy="0" r="12" class="point"/>
+      <g transform="rotate(0)">
+        <rect x="-55" y="-32" width="110" height="64" rx="16" class="robot-body"/>
+        <ellipse cx="0" cy="-38" rx="70" ry="20" class="robot-top"/>
+        <circle cx="-38" cy="38" r="18" class="wheel"/>
+        <circle cx="-38" cy="38" r="9" class="wheel-inner"/>
+        <circle cx="38" cy="38" r="18" class="wheel"/>
+        <circle cx="38" cy="38" r="9" class="wheel-inner"/>
+        <path d="M0 -78 L88 -78" class="arrow-blue" marker-end="url(#arrowBlue)"/>
+      </g>
+      <text x="-70" y="105" class="coord">P2 = (x2, y2)</text>
+    </g>
+  </g>
+
+  <rect x="110" y="635" width="610" height="42" rx="10" fill="#FFFFFF" stroke="#90CAF9" stroke-width="3"/>
+  <text x="130" y="663" class="small">Cambia la posición, pero la flecha de orientación apunta igual.</text>
+
+  <!-- Right panel: same position, different orientations -->
+  <rect x="825" y="200" width="700" height="500" rx="24" class="right-panel"/>
+  <text x="860" y="255" class="section">Misma posición, distinta orientación</text>
+  <text x="860" y="292" class="small">Los robots ocupan el mismo lugar, pero apuntan hacia direcciones diferentes.</text>
+
+  <g transform="translate(910,390)">
+    <g opacity="0.9">
+      <line x1="0" y1="0" x2="540" y2="0" class="grid"/>
+      <line x1="0" y1="70" x2="540" y2="70" class="grid"/>
+      <line x1="0" y1="140" x2="540" y2="140" class="grid"/>
+      <line x1="0" y1="210" x2="540" y2="210" class="grid"/>
+      <line x1="0" y1="280" x2="540" y2="280" class="grid"/>
+      <line x1="0" y1="0" x2="0" y2="280" class="grid"/>
+      <line x1="90" y1="0" x2="90" y2="280" class="grid"/>
+      <line x1="180" y1="0" x2="180" y2="280" class="grid"/>
+      <line x1="270" y1="0" x2="270" y2="280" class="grid"/>
+      <line x1="360" y1="0" x2="360" y2="280" class="grid"/>
+      <line x1="450" y1="0" x2="450" y2="280" class="grid"/>
+      <line x1="540" y1="0" x2="540" y2="280" class="grid"/>
+    </g>
+
+    <circle cx="270" cy="140" r="120" fill="#FFFFFF" opacity="0.55" stroke="#F9A825" stroke-width="4"/>
+    <path d="M270 35 A105 105 0 0 1 375 140" class="arrow-yellow" marker-end="url(#arrowYellow)"/>
+    <path d="M375 140 A105 105 0 0 1 270 245" class="arrow-yellow" marker-end="url(#arrowYellow)" opacity="0.65"/>
+
+    <g transform="translate(270,140) rotate(0)">
+      <rect x="-55" y="-32" width="110" height="64" rx="16" class="robot-body"/>
+      <ellipse cx="0" cy="-38" rx="70" ry="20" class="robot-top"/>
+      <circle cx="-38" cy="38" r="18" class="wheel"/>
+      <circle cx="-38" cy="38" r="9" class="wheel-inner"/>
+      <circle cx="38" cy="38" r="18" class="wheel"/>
+      <circle cx="38" cy="38" r="9" class="wheel-inner"/>
+      <path d="M0 -78 L88 -78" class="arrow-yellow" marker-end="url(#arrowYellow)"/>
+    </g>
+
+    <g transform="translate(270,140) rotate(90)" opacity="0.7">
+      <rect x="-55" y="-32" width="110" height="64" rx="16" class="robot-body"/>
+      <ellipse cx="0" cy="-38" rx="70" ry="20" class="robot-top"/>
+      <circle cx="-38" cy="38" r="18" class="wheel"/>
+      <circle cx="-38" cy="38" r="9" class="wheel-inner"/>
+      <circle cx="38" cy="38" r="18" class="wheel"/>
+      <circle cx="38" cy="38" r="9" class="wheel-inner"/>
+      <path d="M0 -78 L88 -78" class="arrow-yellow" marker-end="url(#arrowYellow)"/>
+    </g>
+
+    <text x="155" y="285" class="coord">P = (x, y)</text>
+  </g>
+
+  <rect x="860" y="635" width="610" height="42" rx="10" fill="#FFFFFF" stroke="#F5C242" stroke-width="3"/>
+  <text x="880" y="663" class="small">La posición es la misma, pero cambia el ángulo de orientación.</text>
+
+  <!-- Bottom summary -->
+  <rect x="95" y="755" width="1410" height="92" rx="18" class="info"/>
+  <text x="130" y="797" class="label">Idea clave</text>
+  <text x="130" y="830" class="small">Para controlar un robot necesitaremos conocer dos datos diferentes: dónde está situado y hacia dónde está orientado.</text>
+
+  <text x="80" y="900" class="small">Figura 5.7. Diferencia entre posición y orientación de un robot móvil.</text>
+</svg>

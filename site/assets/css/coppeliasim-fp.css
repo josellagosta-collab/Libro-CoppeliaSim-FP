@@ -413,3 +413,56 @@
 .fp-challenge-title {
   color: #43a047;
 }
+
+.md-typeset .admonition.teacher {
+  border-color: #1565c0;
+}
+
+.md-typeset .admonition.teacher > .admonition-title {
+  background-color: rgba(21, 101, 192, 0.12);
+}
+
+.md-typeset .admonition.common-error {
+  border-color: #e53935;
+}
+
+.md-typeset .admonition.common-error > .admonition-title {
+  background-color: rgba(229, 57, 53, 0.12);
+}
+
+.md-typeset .admonition.challenge {
+  border-color: #43a047;
+}
+
+.md-typeset .admonition.challenge > .admonition-title {
+  background-color: rgba(67, 160, 71, 0.12);
+}
+
+/* Menú lateral: parte a la izquierda y capítulos indentados */
+.md-sidebar--primary nav[data-md-level="1"] > .md-nav__title {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+.md-sidebar--primary nav[data-md-level="1"] > .md-nav__list > .md-nav__item > .md-nav__link {
+  padding-left: 1.5rem !important;
+}
+
+/* ===========================
+   Libro más ancho
+   =========================== */
+
+/* Aumenta el ancho máximo del contenido */
+.md-grid {
+    max-width: 1800px;
+}
+
+/* Más espacio para el contenido */
+.md-content {
+    max-width: none;
+}
+
+/* Reduce el margen entre la barra izquierda y el contenido */
+.md-main__inner {
+    gap: 1.2rem;
+}

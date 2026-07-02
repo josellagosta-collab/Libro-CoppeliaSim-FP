@@ -71,6 +71,15 @@ nav:
       - "Capítulo 4. Creando nuestra primera simulación": parte1/capitulo04.md
       - "Capítulo 5. Manipulación de objetos y sistemas de coordenadas": parte1/capitulo05.md
       - "Capítulo 6. Primera conexión entre Python y CoppeliaSim": parte1/capitulo06.md
+
+  - Parte II. Robótica móvil:
+      - Presentación: parte2/index.md
+      - "Capítulo 7. Introducción a la robótica móvil": parte2/capitulo07.md
+      - "Capítulo 8. Cinemática diferencial de robots móviles": parte2/capitulo08.md
+      - "Capítulo 9. Control de robots móviles": parte2/capitulo09.md
+      - "Capítulo 10. Localización y mapeo": parte2/capitulo10.md
+      - "Capítulo 11. Planificación de trayectorias": parte2/capitulo11.md
+      
   
   - Editorial:
       - Inicio: editorial/index.md

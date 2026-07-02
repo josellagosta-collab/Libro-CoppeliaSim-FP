@@ -11,6 +11,14 @@ class CalloutRenderer:
             icon="👨‍🏫",
             default_title="Consejo para el profesor",
         )
+        
+        markdown = self._render_simple_block(
+            markdown,
+            block_name="info",
+            admonition_type="info",
+            icon="ℹ️",
+            default_title="Información",
+        )
 
         markdown = self._render_simple_block(
             markdown,
@@ -32,15 +40,21 @@ class CalloutRenderer:
 
     def _render_simple_block(self, markdown, block_name, admonition_type, icon, default_title):
         pattern = re.compile(
-            rf"::: {block_name}\s*\n"
-            r"(.*?)\n:::",
-            re.DOTALL,
+            rf"^(?P<fence>:{{3,}})[ \t]+{re.escape(block_name)}"
+            r"(?:[ \t]+(?P<inline_title>\"[^\"]+\"|'[^']+'|[^\n]+))?[ \t]*\n"
+            r"(?P<content>.*?)"
+            r"\n(?P=fence)\s*$",
+            re.DOTALL | re.MULTILINE,
         )
 
         def replace(match):
-            raw_content = match.group(1).strip()
+            raw_content = match.group("content").strip()
+            inline_title = (match.group("inline_title") or "").strip()
             title = default_title
             content = raw_content
+
+            if inline_title:
+                title = inline_title.strip("\"'")
 
             lines = raw_content.splitlines()
 

@@ -1,0 +1,7 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='512' height='160' viewBox='0 0 512 160'>
+<defs><style>
+.blue{fill:#1565C0}.dark{fill:#0D47A1}.green{fill:#43A047}.teal{fill:#00897B}.purple{fill:#6A1B9A}.yellow{fill:#F9A825}.red{fill:#E53935}.grey{fill:#ECEFF1}.black{fill:#37474F}
+.stroke{stroke:#37474F;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;fill:none}.stroke-blue{stroke:#1565C0;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.text{font-family:Arial,sans-serif;font-weight:700;fill:#37474F}
+</style></defs>
+<path class='stroke-blue' d='M60 80h360M380 40l48 40-48 40'/></svg>
