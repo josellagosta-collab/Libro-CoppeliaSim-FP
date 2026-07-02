@@ -562,6 +562,11 @@ Si el Pioneer queda suspendido en el aire, la simulación puede comenzar con una
 
 Además de modificar su posición, también podemos cambiar la orientación del robot.
 
+::: figure
+image: ../assets/cap07/svg/rotacion_manual_pioneer.svg
+caption: Rotación manual del Pioneer P3DX sobre el eje Z.
+:::
+
 Para ello utilizaremos la herramienta **Rotar objeto**.
 
 Al activarla aparecerán unos anillos de colores que representan los diferentes ejes de rotación.
@@ -665,6 +670,11 @@ Para ello necesitaremos escribir programas capaces de comunicarse con el simulad
 En el capítulo anterior aprendimos a establecer una conexión entre Python y CoppeliaSim mediante la API remota ZeroMQ.
 
 Ha llegado el momento de utilizar esa conexión para controlar nuestro primer robot.
+
+::: figure
+image: ../assets/cap07/svg/flujo_python_pioneer.svg
+caption: Flujo de control del Pioneer P3DX mediante Python y la API remota ZeroMQ.
+:::
 
 Aunque los ejemplos que veremos son muy sencillos, representan el punto de partida de todos los proyectos que desarrollaremos durante el resto del libro.
 
