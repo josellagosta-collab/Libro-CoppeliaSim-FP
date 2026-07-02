@@ -551,7 +551,7 @@ En un robot móvil normalmente la coordenada Z apenas cambia, ya que permanece a
 Lo realmente importante serán las coordenadas X e Y.
 
 ::: figure
-image: ../assets/cap06/coordenadas_robot.png
+image: ../assets/cap06/svg/cordenadas_globales.png
 caption: Interpretación de la posición de un robot en el sistema de coordenadas global.
 :::
 
