@@ -537,6 +537,14 @@ No es necesario memorizar todos estos nombres.
 Basta con localizarlos una vez dentro de CoppeliaSim y utilizarlos posteriormente desde Python.
 :::
 
+::: teacher
+title: Recomendación metodológica
+
+content:
+
+Aunque en este capítulo trabajaremos con un único sensor frontal para simplificar los ejemplos, en aplicaciones reales es habitual consultar simultáneamente varios sensores y combinar toda la información obtenida.
+:::
+
 ---
 
 ### Leyendo un sensor
@@ -546,8 +554,29 @@ La API remota proporciona la función `readProximitySensor()` para consultar el 
 Su utilización es muy sencilla.
 
 ```python
-detectado, distancia, objeto, normal = sim.readProximitySensor(sensor)
+resultado, distancia, punto, objeto, normal = sim.readProximitySensor(sensor)
 ```
+
+::: info
+title: Valores devueltos por readProximitySensor()
+
+content:
+
+En CoppeliaSim EDU 4.10 la función `readProximitySensor()` devuelve cinco valores:
+
+1. `resultado`: indica si el sensor ha detectado un objeto (`True`) o no (`False`).
+2. `distancia`: distancia desde el sensor hasta el punto detectado.
+3. `punto`: coordenadas del punto de detección respecto al sistema de referencia del sensor.
+4. `objeto`: identificador (*handle*) del objeto detectado.
+5. `normal`: vector normal de la superficie detectada.
+
+Durante este capítulo únicamente utilizaremos `resultado` y `distancia`. Los demás valores se estudiarán más adelante.
+:::
+
+::: figure
+image: ../assets/cap08/svg/valores_read_proximity_sensor.svg
+caption: Valores devueltos por readProximitySensor() en CoppeliaSim EDU 4.10.
+:::
 
 Aunque la función devuelve varios valores, durante las primeras prácticas únicamente utilizaremos los dos primeros.
 
@@ -715,7 +744,7 @@ from coppeliasim_zmqremoteapi_client import RemoteAPIClient
 client = RemoteAPIClient()
 sim = client.require("sim")
 
-sensor = sim.getObject("/PioneerP3DX/ultrasonicSensor1")
+sensor = sim.getObject("/PioneerP3DX/ultrasonicSensor[0]")
 
 detectado, distancia, objeto, normal = sim.readProximitySensor(sensor)
 
@@ -733,11 +762,49 @@ Este programa realiza cuatro operaciones fundamentales.
 3. Lee el estado del sensor.
 4. Muestra un mensaje diferente según exista o no un obstáculo.
 
+::: info
+title: Nombre de los sensores
+
+content:
+
+En CoppeliaSim los sensores del Pioneer P3DX aparecen con nombres del tipo:
+
+`ultrasonicSensor[0]`
+
+`ultrasonicSensor[1]`
+
+...
+
+`ultrasonicSensor[15]`
+
+La numeración puede variar ligeramente entre versiones del simulador. Siempre es recomendable comprobar el nombre exacto en el árbol de la escena.
+:::
+
+::: common-error
+title: El sensor no detecta ningún objeto
+
+content:
+
+Si el programa indica continuamente que no existe ningún obstáculo, comprueba los siguientes puntos:
+
+- La simulación está en ejecución.
+- El obstáculo se encuentra dentro del volumen de detección del sensor.
+- Estás leyendo el sensor correcto.
+- El nombre del sensor coincide exactamente con el que aparece en el árbol de la escena.
+
+Una forma sencilla de localizar el sensor adecuado consiste en recorrer los dieciséis sensores del Pioneer y comprobar cuál detecta el obstáculo.
+:::
+
 ---
 
 ### Probando el programa
 
 Ejecuta primero el programa con el cubo delante del robot.
+
+::: figure
+image: ../assets/cap08/annotated/deteccion_obstaculo.png
+caption: Detección de un obstáculo mediante un sensor de proximidad.
+:::
 
 Deberías obtener una salida similar a:
 
@@ -757,6 +824,23 @@ Camino libre
 ```
 
 Este cambio confirma que el programa está interpretando correctamente la información del sensor.
+
+::: practice
+title: Identificar el sensor frontal
+
+difficulty: Baja
+
+time: 10 minutos
+
+content:
+
+Escribe un programa que recorra los dieciséis sensores del Pioneer P3DX.
+
+Muestra por pantalla cuál de ellos detecta un obstáculo situado delante del robot.
+
+Este ejercicio permitirá identificar fácilmente el sensor que utilizarás durante el resto del capítulo.
+
+:::
 
 ---
 
@@ -807,7 +891,7 @@ from coppeliasim_zmqremoteapi_client import RemoteAPIClient
 client = RemoteAPIClient()
 sim = client.require("sim")
 
-sensor = sim.getObject("/PioneerP3DX/ultrasonicSensor1")
+sensor = sim.getObject("/PioneerP3DX/ultrasonicSensor[0]")
 
 detectado, distancia, objeto, normal = sim.readProximitySensor(sensor)
 
