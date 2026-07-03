@@ -150,7 +150,18 @@ El Pioneer P3DX no utiliza ningún sistema de dirección como el de un automóvi
 Todos sus movimientos se consiguen controlando de forma independiente la velocidad de las dos ruedas motrices.
 
 Comprender este principio resulta esencial para programar correctamente cualquier robot móvil de tracción diferencial.
+:::
 
+::: figure
+image: ../assets/cap09/png/traccion_diferencial_pioneer.png
+caption: Esquema del sistema de tracción diferencial del robot Pioneer P3DX."
+:::
+
+Para interpretar correctamente los movimientos del robot es útil identificar su sistema de referencia: el eje delantero, el eje lateral y el sentido positivo de giro.
+
+::: figure
+image: ../assets/cap09/png/marcos_referencia_pioneer.png
+caption: Marcos de referencia del robot Pioneer P3DX utilizados para interpretar su movimiento."
 :::
 
 ---
@@ -229,6 +240,11 @@ No es necesario memorizar todavía el nombre exacto de cada motor.
 
 En el siguiente apartado aprenderemos a obtener su referencia desde Python.
 
+::: figure
+image: ../assets/cap09/png/escena_pioneer_p3dx.png
+caption: "Escena básica del Pioneer P3DX en CoppeliaSim mostrando la jerarquía de objetos del robot."
+:::
+
 ::: teacher
 title: Consejo para el profesor
 
@@ -273,6 +289,11 @@ En CoppeliaSim estos motores se representan como articulaciones (*joints*) y se 
 
 :::
 
+::: figure
+image: ../assets/cap09/png/jerarquia_objetos_pioneer.png
+caption: "Jerarquía de objetos del Pioneer P3DX en CoppeliaSim y componentes principales."
+:::
+
 ---
 
 ## 9.3 Controlando la velocidad de los motores desde Python
@@ -312,6 +333,11 @@ content:
 Aunque los modelos oficiales del Pioneer P3DX utilizan habitualmente los nombres `leftMotor` y `rightMotor`, siempre es recomendable comprobar el nombre exacto en el árbol de la escena.
 
 En caso de duda, despliega el modelo del robot y verifica cómo aparecen identificados los motores en tu versión de CoppeliaSim.
+:::
+
+::: figure
+image: ../assets/cap09/png/control_motores_python.png
+caption: "Esquema del flujo de control de los motores del Pioneer P3DX desde Python."
 :::
 
 ---
@@ -785,6 +811,11 @@ Prueba, por ejemplo, las siguientes combinaciones.
 | 2.0 | -2.0 | Giro sobre el propio eje |
 | -2.0 | -2.0 | Retrocede en línea recta |
 
+::: figure
+image: ../assets/cap09/png/movimientos_pioneer_velocidad_ruedas.png
+caption: "Movimientos del Pioneer P3DX en función de la velocidad de las ruedas motrices."
+:::
+
 Dedica unos minutos a experimentar.
 
 Comprender la relación entre la velocidad de las ruedas y la trayectoria es mucho más sencillo cuando se observa directamente en la simulación.
@@ -962,6 +993,11 @@ La segunda mantiene ese movimiento durante un determinado intervalo de tiempo.
 
 Cada tramo del recorrido no es más que una combinación distinta de velocidades aplicada durante unos segundos.
 
+::: figure
+image: ../assets/cap09/png/recorrido_programado.png
+caption: "Ejecución del programa `recorrido_programado.py`: secuencia de movimientos y trayectoria resultante del Pioneer P3DX."
+:::
+
 ---
 
 ### La importancia de las velocidades
@@ -1017,6 +1053,11 @@ Por ejemplo:
 Observa cómo pequeños cambios producen trayectorias completamente diferentes.
 
 Esta es una de las grandes ventajas de la simulación: puedes experimentar tantas veces como quieras sin riesgo para el robot.
+
+::: figure
+image: ../assets/cap09/png/experimento_velocidades_pioneer.png
+caption: "Experimentos propuestos para observar el efecto de diferentes velocidades de las ruedas sobre el movimiento del Pioneer P3DX."
+:::
 
 ---
 
