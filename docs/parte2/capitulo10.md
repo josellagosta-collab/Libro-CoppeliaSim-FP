@@ -82,6 +82,11 @@ El robot no puede reaccionar ante los cambios que se producen en su entorno.
 
 Para conseguir un comportamiento autónomo debemos combinar tres procesos que se ejecutan continuamente.
 
+::: figure
+image: ../assets/cap10/svg/ciclo_robot_autonomo.png
+caption: Ciclo percepción → decisión → acción utilizado por el Pioneer P3DX para navegar de forma autónoma.
+:::
+
 1. Percibir el entorno mediante los sensores.
 2. Decidir cuál debe ser la siguiente acción.
 3. Actuar modificando el movimiento del robot.
@@ -201,6 +206,11 @@ A partir de este momento el Pioneer P3DX será capaz de observar continuamente e
 La información obtenida por los sensores servirá para decidir cómo deben actuar los motores en cada instante.
 
 Este tipo de programación recibe el nombre de **control reactivo**, ya que el comportamiento del robot depende directamente de la información que recibe del entorno.
+
+::: figure
+image: ../assets/cap10/svg/integracion_sensor_python_motores.png
+caption: Integración entre los sensores, el programa en Python y los motores del Pioneer P3DX. El programa actúa como puente entre la percepción del entorno y el movimiento del robot.
+:::
 
 ---
 
@@ -645,6 +655,11 @@ Con estas instrucciones garantizamos que el Pioneer P3DX no continúa moviéndos
 
 ---
 
+::: figure
+image: ../assets/cap10/svg/deteccion_obstaculo.png
+caption: Detección de un obstáculo mediante el sensor de proximidad frontal. El programa interpreta la información recibida y decide automáticamente si el Pioneer P3DX debe continuar avanzando o modificar su movimiento.
+:::
+
 ### Programa completo
 
 ```python
@@ -794,6 +809,11 @@ El Pioneer P3DX será capaz de desplazarse por la escena evitando los obstáculo
 
 Antes de escribir el programa conviene representar el comportamiento mediante un algoritmo.
 
+::: figure
+image: ../assets/cap10/svg/algoritmo_reactivo.png
+caption: Algoritmo reactivo utilizado por el Pioneer P3DX para evitar obstáculos.
+:::
+
 ```text
 Mientras la simulación esté funcionando
 
@@ -814,9 +834,15 @@ Mientras la simulación esté funcionando
 Repetir
 ```
 
+
 Observa que el algoritmo continúa ejecutándose indefinidamente.
 
 Cada decisión depende exclusivamente de la información obtenida por el sensor.
+
+::: figure
+image: ../assets/cap10/svg/maquina_estados.png
+caption: Máquina de estados del Pioneer P3DX. El robot alterna entre los estados de avanzar, detenerse y girar en función de la información proporcionada por el sensor de proximidad.
+:::
 
 ---
 
@@ -875,6 +901,11 @@ sim.stopSimulation()
 
 ---
 
+::: figure
+image: ../assets/cap10/svg/trayectoria_evitando_obstaculos.png
+caption: Ejemplo de trayectoria seguida por el Pioneer P3DX al aplicar el algoritmo reactivo de evitación de obstáculos. El robot detecta un obstáculo, gira para buscar un nuevo camino y continúa avanzando de forma autónoma.
+:::
+
 ### Analizando el comportamiento
 
 Mientras el sensor no detecta ningún obstáculo, ambos motores giran a la misma velocidad.
@@ -928,6 +959,11 @@ Estas limitaciones son completamente normales.
 Los algoritmos utilizados en robots industriales y vehículos autónomos son mucho más complejos.
 
 No obstante, todos ellos parten del mismo principio que acabamos de estudiar: utilizar la información de los sensores para decidir cómo deben actuar los motores.
+
+::: figure
+image: ../assets/cap10/svg/ejecucion_algoritmo_coppeliasim.png
+caption: Ejecución completa del algoritmo reactivo de evitación de obstáculos en CoppeliaSim. El Pioneer P3DX percibe el entorno mediante sus sensores, toma decisiones en tiempo real y modifica su trayectoria para continuar avanzando de forma autónoma.
+:::
 
 ---
 
@@ -1106,7 +1142,3 @@ En los próximos capítulos ampliaremos este comportamiento incorporando nuevos 
 
 ---
 
-::: chapter-end
-next: "Capítulo 11 · Programación avanzada del Pioneer P3DX"
-previous: "Capítulo 9 · Control del movimiento del Pioneer P3DX"
-:::
