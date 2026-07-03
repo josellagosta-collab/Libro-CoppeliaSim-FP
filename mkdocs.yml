@@ -74,10 +74,12 @@ nav:
   
   - Parte II. Robótica móvil:
       - Presentación: parte2/index.md
-      - "Capítulo 7. Introducción a la robótica móvil": parte2/capitulo07.md
-      - "Capítulo 8. Cinemática diferencial de robots móviles": parte2/capitulo08.md
+      - "Capítulo 7. Primer contacto con el Pioneer P3DX": parte2/capitulo07.md
+      - "Capítulo 8. Sensores en robots móviles": parte2/capitulo08.md
       - "Capítulo 9. Control del movimiento del Pioneer P3DX": parte2/capitulo09.md
       - "Capítulo 10. Navegación autónoma mediante sensores": parte2/capitulo10.md
+      - "Capítulo 11. Programación estructurada del Pioneer P3DX": parte2/capitulo11.md
+
 
   - Parte III:
     - Introducción: parte3/index.md

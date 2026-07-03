@@ -1,40 +1,35 @@
 # Parte II. Robótica móvil
 
-En esta parte comenzaremos a trabajar con robots reales dentro de CoppeliaSim. Aprenderemos a incorporar modelos móviles a una escena, conoceremos su estructura interna y empezaremos a controlarlos mediante Python utilizando la API remota.
+En esta parte comenzaremos a trabajar con robots móviles dentro de CoppeliaSim utilizando el **Pioneer P3DX** como plataforma principal.
 
-El objetivo no es únicamente mover un robot, sino comprender cómo está construido, cómo interactúa con el entorno y cómo desarrollar programas capaces de controlar su comportamiento.
+El objetivo no será únicamente mover un robot, sino comprender cómo está construido, cómo percibe el entorno, cómo se desplaza y cómo podemos programarlo para tomar decisiones de forma autónoma mediante Python.
 
-Durante los siguientes capítulos construiremos progresivamente aplicaciones cada vez más completas, incorporando sensores, navegación, planificación de trayectorias y técnicas habituales en la robótica móvil.
+A lo largo de esta parte construiremos progresivamente un robot móvil autónomo: primero conoceremos su estructura, después utilizaremos sus sensores, controlaremos sus motores y finalmente desarrollaremos algoritmos capaces de reaccionar ante obstáculos.
 
 ::: part-cover
 number: II
 title: Robótica móvil
-subtitle: Modelado, control y programación de robots móviles con CoppeliaSim y Python
+subtitle: Sensores, movimiento y navegación autónoma con el Pioneer P3DX
 :::
 
 ## Capítulos de esta parte
 
-### Capítulo 7. Robots móviles: primeros pasos
+### Capítulo 7. Primer contacto con el Pioneer P3DX
 
-Conoceremos el robot Pioneer P3DX, aprenderemos a incorporarlo a una escena, estudiaremos su estructura interna y realizaremos los primeros movimientos tanto manualmente como mediante Python.
+Conoceremos el robot móvil Pioneer P3DX, aprenderemos a incorporarlo a una escena de CoppeliaSim, estudiaremos sus componentes principales y realizaremos los primeros pasos de control mediante Python.
 
 ### Capítulo 8. Sensores en robots móviles
 
-Descubriremos los principales sensores disponibles en CoppeliaSim: sensores de proximidad, ultrasonidos, visión y otros dispositivos que permiten al robot percibir su entorno.
+Aprenderemos la importancia de la percepción en robótica móvil, estudiaremos los sensores de proximidad del Pioneer P3DX y desarrollaremos los primeros programas capaces de detectar obstáculos desde Python.
 
-### Capítulo 9. Movimiento y navegación
+### Capítulo 9. Control del movimiento del Pioneer P3DX
 
-Aprenderemos a controlar el desplazamiento de un robot móvil utilizando velocidades lineales y angulares, giros, trayectorias y navegación básica.
+Descubriremos cómo se mueve un robot de tracción diferencial, localizaremos los motores del Pioneer P3DX y aprenderemos a controlar su velocidad para avanzar, retroceder, girar y combinar movimientos.
 
-### Capítulo 10. Evitación de obstáculos
+### Capítulo 10. Navegación autónoma mediante sensores
 
-Implementaremos algoritmos sencillos para detectar obstáculos y modificar automáticamente la trayectoria del robot utilizando la información proporcionada por los sensores.
+Integraremos sensores y motores en un mismo programa para construir el primer comportamiento autónomo del robot. El Pioneer P3DX será capaz de detectar obstáculos, tomar decisiones y modificar su trayectoria.
 
-### Capítulo 11. Navegación autónoma
+### Capítulo 11. Programación estructurada del Pioneer P3DX
 
-Desarrollaremos comportamientos autónomos combinando sensores, control de movimiento y programación para que el robot sea capaz de desplazarse sin intervención del usuario.
-
-### Capítulo 12. Proyecto práctico: robot explorador
-
-Aplicaremos todos los conocimientos adquiridos en un proyecto completo donde un robot recorrerá un escenario detectando obstáculos y tomando decisiones de forma autónoma.
-
+Reorganizaremos el código desarrollado en los capítulos anteriores utilizando funciones, constantes y buenas prácticas de programación. El objetivo será transformar los programas de prueba en una aplicación más clara, modular y fácil de ampliar.
