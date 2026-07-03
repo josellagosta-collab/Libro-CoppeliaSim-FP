@@ -1,82 +1,125 @@
 # Introducción
 
-Este libro ha sido diseñado para que puedas aprender robótica de forma progresiva, práctica y completamente guiada utilizando **CoppeliaSim** como entorno principal de simulación.
+Aprender robótica no consiste únicamente en programar un robot para que se mueva. Significa comprender cómo percibe el entorno, cómo toma decisiones y cómo interactúa con el mundo que le rodea.
 
-No es necesario disponer de conocimientos previos sobre robótica.
+Tradicionalmente, este aprendizaje ha estado condicionado por la disponibilidad de equipos físicos. Los robots industriales y las plataformas móviles tienen un coste elevado y requieren espacios específicos, mantenimiento y unas condiciones de seguridad que no siempre están al alcance de todos los centros educativos.
 
-Los conceptos se introducen paso a paso y cada capítulo parte de los conocimientos adquiridos en los anteriores.
+Afortunadamente, hoy disponemos de herramientas capaces de reproducir con gran fidelidad el comportamiento de estos sistemas en un entorno virtual.
+
+Entre todas ellas, **CoppeliaSim** se ha convertido en uno de los simuladores de robótica más completos y utilizados tanto en el ámbito educativo como en la investigación y el desarrollo profesional.
+
+Sin embargo, este **no es un libro para aprender a utilizar CoppeliaSim**.
+
+Este es un libro para **aprender robótica utilizando CoppeliaSim como laboratorio virtual**.
+
+El simulador es la herramienta.
+
+La robótica es el verdadero objetivo.
+
+A lo largo de estas páginas aprenderás cómo funciona un robot, cómo se mueve, cómo percibe el entorno mediante sensores, cómo toma decisiones y cómo puede programarse para resolver problemas cada vez más complejos.
+
+Todo ello mediante una metodología eminentemente práctica, basada en la experimentación y en el desarrollo progresivo de proyectos.
+
+Cada concepto se introduce únicamente cuando resulta necesario, apoyándose siempre en ejemplos, ilustraciones, ejercicios y prácticas guiadas.
+
+El resultado es un recorrido que reproduce, de forma muy similar, el proceso de aprendizaje que seguiría un ingeniero o un técnico al enfrentarse por primera vez al desarrollo de una aplicación robótica.
 
 ## ¿A quién va dirigido?
 
-Este libro está especialmente orientado a:
+Este libro está especialmente dirigido a:
 
 - estudiantes de Formación Profesional;
-- alumnado universitario de ingeniería;
-- profesorado que desee incorporar simulación a sus clases;
-- personas que quieran iniciarse en la robótica de forma práctica.
+- alumnado universitario de titulaciones técnicas;
+- profesorado que desee incorporar la simulación robótica a sus clases;
+- profesionales que quieran iniciarse en el desarrollo de aplicaciones robóticas;
+- cualquier persona interesada en aprender robótica desde una perspectiva práctica.
+
+No se requieren conocimientos previos sobre robótica.
+
+Cada capítulo parte de los contenidos estudiados anteriormente y aumenta progresivamente el nivel de dificultad.
 
 ## ¿Qué aprenderás?
 
-A lo largo del libro aprenderás a:
+Al finalizar el recorrido serás capaz de:
 
-- utilizar CoppeliaSim con soltura;
-- construir escenas de simulación;
-- trabajar con robots móviles y brazos robóticos;
-- integrar sensores y actuadores;
-- programar robots mediante Python;
-- desarrollar aplicaciones conectadas mediante APIs;
-- crear proyectos completos de automatización y robótica.
+- instalar y configurar correctamente CoppeliaSim;
+- comprender la interfaz del simulador y crear escenas de simulación;
+- trabajar con sistemas de coordenadas y transformaciones espaciales;
+- incorporar robots móviles y brazos robóticos a una escena;
+- utilizar sensores y actuadores;
+- controlar robots mediante Python y la API remota ZeroMQ;
+- desarrollar algoritmos de navegación autónoma;
+- programar manipuladores industriales;
+- integrar visión artificial, ROS e inteligencia artificial;
+- desarrollar proyectos completos de robótica y automatización.
+
+Más importante aún, comprenderás los principios que hay detrás de cada una de estas tecnologías.
 
 ## Cómo está organizado el libro
 
-El contenido se divide en cinco grandes bloques.
+El contenido sigue una secuencia de aprendizaje progresiva.
 
-### Parte I. Primeros pasos con CoppeliaSim
+Cada parte prepara los conocimientos necesarios para abordar la siguiente.
 
-Instalación, interfaz, navegación y creación de las primeras escenas.
+### Parte I · Primer contacto
 
-### Parte II. Construcción de simulaciones
+Comenzaremos instalando CoppeliaSim, conociendo su interfaz y aprendiendo a crear nuestras primeras escenas.
 
-Creación de escenarios, incorporación de robots y utilización de sensores y actuadores.
+También prepararemos el entorno de programación con Python y comprenderemos los fundamentos de los sistemas de coordenadas.
 
-### Parte III. Programación con Python
+### Parte II · Robots móviles
 
-Control de robots, automatización de tareas y desarrollo de aplicaciones.
+Trabajaremos con el robot Pioneer P3DX.
 
-### Parte IV. Robótica avanzada
+Aprenderemos a incorporarlo a una simulación, conoceremos su estructura, utilizaremos sus sensores, controlaremos sus motores y desarrollaremos nuestros primeros algoritmos de navegación.
 
-Visión artificial, inteligencia artificial, ROS, comunicaciones y gemelos digitales.
+### Parte III · Brazos robóticos industriales
 
-### Parte V. Proyectos completos
+El siguiente paso será trabajar con robots manipuladores.
 
-Desarrollo de aplicaciones reales que integran todos los conocimientos adquiridos.
+Estudiaremos su cinemática, el control de articulaciones, las herramientas terminales y la automatización de tareas de manipulación.
 
-## Iconos utilizados
+### Parte IV · Programación y automatización
 
-A lo largo del libro aparecerán diferentes elementos didácticos.
+Profundizaremos en el desarrollo de aplicaciones utilizando Python, la comunicación mediante APIs, la automatización de procesos y la integración con otros sistemas.
 
-- 📘 Conceptos importantes.
-- ⚠️ Errores frecuentes.
-- 💻 Prácticas guiadas.
-- 👨‍🏫 Recomendaciones para el profesorado.
-- 💡 Consejos y buenas prácticas.
+### Parte V · Tecnologías avanzadas y proyectos
+
+La última parte del libro estará dedicada a contenidos avanzados como ROS, visión artificial, inteligencia artificial, gemelos digitales y el desarrollo de proyectos completos inspirados en aplicaciones reales.
+
+## Recursos didácticos
+
+Para facilitar el aprendizaje, cada capítulo incorpora diferentes elementos didácticos.
+
+- **Información**: amplía o complementa los contenidos principales.
+- **Consejo**: recomendaciones basadas en la experiencia.
+- **Error frecuente**: problemas habituales y cómo resolverlos.
+- **Práctica guiada**: actividades paso a paso.
+- **Reto**: ejercicios para afianzar los conocimientos.
+- **Resumen**: ideas clave de cada apartado.
+
+Además, todas las figuras e infografías han sido diseñadas específicamente para este libro con el objetivo de facilitar la comprensión de conceptos que, en muchas ocasiones, resultan difíciles de visualizar únicamente mediante texto.
 
 ## Recursos disponibles
 
-Todos los ejemplos, escenas, scripts, modelos y material complementario del libro estarán disponibles en el repositorio oficial del proyecto.
+El repositorio oficial del libro incluye todas las escenas de CoppeliaSim, programas en Python, imágenes, scripts y material complementario utilizado a lo largo de los capítulos.
 
-De esta forma podrás reproducir todas las prácticas exactamente igual que aparecen en el texto.
+Podrás reproducir exactamente las mismas prácticas que aparecen en el libro, modificarlas y utilizarlas como punto de partida para desarrollar tus propios proyectos.
 
-## Recomendaciones
+## Cómo aprovechar este libro
 
-La mejor forma de aprender robótica es experimentar.
+La robótica no se aprende leyendo.
 
-No tengas miedo a modificar escenas, cambiar parámetros o cometer errores.
+Se aprende experimentando.
 
-En simulación, equivocarse forma parte del aprendizaje.
+Por ello, te recomendamos seguir el orden propuesto, reproducir todos los ejemplos, realizar las prácticas guiadas y dedicar tiempo a modificar las simulaciones para observar cómo afectan los cambios al comportamiento de los robots.
 
-Comienza cada capítulo realizando las prácticas propuestas y procura reproducir todos los ejemplos antes de continuar con el siguiente.
+Cada error será una oportunidad para comprender mejor el funcionamiento del sistema.
 
-Al finalizar el libro habrás desarrollado una base sólida para crear tus propias aplicaciones de robótica utilizando CoppeliaSim y Python.
+Ese es precisamente uno de los mayores beneficios de la simulación: permite experimentar, equivocarse y aprender sin riesgo para las personas ni para los equipos.
 
-Comencemos.
+Esperamos que este libro se convierta en una herramienta útil para estudiantes, docentes y profesionales, y contribuya a acercar la robótica a las aulas desde una perspectiva práctica, rigurosa y motivadora.
+
+**Bienvenido a tu laboratorio virtual de robótica.**
+
+**Comencemos.**

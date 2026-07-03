@@ -76,6 +76,7 @@ nav:
       - Presentación: parte2/index.md
       - "Capítulo 7. Introducción a la robótica móvil": parte2/capitulo07.md
       - "Capítulo 8. Cinemática diferencial de robots móviles": parte2/capitulo08.md
+      - "Capítulo 9. Control del movimiento del Pioneer P3DX": parte2/capitulo09.md
 
   - Parte III:
     - Introducción: parte3/index.md
