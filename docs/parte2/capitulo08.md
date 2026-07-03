@@ -66,6 +66,11 @@ En robótica existe una idea fundamental:
 
 > **Un robot primero percibe, después decide y finalmente actúa.**
 
+::: figure
+image: ../assets/cap08/png/svgciclo_percepcion_decision_accion.png
+caption: Ciclo percepción → decisión → acción utilizado por un robot móvil autónomo.
+:::
+
 Este ciclo se repite continuamente mientras el robot está funcionando.
 
 En cada instante los sensores recopilan información del entorno.
@@ -180,6 +185,11 @@ Antes de aprender a utilizarlos desde Python conviene conocer cómo están distr
 
 Si observamos el Pioneer P3DX desde la parte superior veremos que los sensores se encuentran distribuidos alrededor de todo el perímetro del robot.
 
+::: figure
+image: ../assets/cap07/annotated/sensores_pioneer_p3dx.png
+caption: Distribución aproximada de los sensores ultrasónicos del Pioneer P3DX.
+:::
+
 Esta disposición permite detectar obstáculos prácticamente en cualquier dirección.
 
 No todos los sensores apuntan hacia el frente.
@@ -289,6 +299,11 @@ La percepción completa del entorno se consigue combinando la información proce
 
 Si desplegamos el Pioneer P3DX en el árbol de la escena podremos localizar fácilmente los sensores.
 
+::: figure
+image: ../assets/cap08/annotated/arbol_sensores.png
+caption: Sensores del Pioneer P3DX en el árbol de la escena.
+:::
+
 Cada uno aparece como un objeto independiente dentro de la jerarquía del robot.
 
 Esto resulta especialmente útil porque podremos acceder a ellos individualmente desde Python utilizando su nombre.
@@ -333,15 +348,30 @@ Su campo de visión está limitado a una determinada zona del espacio.
 
 Podemos imaginar este volumen como un cono que parte desde la parte frontal del sensor.
 
+::: figure
+image: ../assets/cap08/svg/volumen_deteccion_sensor.svg
+caption: Volumen de detección de un sensor de proximidad.
+:::
+
 Mientras no exista ningún objeto dentro de ese cono, el sensor no detectará nada.
 
 Cuando un objeto penetra en la zona de detección, el sensor genera una respuesta positiva.
+
+::: figure
+image: ../assets/cap08/png/deteccion_correcta_incorrecta.png
+caption: Comparación entre un objeto detectado y un objeto situado fuera del volumen de detección.
+:::
 
 Este comportamiento resulta muy parecido al funcionamiento de una linterna.
 
 La luz únicamente ilumina aquello que se encuentra dentro de su haz.
 
 Todo lo que queda fuera permanece invisible.
+
+::: figure
+image: ../assets/cap08/png/analogia_linterna_sensor.png
+caption: Analogía entre el haz de una linterna y el volumen de detección de un sensor de proximidad.
+:::
 
 
 ::: info
@@ -545,6 +575,11 @@ True
 ```
 
 Además, la variable `distancia` contendrá la separación entre el sensor y el punto detectado.
+
+::: figure
+image: ../assets/cap08/png/distancia_objeto_mas_cercano.png
+caption: El sensor de proximidad devuelve la distancia al objeto más cercano situado dentro de su volumen de detección.
+:::
 
 Nuestro programa podrá utilizar esa información para decidir cómo debe actuar el robot.
 
