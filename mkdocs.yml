@@ -88,9 +88,14 @@ nav:
       - "Capítulo 15. Seguimiento visual de objetos": parte3/capitulo15.md
       - "Capítulo 16. Proyecto final de percepción": parte3/capitulo16.md
     
+  - Parte IV. Robótica Industrial:
 
-  - Parte IV:
-      - Introducción: parte4/index.md
+      - Presentación: parte4/index.md
+      - "Capítulo 17. Introducción a la robótica industrial": parte4/capitulo17.md
+      - "Capítulo 18. Control de articulaciones": parte4/capitulo18.md
+      - "Capítulo 19. Cinemática directa e inversa": parte4/capitulo19.md
+      - "Capítulo 20. Manipulación de objetos": parte4/capitulo20.md
+      - "Capítulo 21. Proyecto industrial completo": parte4/capitulo21.md
 
   - Parte V:
       - Introducción: parte5/index.md
