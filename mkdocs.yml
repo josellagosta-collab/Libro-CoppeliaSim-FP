@@ -80,7 +80,7 @@ nav:
       - "Capítulo 10. Navegación autónoma mediante sensores": parte2/capitulo10.md
       - "Capítulo 11. Programación estructurada del Pioneer P3DX": parte2/capitulo11.md
 
-  - Parte III. Percepción avanzada y visión artificial:
+  - Parte III. Visión artificial:
       - Presentación: parte3/index.md
       - "Capítulo 12. Visión artificial con CoppeliaSim": parte3/capitulo12.md
       - "Capítulo 13. Procesamiento básico de imágenes": parte3/capitulo13.md
