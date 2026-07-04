@@ -97,8 +97,14 @@ nav:
       - "Capítulo 20. Manipulación de objetos": parte4/capitulo20.md
       - "Capítulo 21. Proyecto industrial completo": parte4/capitulo21.md
 
-  - Parte V:
-      - Introducción: parte5/index.md
+  - Parte V. Integración de sistemas:
+      - Presentación: parte5/index.md
+      - "Capítulo 22. Comunicación entre CoppeliaSim y aplicaciones externas": parte5/capitulo22.md
+      - "Capítulo 23. Integración con ROS 2": parte5/capitulo23.md
+      - "Capítulo 24. Comunicación industrial": parte5/capitulo24.md
+      - "Capítulo 25. Gemelo digital e Industria 4.0": parte5/capitulo25.md
+      - "Capítulo 26. Proyecto industrial conectado": parte5/capitulo26.md
+
 
   - Parte VI:
       - Introducción: parte6/index.md
