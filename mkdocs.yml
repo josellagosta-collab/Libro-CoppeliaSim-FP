@@ -106,9 +106,11 @@ nav:
       - "Capítulo 26. Proyecto industrial conectado": parte5/capitulo26.md
 
 
-  - Parte VI:
-      - Introducción: parte6/index.md
+  - Parte VI. Proyectos:
+      - Presentación: parte6/index.md
+      - "Capítulo 27. Diseño de una célula robotizada": parte6/capitulo27.md
+      - "Capítulo 28. Sistema automático de clasificación": parte6/capitulo28.md
+      - "Capítulo 29. Robot colaborativo inteligente": parte6/capitulo29.md
+      - "Capítulo 30. Proyecto final del libro": parte6/capitulo30.md
       
-  - Editorial:
-      - Manual de estilo: editorial/manual_estilo.md
-
+  
