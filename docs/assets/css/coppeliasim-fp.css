@@ -466,3 +466,95 @@
 .md-main__inner {
     gap: 1.2rem;
 }
+
+/* ==========================================================
+   PORTADA A PANTALLA COMPLETA
+   ========================================================== */
+
+body.fp-cover-page .md-header,
+body.fp-cover-page .md-sidebar,
+body.fp-cover-page .md-tabs,
+body.fp-cover-page .md-footer,
+body.fp-cover-page .md-content__button,
+body.fp-cover-page .md-nav--secondary,
+body.fp-cover-page .md-top {
+  display: none !important;
+}
+
+body.fp-cover-page .md-container,
+body.fp-cover-page .md-main,
+body.fp-cover-page .md-main__inner,
+body.fp-cover-page .md-content,
+body.fp-cover-page .md-content__inner,
+body.fp-cover-page .md-grid {
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: none !important;
+}
+
+body.fp-cover-page .md-typeset {
+  margin: 0 !important;
+  padding: 1rem !important;
+  box-sizing: border-box;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+body.fp-cover-page .md-typeset > h1 {
+  display: none !important;
+}
+
+body.fp-cover-page .md-content__inner::before {
+  display: none !important;
+}
+
+.fp-cover-full {
+  flex: 1 1 auto;
+  min-height: 0 !important;
+  width: 100%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.fp-cover-full img {
+  display: block;
+  max-height: 100%;
+  max-width: 96vw;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 14px;
+  box-shadow: 0 14px 42px rgba(0,0,0,.22);
+}
+
+body.fp-cover-page .fp-cover-full + div {
+  flex: 0 0 auto;
+  margin: 0;
+}
+
+.fp-cover-button {
+  position: static;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 0.95rem 2.4rem;
+  border-radius: 999px;
+  background: var(--coppelia-blue-dark);
+  color: white !important;
+  font-weight: 800;
+  text-decoration: none !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+}
+
+.fp-cover-button:hover {
+  background: var(--coppelia-blue);
+}

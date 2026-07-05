@@ -35,6 +35,7 @@ extra_css:
 
 extra_javascript:
   - assets/js/coppeliasim-fp.js
+  - assets/js/portada.js
 
 markdown_extensions:
   - admonition
@@ -59,7 +60,8 @@ plugins:
       minify_html: true
 
 nav:
-  - Inicio: index.md
+  - Portada: index.md
+  - Inicio: inicio.md
   - Prólogo: prologo.md
   - Introducción: introduccion.md
 
@@ -112,5 +114,4 @@ nav:
       - "Capítulo 28. Sistema automático de clasificación": parte6/capitulo28.md
       - "Capítulo 29. Integración de visión artificial": parte6/capitulo29.md
       - "Capítulo 30. Proyecto final de Industria 4.0": parte6/capitulo30.md
-      
-  
+
