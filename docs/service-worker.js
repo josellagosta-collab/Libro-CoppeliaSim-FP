@@ -1,4 +1,4 @@
-const CACHE_NAME = "coppeliasim-fp-v2";
+const CACHE_NAME = "coppeliasim-fp-v3";
 const APP_SHELL = [
   "./",
   "./manifest.webmanifest",
