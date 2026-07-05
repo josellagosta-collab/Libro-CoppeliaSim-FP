@@ -513,7 +513,7 @@ body.fp-cover-page .md-content__inner::before {
   display: none !important;
 }
 
-.fp-cover-full {
+body.fp-cover-page .fp-cover-full {
   flex: 1 1 auto;
   min-height: 0 !important;
   width: 100%;
@@ -524,7 +524,7 @@ body.fp-cover-page .md-content__inner::before {
   position: relative;
 }
 
-.fp-cover-full img {
+body.fp-cover-page .fp-cover-full img {
   display: block;
   max-height: 100%;
   max-width: 96vw;
@@ -535,13 +535,19 @@ body.fp-cover-page .md-content__inner::before {
   box-shadow: 0 14px 42px rgba(0,0,0,.22);
 }
 
-body.fp-cover-page .fp-cover-full + div {
+.fp-cover-actions {
   flex: 0 0 auto;
+  width: 100%;
   margin: 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 .fp-cover-button {
   position: static;
+  flex: 0 0 auto;
+  align-self: center;
   display: inline-flex;
   align-items: center;
   justify-content: center;

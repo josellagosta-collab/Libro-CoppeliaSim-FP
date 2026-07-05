@@ -1,4 +1,4 @@
-const CACHE_NAME = "coppeliasim-fp-v1";
+const CACHE_NAME = "coppeliasim-fp-v2";
 const APP_SHELL = [
   "./",
   "./manifest.webmanifest",
@@ -51,6 +51,11 @@ self.addEventListener("fetch", function (event) {
   }
 
   if (request.mode === "navigate") {
+    event.respondWith(networkFirst(request));
+    return;
+  }
+
+  if (request.destination === "image") {
     event.respondWith(networkFirst(request));
     return;
   }
