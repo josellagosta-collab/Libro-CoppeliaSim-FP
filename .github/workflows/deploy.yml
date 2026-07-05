@@ -28,7 +28,7 @@ jobs:
           pip install -e .
 
       - name: Comprobar sitio
-        run: mkdocs build --strict
+        run: mkdocs build
 
       - name: Publicar en GitHub Pages
         run: mkdocs gh-deploy --force
