@@ -5,7 +5,7 @@ site_author: José Aguilera
 theme:
   name: material
   language: es
-  # custom_dir: overrides
+  custom_dir: overrides
   logo: assets/logos/logo.svg
   favicon: assets/logos/favicon.png
   features:
