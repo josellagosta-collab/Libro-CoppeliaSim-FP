@@ -123,20 +123,36 @@ Una vez obtenido el *handle*, podremos utilizarlo para:
 
 Cada articulación del UR3 posee un nombre dentro del árbol de la escena.
 
-Aunque puede variar ligeramente según la versión del modelo utilizada, normalmente encontraremos una estructura similar a la siguiente:
+En la versión de CoppeliaSim utilizada en estas prácticas, las articulaciones del modelo no aparecen con nombres numerados. En el árbol se llaman simplemente `joint` y están encadenadas dentro de objetos llamados `link`.
+
+Por tanto, no debemos buscar seis objetos con nombres numerados. Debemos respetar la jerarquía real del robot:
 
 ```text
 UR3
-
-├── UR3_joint1
-├── UR3_joint2
-├── UR3_joint3
-├── UR3_joint4
-├── UR3_joint5
-└── UR3_joint6
+├── Script
+├── link1_visible
+└── joint
+    └── link
+        ├── link2_visible
+        └── joint
+            └── link
+                ├── link3_visible
+                └── joint
+                    └── link
+                        ├── link4_visible
+                        └── joint
+                            └── link
+                                ├── link5_visible
+                                └── joint
+                                    └── link
+                                        ├── link6_visible
+                                        └── joint
+                                            └── link
+                                                ├── connection
+                                                └── link7_visible
 ```
 
-Estos nombres serán los que utilizaremos para solicitar sus correspondientes *handles* desde Python.
+Cada línea llamada `joint` corresponde a uno de los seis ejes del robot. Como varias articulaciones tienen el mismo nombre, para obtenerlas desde Python utilizaremos su ruta completa dentro del árbol.
 
 ::: figure
 image: ../assets/cap18/fig18_3.png
@@ -149,13 +165,13 @@ caption: Identificación de las seis articulaciones del UR3 en el árbol de la e
 
 La API remota de CoppeliaSim proporciona la función `sim.getObject()` para localizar cualquier objeto de la escena a partir de su nombre.
 
-El siguiente ejemplo obtiene el identificador de la primera articulación del robot.
+El siguiente ejemplo obtiene el identificador de la primera articulación del robot, que es el `joint` situado directamente bajo `UR3`.
 
 ```python
-joint1 = sim.getObject("/UR3/joint1")
+eje_1 = sim.getObject("/UR3/joint")
 ```
 
-A partir de este momento, la variable `joint1` contendrá una referencia directa a la primera articulación del robot.
+A partir de este momento, la variable `eje_1` contendrá una referencia directa a la primera articulación del robot.
 
 Podremos utilizarla tantas veces como sea necesario durante la ejecución del programa.
 
@@ -165,13 +181,15 @@ Podremos utilizarla tantas veces como sea necesario durante la ejecución del pr
 
 Lo habitual será obtener los seis *handles* al comenzar el programa.
 
+En este modelo, las rutas completas de las articulaciones son:
+
 ```python
-joint1 = sim.getObject("/UR3/joint1")
-joint2 = sim.getObject("/UR3/joint2")
-joint3 = sim.getObject("/UR3/joint3")
-joint4 = sim.getObject("/UR3/joint4")
-joint5 = sim.getObject("/UR3/joint5")
-joint6 = sim.getObject("/UR3/joint6")
+eje_1 = sim.getObject("/UR3/joint")
+eje_2 = sim.getObject("/UR3/joint/link/joint")
+eje_3 = sim.getObject("/UR3/joint/link/joint/link/joint")
+eje_4 = sim.getObject("/UR3/joint/link/joint/link/joint/link/joint")
+eje_5 = sim.getObject("/UR3/joint/link/joint/link/joint/link/joint/link/joint")
+eje_6 = sim.getObject("/UR3/joint/link/joint/link/joint/link/joint/link/joint/link/joint")
 ```
 
 De esta forma tendremos acceso inmediato a todas las articulaciones del robot.
@@ -185,6 +203,8 @@ Comprueba siempre el árbol de la escena.
 
 Si el nombre utilizado en el programa no coincide exactamente con el del objeto existente en CoppeliaSim, la función no podrá localizar la articulación.
 
+En este UR3 concreto, las articulaciones no tienen nombres únicos visibles en el árbol. La primera articulación es `/UR3/joint`, y las siguientes se encuentran bajando por la cadena `joint/link/joint`.
+
 :::
 
 ---
@@ -196,15 +216,40 @@ Cuando un robot dispone de varias articulaciones resulta más cómodo almacenarl
 Así podremos recorrerlas mediante un bucle sin repetir continuamente el mismo código.
 
 ```python
+joint_paths = [
+    "/UR3/joint",
+    "/UR3/joint/link/joint",
+    "/UR3/joint/link/joint/link/joint",
+    "/UR3/joint/link/joint/link/joint/link/joint",
+    "/UR3/joint/link/joint/link/joint/link/joint/link/joint",
+    "/UR3/joint/link/joint/link/joint/link/joint/link/joint/link/joint",
+]
+
 joints = []
 
-for i in range(1, 7):
-    joints.append(sim.getObject(f"/UR3/joint{i}"))
+for path in joint_paths:
+    joints.append(sim.getObject(path))
 ```
 
 Esta técnica simplificará mucho los programas de los próximos capítulos.
 
 Además, permitirá escribir funciones reutilizables para mover varias articulaciones simultáneamente.
+
+También podemos dejar esta parte preparada en una función:
+
+```python
+def obtener_articulaciones_ur3(sim):
+    joint_paths = [
+        "/UR3/joint",
+        "/UR3/joint/link/joint",
+        "/UR3/joint/link/joint/link/joint",
+        "/UR3/joint/link/joint/link/joint/link/joint",
+        "/UR3/joint/link/joint/link/joint/link/joint/link/joint",
+        "/UR3/joint/link/joint/link/joint/link/joint/link/joint/link/joint",
+    ]
+
+    return [sim.getObject(path) for path in joint_paths]
+```
 
 ::: figure
 image: ../assets/cap18/fig18_4.png
@@ -250,7 +295,7 @@ La función `sim.setJointTargetPosition()` permite indicar la posición objetivo
 Su sintaxis es muy sencilla:
 
 ```python
-sim.setJointTargetPosition(joint1, math.radians(45))
+sim.setJointTargetPosition(joints[0], math.radians(45))
 ```
 
 En este ejemplo estamos indicando que la primera articulación debe girar hasta **45 grados**.
@@ -278,12 +323,26 @@ El siguiente ejemplo realiza una conexión con CoppeliaSim, obtiene el *handle* 
 from coppeliasim_zmqremoteapi_client import RemoteAPIClient
 import math
 
+
+def obtener_articulaciones_ur3(sim):
+    joint_paths = [
+        "/UR3/joint",
+        "/UR3/joint/link/joint",
+        "/UR3/joint/link/joint/link/joint",
+        "/UR3/joint/link/joint/link/joint/link/joint",
+        "/UR3/joint/link/joint/link/joint/link/joint/link/joint",
+        "/UR3/joint/link/joint/link/joint/link/joint/link/joint/link/joint",
+    ]
+
+    return [sim.getObject(path) for path in joint_paths]
+
+
 client = RemoteAPIClient()
 sim = client.require('sim')
 
-joint1 = sim.getObject('/UR3/joint1')
+joints = obtener_articulaciones_ur3(sim)
 
-sim.setJointTargetPosition(joint1, math.radians(45))
+sim.setJointTargetPosition(joints[0], math.radians(45))
 ```
 
 Al ejecutar este programa observarás cómo la base del robot gira suavemente hasta alcanzar la nueva posición.
@@ -331,7 +390,7 @@ Además de enviar órdenes al robot, también podemos consultar la posición act
 La función `sim.getJointPosition()` devuelve el ángulo actual del eje en **radianes**.
 
 ```python
-angulo = sim.getJointPosition(joint1)
+angulo = sim.getJointPosition(joints[0])
 
 print(math.degrees(angulo))
 ```
@@ -378,12 +437,12 @@ En este apartado aprenderemos a controlar varias articulaciones del UR3 dentro d
 Una vez obtenidos los *handles*, podemos enviar órdenes a todas las articulaciones de forma consecutiva.
 
 ```python
-sim.setJointTargetPosition(joint1, math.radians(30))
-sim.setJointTargetPosition(joint2, math.radians(-40))
-sim.setJointTargetPosition(joint3, math.radians(60))
-sim.setJointTargetPosition(joint4, math.radians(20))
-sim.setJointTargetPosition(joint5, math.radians(-15))
-sim.setJointTargetPosition(joint6, math.radians(90))
+sim.setJointTargetPosition(joints[0], math.radians(30))
+sim.setJointTargetPosition(joints[1], math.radians(-40))
+sim.setJointTargetPosition(joints[2], math.radians(60))
+sim.setJointTargetPosition(joints[3], math.radians(20))
+sim.setJointTargetPosition(joints[4], math.radians(-15))
+sim.setJointTargetPosition(joints[5], math.radians(90))
 ```
 
 Aunque las instrucciones se ejecutan una detrás de otra, el robot comenzará a mover todos los ejes de forma prácticamente simultánea.
@@ -437,7 +496,7 @@ Cada postura representa una configuración concreta del UR3.
 
 Por ejemplo:
 
-| Postura | Joint1 | Joint2 | Joint3 | Joint4 | Joint5 | Joint6 |
+| Postura | Eje 1 | Eje 2 | Eje 3 | Eje 4 | Eje 5 | Eje 6 |
 |----------|--------|--------|--------|--------|--------|--------|
 | Inicio | 0° | 0° | 0° | 0° | 0° | 0° |
 | Recogida | 20° | -50° | 75° | 10° | -25° | 0° |
@@ -550,16 +609,21 @@ Por ejemplo:
 El siguiente ejemplo ilustra esta idea.
 
 ```python
+def mover_robot(joints, postura):
+    for joint, angulo in zip(joints, postura):
+        sim.setJointTargetPosition(joint, math.radians(angulo))
+
+
 postura_inicio = [0, 0, 0, 0, 0, 0]
 postura_aproximacion = [25, -35, 60, 15, -20, 0]
 
-mover_robot(postura_inicio)
+mover_robot(joints, postura_inicio)
 time.sleep(2)
 
-mover_robot(postura_aproximacion)
+mover_robot(joints, postura_aproximacion)
 time.sleep(2)
 
-mover_robot(postura_inicio)
+mover_robot(joints, postura_inicio)
 ```
 
 En los próximos capítulos ampliaremos esta función para construir secuencias mucho más complejas.

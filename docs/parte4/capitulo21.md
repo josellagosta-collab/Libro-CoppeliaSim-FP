@@ -96,7 +96,7 @@ A lo largo del proyecto utilizaremos:
 - control de articulaciones;
 - cinemática inversa;
 - coordenadas cartesianas;
-- objetos **Tip** y **Target**;
+- objetos auxiliares `UR3_tip` y `UR3_target`;
 - control de la pinza;
 - trayectorias seguras;
 - programación modular;
@@ -180,11 +180,16 @@ Una posible organización podría ser la siguiente:
 CelulaRobotizada
 │
 ├── UR3
-│   ├── Base
-│   ├── Articulaciones
-│   ├── Target
-│   ├── Tip
-│   └── Pinza
+│   ├── Script
+│   ├── link1_visible
+│   └── joint
+│       └── link
+│           └── ...
+│               └── connection
+│
+├── UR3_tip
+├── UR3_target
+├── UR3_gripper
 │
 ├── CintaTransportadora
 │
@@ -197,7 +202,7 @@ CelulaRobotizada
 └── Pieza_03
 ```
 
-Esta estructura facilitará la localización de cualquier elemento cuando comencemos a programar desde Python.
+Esta estructura respeta el árbol real del UR3 que estamos utilizando. El robot conserva su cadena interna de `joint` y `link`, mientras que los objetos auxiliares de trabajo (`UR3_tip`, `UR3_target` y `UR3_gripper`) se nombran de forma explícita para localizarlos fácilmente desde Python.
 
 ---
 
@@ -246,7 +251,7 @@ En el siguiente apartado aprenderemos a conectar Python con cada uno de los comp
 
 Una vez construida la escena, el siguiente paso consiste en establecer la comunicación entre Python y los diferentes elementos de la célula.
 
-Hasta ahora habíamos trabajado principalmente con el **UR3** y su **Target**.
+Hasta ahora habíamos trabajado principalmente con el **UR3** y el objeto auxiliar `UR3_target`.
 
 En este proyecto necesitaremos controlar varios dispositivos de forma coordinada.
 
@@ -270,9 +275,9 @@ Estos identificadores permiten acceder a cada elemento desde Python.
 ```python
 ur3 = sim.getObject('/UR3')
 
-target = sim.getObject('/UR3/Target')
+target = sim.getObject('/UR3_target')
 
-gripper = sim.getObject('/UR3/Gripper')
+gripper = sim.getObject('/UR3_gripper')
 
 conveyor = sim.getObject('/Conveyor')
 
@@ -306,13 +311,15 @@ def inicializar():
     global sensor
 
     ur3 = sim.getObject('/UR3')
-    target = sim.getObject('/UR3/Target')
-    gripper = sim.getObject('/UR3/Gripper')
+    target = sim.getObject('/UR3_target')
+    gripper = sim.getObject('/UR3_gripper')
     conveyor = sim.getObject('/Conveyor')
     sensor = sim.getObject('/PresenceSensor')
 ```
 
 Organizar el código de esta forma facilitará enormemente el mantenimiento del proyecto.
+
+Recuerda que `UR3_target` y `UR3_gripper` son los nombres que hemos asignado en nuestra escena de prácticas. No pertenecen automáticamente al árbol base del UR3 mostrado por CoppeliaSim; deben existir con esos nombres o el programa deberá adaptarse al nombre real que hayas utilizado.
 
 ---
 

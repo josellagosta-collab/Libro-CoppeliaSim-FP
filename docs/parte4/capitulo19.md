@@ -137,7 +137,7 @@ Podemos representar este proceso de la siguiente forma:
 
 ```text
 Articulaciones
-(Joint1...Joint6)
+(Eje 1...Eje 6)
 
         │
         ▼
@@ -190,7 +190,7 @@ Efector final
 
 Articulaciones
 
-(Joint1...Joint6)
+(Eje 1...Eje 6)
 ```
 
 En robótica industrial esta es, con diferencia, la forma de trabajo más habitual.
@@ -252,12 +252,19 @@ Pero...
 
 ¿Y cómo indicamos el punto al que queremos que se desplace?
 
-La respuesta está en dos objetos muy importantes que incorpora el modelo del **UR3**:
+La respuesta está en dos objetos muy importantes para trabajar con cinemática inversa:
 
 - **Tip**
 - **Target**
 
-Estos dos elementos son la base del funcionamiento de la cinemática inversa dentro de CoppeliaSim.
+En algunas escenas ya aparecen preparados junto al robot. En la versión del UR3 que estamos utilizando en estas prácticas, el árbol base solo muestra la cadena real del robot (`UR3`, `joint`, `link`, `link*_visible`, `connection`, etc.), por lo que tendremos que localizar o crear estos objetos auxiliares y darles nombres claros.
+
+Durante el libro utilizaremos esta convención:
+
+- `UR3_tip`: punto situado en el extremo real del robot.
+- `UR3_target`: punto objetivo que moveremos desde Python.
+
+Así evitaremos depender de rutas que no existen en nuestro árbol, como un supuesto `Target` colgado directamente de `UR3`.
 
 ---
 
@@ -323,9 +330,9 @@ Observa la diferencia con el capítulo anterior.
 Antes escribíamos programas como este:
 
 ```python
-Joint1 = 30°
-Joint2 = -45°
-Joint3 = 60°
+eje_1 = 30°
+eje_2 = -45°
+eje_3 = 60°
 ...
 ```
 
@@ -360,9 +367,26 @@ La misión de la cinemática inversa consiste precisamente en conseguir que ambo
 
 ## ¿Dónde aparecen en el árbol de la escena?
 
-Si desplegamos el modelo del **UR3** en el árbol de la escena, observaremos que ambos objetos forman parte del robot.
+Si desplegamos el modelo del **UR3** en nuestra versión de CoppeliaSim, veremos principalmente la cadena física del robot.
 
-Habitualmente aparecen próximos al efector final y constituyen el núcleo del mecanismo de cinemática inversa.
+Su estructura es similar a la trabajada en el capítulo anterior: un `joint` bajo `UR3` y, a partir de ahí, una secuencia de objetos `link` que contienen el siguiente `joint`.
+
+Los objetos **Tip** y **Target** no deben darse por supuestos dentro de `/UR3`. Para estas prácticas los prepararemos con nombres propios en la escena:
+
+```text
+UR3
+├── Script
+├── link1_visible
+└── joint
+    └── link
+        └── ...
+            └── connection
+
+UR3_tip
+UR3_target
+```
+
+El objeto `UR3_tip` se colocará en el extremo del robot, cerca de `connection` o `link7_visible`. El objeto `UR3_target` será el punto que moveremos para indicar el destino.
 
 En los próximos apartados aprenderemos a acceder a ellos desde Python y a desplazarlos mediante programación para mover el robot sin necesidad de calcular manualmente las posiciones de sus articulaciones.
 
@@ -534,10 +558,12 @@ Al igual que cualquier otro objeto de CoppeliaSim, el **Target** posee su propio
 Podemos obtenerlo utilizando la función `sim.getObject()`.
 
 ```python
-target = sim.getObject('/UR3/Target')
+target = sim.getObject('/UR3_target')
 ```
 
 Una vez obtenido el identificador, podremos consultar o modificar su posición desde Python.
+
+Si en tu escena has utilizado otro nombre, debes cambiar la ruta para que coincida exactamente con el árbol de CoppeliaSim. En nuestra escena de prácticas no usaremos `/UR3/Target`, porque ese objeto no aparece dentro del árbol real del UR3.
 
 ::: figure
 image: ../assets/cap19/fig19_9.png
@@ -778,7 +804,7 @@ Realiza las siguientes actividades:
 
 1. Abre la escena del UR3 utilizada durante este capítulo.
 2. Ejecuta la simulación.
-3. Localiza los objetos **Tip** y **Target** en el árbol de la escena.
+3. Localiza o crea los objetos `UR3_tip` y `UR3_target` en la escena.
 4. Mueve manualmente el **Target** utilizando el manipulador de traslación.
 5. Observa cómo el UR3 adapta automáticamente la posición de todas sus articulaciones.
 6. Obtén el *handle* del **Target** desde Python.

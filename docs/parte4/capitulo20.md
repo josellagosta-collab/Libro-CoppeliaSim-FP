@@ -281,15 +281,25 @@ En CoppeliaSim el proceso resulta mucho más sencillo y nos permitirá concentra
 
 ### Localizando la pinza
 
-Al igual que ocurría con las articulaciones o con el objeto **Target**, la pinza forma parte del árbol de la escena y dispone de su propio identificador (*handle*).
+Al igual que ocurría con las articulaciones o con `UR3_target`, la pinza debe disponer de su propio identificador (*handle*).
+
+En el árbol real del UR3 utilizado en estas prácticas no aparece una pinza llamada `Gripper` dentro de `/UR3`. El modelo base termina en la zona de `connection` y `link7_visible`. Por tanto, antes de programarla debemos añadir la herramienta a la escena, acoplarla al extremo del robot y asignarle un nombre claro.
+
+Durante este capítulo utilizaremos el nombre:
+
+```text
+UR3_gripper
+```
 
 El primer paso consistirá en obtener dicho identificador para poder acceder a ella desde nuestro programa.
 
 ```python
-gripper = sim.getObject('/UR3/Gripper')
+gripper = sim.getObject('/UR3_gripper')
 ```
 
 A partir de este momento podremos enviar órdenes para controlar su funcionamiento.
+
+Si tu pinza tiene otro nombre en el árbol de la escena, sustituye `/UR3_gripper` por la ruta real. Lo importante es no utilizar `/UR3/Gripper` salvo que ese objeto exista realmente en tu escena.
 
 ::: figure
 image: ../assets/cap20/fig20_5.png
@@ -378,7 +388,7 @@ De este modo el alumnado podrá observar claramente la coordinación entre el mo
 
 Ya disponemos de todos los elementos necesarios para desarrollar una operación completa de manipulación.
 
-En el siguiente apartado integraremos el movimiento del **Target** con la apertura y el cierre de la pinza para construir nuestro primer programa completo de **pick & place** utilizando el **UR3** y Python.
+En el siguiente apartado integraremos el movimiento de `UR3_target` con la apertura y el cierre de la pinza para construir nuestro primer programa completo de **pick & place** utilizando el **UR3** y Python.
 
 ---
 
@@ -388,7 +398,7 @@ Ha llegado el momento de integrar todos los conocimientos adquiridos durante est
 
 Hasta ahora hemos aprendido a:
 
-- mover el **Target** mediante coordenadas cartesianas;
+- mover `UR3_target` mediante coordenadas cartesianas;
 - controlar la apertura y el cierre de la pinza;
 - utilizar posiciones de aproximación;
 - sincronizar el movimiento del robot con el accionamiento del efector final.
