@@ -35,7 +35,7 @@ class FigureRenderer:
         return pattern.sub(replace, markdown)
 
     def _chapter_number(self, path):
-        match = re.search(r"capitulo(\d+)\.md", path)
+        match = re.search(r"capitulo(\d+)(?:_[^/\\.]*)?\.md", path)
         return str(int(match.group(1))) if match else ""
 
     def _make_relative_url(self, image_path, page_src_path):
