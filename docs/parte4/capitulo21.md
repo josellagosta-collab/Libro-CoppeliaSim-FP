@@ -93,14 +93,18 @@ Su principal objetivo consiste en integrar todos los conocimientos adquiridos du
 
 A lo largo del proyecto utilizaremos:
 
+A lo largo del proyecto utilizaremos:
+
 - control de articulaciones;
 - cinemática inversa;
 - coordenadas cartesianas;
-- objetos auxiliares `UR3_tip` y `UR3_target`;
-- control de la pinza;
+- los objetos auxiliares `UR3_tip` y `UR3_target`, creados y configurados en el capítulo anterior;
+- control de la pinza **RG2**;
 - trayectorias seguras;
 - programación modular;
 - ciclos automáticos.
+
+Partiremos de la escena obtenida al finalizar el capítulo 20. Si tu modelo de **UR3** no incorpora de forma predeterminada los objetos `UR3_tip` y `UR3_target`, recuerda crearlos y configurarlos mediante el sistema de cinemática inversa, tal como se explicó en dicho capítulo.
 
 Al finalizar el capítulo habrás construido una aplicación muy próxima a las que pueden encontrarse en un entorno industrial real.
 
@@ -110,6 +114,17 @@ content:
 Antes de comenzar a programar, asegúrate de que todos los elementos de la célula están correctamente posicionados.
 
 Una mala ubicación de la cinta transportadora o de la zona de depósito puede impedir que el UR3 alcance las piezas o provocar colisiones durante la manipulación.
+
+:::
+
+::: common-error
+content:
+
+Antes de comenzar este proyecto, verifica que la pinza **RG2** está correctamente ensamblada con el robot mediante la herramienta **Assemble / Disassemble**.
+
+Comprueba también que la simulación se encuentra en ejecución antes de intentar controlar la pinza desde Python.
+
+Si la pinza no está ensamblada correctamente o la simulación está detenida, el programa puede ejecutarse sin errores aparentes, pero la pinza no responderá como se espera.
 
 :::
 
@@ -181,28 +196,31 @@ CelulaRobotizada
 │
 ├── UR3
 │   ├── Script
-│   ├── link1_visible
-│   └── joint
-│       └── link
-│           └── ...
-│               └── connection
+│   ├── joint
+│   └── ...
+│
+├── RG2
+│   ├── openCloseJoint
+│   └── ...
 │
 ├── UR3_tip
 ├── UR3_target
-├── UR3_gripper
 │
-├── CintaTransportadora
+├── Conveyor
+├── PresenceSensor
+├── DepositTray
 │
-├── SensorPresencia
-│
-├── BandejaDeposito
-│
-├── Pieza_01
-├── Pieza_02
-└── Pieza_03
+├── Piece_01
+├── Piece_02
+└── Piece_03
+
 ```
 
-Esta estructura respeta el árbol real del UR3 que estamos utilizando. El robot conserva su cadena interna de `joint` y `link`, mientras que los objetos auxiliares de trabajo (`UR3_tip`, `UR3_target` y `UR3_gripper`) se nombran de forma explícita para localizarlos fácilmente desde Python.
+Esta organización reproduce la escena utilizada a lo largo del libro.
+
+El robot mantiene su estructura interna, mientras que la pinza **RG2** aparece ensamblada con el UR3. Los objetos auxiliares `UR3_tip` y `UR3_target` permiten controlar la cinemática inversa desde Python.
+
+Recuerda que los nombres de los objetos pueden variar ligeramente según la escena utilizada. Si has empleado nombres diferentes, deberás utilizarlos también en tu programa.
 
 ---
 
@@ -274,15 +292,15 @@ Estos identificadores permiten acceder a cada elemento desde Python.
 
 ```python
 ur3 = sim.getObject('/UR3')
-
 target = sim.getObject('/UR3_target')
-
-gripper = sim.getObject('/UR3_gripper')
-
+rg2 = sim.getObject('/RG2')
 conveyor = sim.getObject('/Conveyor')
-
 sensor = sim.getObject('/PresenceSensor')
 ```
+
+En este libro utilizaremos los nombres empleados en nuestra escena de trabajo (`UR3`, `UR3_target`, `RG2`, `Conveyor` y `PresenceSensor`).
+
+Si en tu escena alguno de estos objetos tiene un nombre diferente, deberás utilizar ese mismo nombre en las llamadas a `sim.getObject()`.
 
 Una vez almacenados estos *handles*, el programa podrá controlar cada componente de forma independiente.
 
@@ -306,20 +324,20 @@ def inicializar():
 
     global ur3
     global target
-    global gripper
+    global rg2
     global conveyor
     global sensor
 
     ur3 = sim.getObject('/UR3')
     target = sim.getObject('/UR3_target')
-    gripper = sim.getObject('/UR3_gripper')
+    rg2 = sim.getObject('/RG2') 
     conveyor = sim.getObject('/Conveyor')
     sensor = sim.getObject('/PresenceSensor')
 ```
 
 Organizar el código de esta forma facilitará enormemente el mantenimiento del proyecto.
 
-Recuerda que `UR3_target` y `UR3_gripper` son los nombres que hemos asignado en nuestra escena de prácticas. No pertenecen automáticamente al árbol base del UR3 mostrado por CoppeliaSim; deben existir con esos nombres o el programa deberá adaptarse al nombre real que hayas utilizado.
+Los nombres utilizados corresponden a la escena desarrollada en este libro. Si has utilizado nombres diferentes para la pinza, la cinta transportadora o cualquier otro objeto, recuerda actualizar también las llamadas a `sim.getObject()`.
 
 ---
 
@@ -335,7 +353,7 @@ Por ejemplo:
 
 - iniciar la aplicación;
 - mover el robot;
-- controlar la pinza;
+- controlar la apertura y cierre de la pinza RG2;
 - leer el sensor;
 - controlar la cinta;
 - ejecutar un ciclo completo.
@@ -373,6 +391,15 @@ Un nombre incorrecto suele ser la causa más frecuente de errores al utilizar `s
 ---
 
 ## Preparando el primer ciclo automático
+
+Antes de integrar todos los elementos en un único programa es recomendable comprobar de forma independiente que:
+
+- el UR3 responde correctamente a los movimientos;
+- la pinza RG2 abre y cierra sin problemas;
+- la cinta transportadora funciona correctamente;
+- el sensor detecta el paso de las piezas.
+
+Una vez verificados todos los subsistemas será mucho más sencillo localizar posibles errores durante la integración.
 
 Ya disponemos de todos los elementos necesarios para controlar la célula robotizada desde Python.
 
@@ -609,6 +636,10 @@ Con la incorporación de la visión artificial, nuestra célula robotizada ya in
 - una cámara de visión artificial;
 - un programa de control desarrollado en Python.
 
+Observa que esta aplicación reutiliza todos los conocimientos desarrollados en los capítulos anteriores.
+
+Primero aprendimos a controlar las articulaciones del UR3, después utilizamos la cinemática inversa mediante `UR3_target`, posteriormente integramos la pinza RG2 y, finalmente, incorporamos sensores, cintas transportadoras y visión artificial para construir una célula robotizada completa.
+
 El proyecto desarrollado a lo largo de este capítulo constituye una excelente aproximación a una célula de automatización real y demuestra cómo integrar percepción, decisión y manipulación dentro de una única aplicación.
 
 En la siguiente y última entrega del capítulo realizaremos una práctica guiada completa, repasaremos los conceptos fundamentales y propondremos un reto final que servirá como cierre de la Parte IV del libro.
@@ -639,9 +670,10 @@ Realiza las siguientes actividades:
 5. Incorpora una cámara de visión artificial sobre la zona de inspección.
 6. Sitúa varias piezas de distintos colores sobre la cinta.
 7. Obtén desde Python los *handles* de todos los elementos de la célula.
-8. Programa el movimiento del UR3 mediante posiciones de aproximación y recogida.
-9. Procesa la imagen capturada por la cámara para identificar el color de cada pieza.
-10. Deposita automáticamente cada pieza en la bandeja correspondiente.
+8. Comprueba que la pinza RG2 abre y cierra correctamente antes de iniciar el ciclo automático.
+9. Programa el movimiento del UR3 mediante posiciones de aproximación y recogida.
+10. Procesa la imagen capturada por la cámara para identificar el color de cada pieza.
+11. Deposita automáticamente cada pieza en la bandeja correspondiente.
 
 Una vez finalizada la práctica, el robot deberá ejecutar de forma completamente automática un ciclo continuo de clasificación de piezas.
 
