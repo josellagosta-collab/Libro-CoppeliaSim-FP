@@ -518,7 +518,7 @@ Supongamos que queremos acceder al primer sensor frontal.
 Podemos hacerlo mediante la función `getObject()`.
 
 ```python
-sensor = sim.getObject('/PioneerP3DX/ultrasonicSensor1')
+sensor = sim.getObject('/PioneerP3DX/ultrasonicSensor[1]')
 ```
 
 A partir de ese momento la variable `sensor` almacenará el identificador interno del dispositivo.
@@ -530,7 +530,7 @@ title: Los nombres de los sensores
 
 content:
 
-Los sensores aparecen identificados dentro del árbol de la escena con nombres como `ultrasonicSensor1`, `ultrasonicSensor2`, etc.
+Los sensores aparecen identificados dentro del árbol de la escena con nombres como `ultrasonicSensor[1]`, `ultrasonicSensor[2]`, etc.
 
 No es necesario memorizar todos estos nombres.
 

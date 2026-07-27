@@ -36,41 +36,46 @@
   <circle cx="145" cy="420" r="24" class="badge"/>
   <text x="137" y="429" class="label" fill="#FFFFFF">1</text>
   <text x="185" y="420" class="section">resultado</text>
-  <text x="185" y="458" class="small">Indica si el sensor ha detectado un objeto.</text>
-  <text x="520" y="455" class="code">True / False</text>
+  <text x="185" y="458" class="small">Indica si el sensor ha detectado</text>
+  <text x="185" y="486" class="small">un objeto.</text>
+  <text x="585" y="472" class="code">True / False</text>
 
   <rect x="850" y="380" width="650" height="120" rx="22" class="main"/>
   <circle cx="895" cy="420" r="24" class="badge"/>
   <text x="887" y="429" class="label" fill="#FFFFFF">2</text>
   <text x="935" y="420" class="section">distancia</text>
-  <text x="935" y="458" class="small">Distancia desde el sensor hasta el punto detectado.</text>
-  <text x="1270" y="455" class="code">0.423 m</text>
+  <text x="935" y="458" class="small">Distancia desde el sensor hasta</text>
+  <text x="935" y="486" class="small">el punto detectado.</text>
+  <text x="1330" y="472" class="code">0.423 m</text>
 
   <rect x="100" y="540" width="430" height="140" rx="22" class="extra"/>
   <circle cx="145" cy="580" r="24" fill="#F5C242"/>
   <text x="137" y="589" class="label">3</text>
   <text x="185" y="580" class="section">punto</text>
-  <text x="185" y="618" class="small">Coordenadas del punto de detección.</text>
-  <text x="185" y="652" class="code">[x, y, z]</text>
+  <text x="185" y="618" class="small">Coordenadas del punto</text>
+  <text x="185" y="646" class="small">de detección.</text>
+  <text x="185" y="672" class="code">[x, y, z]</text>
 
   <rect x="585" y="540" width="430" height="140" rx="22" class="extra"/>
   <circle cx="630" cy="580" r="24" fill="#F5C242"/>
   <text x="622" y="589" class="label">4</text>
   <text x="670" y="580" class="section">objeto</text>
-  <text x="670" y="618" class="small">Identificador del objeto detectado.</text>
-  <text x="670" y="652" class="code">handle</text>
+  <text x="670" y="618" class="small">Identificador del objeto</text>
+  <text x="670" y="646" class="small">detectado.</text>
+  <text x="670" y="672" class="code">handle</text>
 
   <rect x="1070" y="540" width="430" height="140" rx="22" class="extra"/>
   <circle cx="1115" cy="580" r="24" fill="#F5C242"/>
   <text x="1107" y="589" class="label">5</text>
   <text x="1155" y="580" class="section">normal</text>
-  <text x="1155" y="618" class="small">Vector normal de la superficie detectada.</text>
-  <text x="1155" y="652" class="code">[nx, ny, nz]</text>
+  <text x="1155" y="618" class="small">Vector normal de la</text>
+  <text x="1155" y="646" class="small">superficie detectada.</text>
+  <text x="1155" y="672" class="code">[nx, ny, nz]</text>
 
-  <rect x="95" y="735" width="1410" height="105" rx="18" class="note"/>
-  <text x="130" y="778" class="label">En este capítulo</text>
+  <rect x="95" y="725" width="1410" height="135" rx="18" class="note"/>
+  <text x="130" y="768" class="label">En este capítulo</text>
   <text x="130" y="812" class="small">Para detectar obstáculos solo necesitamos los dos primeros valores: resultado y distancia.</text>
-  <text x="910" y="812" class="code">resultado, distancia, _, _, _ = sim.readProximitySensor(sensor)</text>
+  <text x="130" y="842" class="code">resultado, distancia, _, _, _ = sim.readProximitySensor(sensor)</text>
 
-  <text x="80" y="900" class="small">Figura 8.9. Valores devueltos por readProximitySensor() en CoppeliaSim EDU 4.10.</text>
+  <text x="80" y="905" class="small">Figura 8.9. Valores devueltos por readProximitySensor() en CoppeliaSim EDU 4.10.</text>
 </svg>
