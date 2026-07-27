@@ -9,6 +9,9 @@ sim = client.require("sim")
 
 visionSensor = sim.getObject("/visionSensor")
 
+sim.setArrayParam(sim.arrayparam_background_color1, [0.0, 0.0, 0.0])
+sim.setArrayParam(sim.arrayparam_background_color2, [0.0, 0.0, 0.0])
+
 # Vista frontal de las tres figuras: cilindro, esfera y cubo.
 sim.setObjectPosition(visionSensor, -1, [0.0, -1.35, 0.55])
 sim.setObjectOrientation(
@@ -42,13 +45,22 @@ try:
 
         # CoppeliaSim entrega la imagen en RGB y con origen vertical invertido.
         imagen = cv2.flip(imagen, 0)
-        imagen = cv2.cvtColor(imagen, cv2.COLOR_RGB2BGR)
+        imagen_gris = cv2.cvtColor(imagen, cv2.COLOR_RGB2GRAY)
+        imagen_hsv = cv2.cvtColor(imagen, cv2.COLOR_RGB2HSV)
+
+        # La saturacion separa las figuras coloreadas del fondo negro y la mesa.
+        _, imagen_binaria = cv2.threshold(
+            imagen_hsv[:, :, 1],
+            50,
+            255,
+            cv2.THRESH_BINARY,
+        )
 
         if not captura_guardada:
-            cv2.imwrite("captura.png", imagen)
+            cv2.imwrite("captura_binaria.png", imagen_binaria)
             captura_guardada = True
 
-        cv2.imshow("Vision Sensor", imagen)
+        cv2.imshow("Vision Sensor - Imagen binaria", imagen_binaria)
 
         tecla = cv2.waitKey(30) & 0xFF
 

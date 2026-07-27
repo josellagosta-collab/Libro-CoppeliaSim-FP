@@ -42,13 +42,13 @@ try:
 
         # CoppeliaSim entrega la imagen en RGB y con origen vertical invertido.
         imagen = cv2.flip(imagen, 0)
-        imagen = cv2.cvtColor(imagen, cv2.COLOR_RGB2BGR)
+        imagen_gris = cv2.cvtColor(imagen, cv2.COLOR_RGB2GRAY)
 
         if not captura_guardada:
-            cv2.imwrite("captura.png", imagen)
+            cv2.imwrite("captura_grises.png", imagen_gris)
             captura_guardada = True
 
-        cv2.imshow("Vision Sensor", imagen)
+        cv2.imshow("Vision Sensor - Escala de grises", imagen_gris)
 
         tecla = cv2.waitKey(30) & 0xFF
 
