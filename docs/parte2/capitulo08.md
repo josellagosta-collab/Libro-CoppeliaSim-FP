@@ -739,18 +739,25 @@ detectar_obstaculo.py
 Escribe el siguiente código:
 
 ```python
+import time
+
 from coppeliasim_zmqremoteapi_client import RemoteAPIClient
 
 client = RemoteAPIClient()
 sim = client.require("sim")
 
-sensor = sim.getObject("/PioneerP3DX/ultrasonicSensor[0]")
+if sim.getSimulationState() == sim.simulation_stopped:
+    print("La simulacion estaba parada. Arrancando simulacion...")
+    sim.startSimulation()
+    time.sleep(0.5)
 
-detectado, distancia, objeto, normal = sim.readProximitySensor(sensor)
+sensor = sim.getObject("/PioneerP3DX/ultrasonicSensor[4]")
+
+detectado, distancia, punto, objeto, normal = sim.readProximitySensor(sensor)
 
 if detectado:
-    print("Obstáculo detectado")
-    print("Distancia:", distancia)
+    print("Obstaculo detectado")
+    print(f"Distancia: {distancia:.3f} m")
 else:
     print("Camino libre")
 ```
@@ -886,21 +893,30 @@ distancia_seguridad = 0.50
 Ahora podemos modificar el programa para comprobar si el obstáculo está demasiado cerca.
 
 ```python
+import time
+
 from coppeliasim_zmqremoteapi_client import RemoteAPIClient
 
 client = RemoteAPIClient()
 sim = client.require("sim")
 
-sensor = sim.getObject("/PioneerP3DX/ultrasonicSensor[0]")
+if sim.getSimulationState() == sim.simulation_stopped:
+    print("La simulacion estaba parada. Arrancando simulacion...")
+    sim.startSimulation()
+    time.sleep(0.5)
 
-detectado, distancia, objeto, normal = sim.readProximitySensor(sensor)
+sensor = sim.getObject("/PioneerP3DX/ultrasonicSensor[4]")
+
+detectado, distancia, punto, objeto, normal = sim.readProximitySensor(sensor)
 
 distancia_seguridad = 0.50
 
 if detectado and distancia < distancia_seguridad:
-    print("Obstáculo demasiado cerca")
+    print("Obstaculo demasiado cerca")
+    print(f"Distancia: {distancia:.3f} m")
 elif detectado:
-    print("Obstáculo detectado, pero a distancia segura")
+    print("Obstaculo detectado, pero a distancia segura")
+    print(f"Distancia: {distancia:.3f} m")
 else:
     print("Camino libre")
 ```
