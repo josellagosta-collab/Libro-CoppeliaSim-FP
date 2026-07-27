@@ -669,47 +669,63 @@ import time
 client = RemoteAPIClient()
 sim = client.require("sim")
 
-sensor = sim.getObject("/PioneerP3DX/ultrasonicSensor[3]")
+sensores_frontales = [
+    sim.getObject("/PioneerP3DX/ultrasonicSensor[3]"),
+    sim.getObject("/PioneerP3DX/ultrasonicSensor[4]"),
+]
 
 motor_izquierdo = sim.getObject("/PioneerP3DX/leftMotor")
 motor_derecho = sim.getObject("/PioneerP3DX/rightMotor")
 
-sim.startSimulation()
+VELOCIDAD_AVANCE = 2.0
+DISTANCIA_PARADA = 0.50
+DURACION_MAXIMA = 30
 
-time.sleep(1)
+try:
+    if sim.getSimulationState() == sim.simulation_stopped:
+        sim.startSimulation()
 
-inicio = time.time()
+    time.sleep(1)
 
-while time.time() - inicio < 30:
+    inicio = time.time()
 
-    resultado, distancia, punto, objeto, normal = sim.readProximitySensor(sensor)
+    while time.time() - inicio < DURACION_MAXIMA:
+        obstaculo_detectado = False
+        distancia_obstaculo = None
 
-    if resultado:
+        for sensor in sensores_frontales:
+            detectado, distancia, punto, objeto, normal = sim.readProximitySensor(sensor)
 
-        sim.setJointTargetVelocity(motor_izquierdo, 0)
-        sim.setJointTargetVelocity(motor_derecho, 0)
+            if detectado and distancia <= DISTANCIA_PARADA:
+                obstaculo_detectado = True
+                distancia_obstaculo = distancia
+                break
 
-        print("Obstáculo detectado")
+        if obstaculo_detectado:
+            sim.setJointTargetVelocity(motor_izquierdo, 0)
+            sim.setJointTargetVelocity(motor_derecho, 0)
+            print(f"Obstaculo detectado a {distancia_obstaculo:.3f} m. Robot detenido.")
+            break
 
-    else:
-
-        sim.setJointTargetVelocity(motor_izquierdo, 2.0)
-        sim.setJointTargetVelocity(motor_derecho, 2.0)
-
+        sim.setJointTargetVelocity(motor_izquierdo, VELOCIDAD_AVANCE)
+        sim.setJointTargetVelocity(motor_derecho, VELOCIDAD_AVANCE)
         print("Camino libre")
 
-    time.sleep(0.05)
+        time.sleep(0.05)
+    else:
+        print("Tiempo maximo alcanzado.")
 
-print("Finalizando programa...")
+finally:
+    sim.setJointTargetVelocity(motor_izquierdo, 0)
+    sim.setJointTargetVelocity(motor_derecho, 0)
+    time.sleep(0.5)
 
-sim.setJointTargetVelocity(motor_izquierdo, 0)
-sim.setJointTargetVelocity(motor_derecho, 0)
+    print("Finalizando programa...")
 
-time.sleep(0.5)
+    sim.stopSimulation()
 
-sim.stopSimulation()
+    print("Programa finalizado.")
 
-print("Programa finalizado.")
 ```
 
 ---
