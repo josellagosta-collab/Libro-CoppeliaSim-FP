@@ -686,6 +686,27 @@ Como ampliación, compara ambos programas e identifica qué partes del algoritmo
 :::
 
 ::: teacher
+
+content:
+
+Para las prácticas de **seguimiento de líneas** resulta mucho más sencillo y flexible utilizar una **textura** en lugar de construir el circuito mediante formas geométricas dentro de **CoppeliaSim**.
+
+Un procedimiento que ofrece muy buenos resultados consiste en crear previamente una imagen **PNG** con un **fondo completamente blanco** y una **línea negra continua y de grosor uniforme** que represente el recorrido que deberá seguir el robot. Esta imagen puede diseñarse con cualquier editor gráfico (por ejemplo, **Inkscape**, **GIMP** o **Paint.NET**), lo que permite crear fácilmente circuitos rectos, curvas, cruces o recorridos complejos.
+
+Una vez creada la imagen:
+
+- Inserte un **Plane** en la escena de **CoppeliaSim**.
+- Aplique la imagen **PNG** como **textura** del plano.
+- Sitúe el **Pioneer** sobre el circuito para comenzar las pruebas de **seguimiento de línea** mediante el **Vision Sensor**.
+
+En algunos casos la **textura** puede aparecer demasiado pequeña respecto al tamaño del suelo. Si esto ocurre, no es necesario modificar la imagen original. Basta con acceder a las **propiedades de la textura** y **escalarla con un factor de ×5**, de forma que el circuito ocupe prácticamente toda la superficie del plano. Este ajuste permite adaptar rápidamente el tamaño del recorrido sin tener que rediseñar la imagen.
+
+Este método facilita enormemente la creación de nuevos circuitos, ya que únicamente es necesario **sustituir la imagen PNG** por otra diferente para disponer de un recorrido completamente nuevo.
+:::
+
+
+
+::: teacher
 content:
 
 Este ejercicio resulta especialmente útil para que el alumnado descubra que muchos problemas de robótica comparten la misma estructura de resolución.
