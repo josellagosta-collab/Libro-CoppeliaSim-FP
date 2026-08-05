@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="950" viewBox="0 0 1600 950">
+  <defs>
+    <style>
+      .title{font-family:Segoe UI,Arial,sans-serif;font-size:44px;font-weight:900;fill:#0D47A1}
+      .subtitle{font-family:Segoe UI,Arial,sans-serif;font-size:25px;font-weight:600;fill:#37474F}
+      .label{font-family:Segoe UI,Arial,sans-serif;font-size:27px;font-weight:800;fill:#263238}
+      .small{font-family:Segoe UI,Arial,sans-serif;font-size:22px;font-weight:600;fill:#455A64}
+      .coord{font-family:Consolas,monospace;font-size:25px;font-weight:700;fill:#263238}
+      .panel{fill:#FFFFFF;stroke:#D6DCE5;stroke-width:4}
+      .info{fill:#F5FFF7;stroke:#D6DCE5;stroke-width:3}
+      .grid{stroke:#DDE3EA;stroke-width:2}
+      .axis-x{stroke:#E53935;stroke-width:8;stroke-linecap:round}
+      .axis-y{stroke:#43A047;stroke-width:8;stroke-linecap:round}
+      .axis-z{stroke:#1565C0;stroke-width:8;stroke-linecap:round}
+      .local-x{stroke:#E53935;stroke-width:7;stroke-linecap:round}
+      .local-y{stroke:#43A047;stroke-width:7;stroke-linecap:round}
+      .dash{stroke:#607D8B;stroke-width:4;stroke-dasharray:12 10}
+      .robot-body{fill:#D84343;stroke:#263238;stroke-width:4}
+      .robot-top{fill:#263238}
+      .wheel{fill:#212121}
+      .wheel-inner{fill:#D7B46A}
+      .origin{fill:#263238}
+      .point{fill:#F5C242;stroke:#263238;stroke-width:4}
+    </style>
+    <marker id="arrowX" markerWidth="15" markerHeight="15" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#E53935"/>
+    </marker>
+    <marker id="arrowY" markerWidth="15" markerHeight="15" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#43A047"/>
+    </marker>
+    <marker id="arrowZ" markerWidth="15" markerHeight="15" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#1565C0"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="#000000" flood-opacity="0.13"/>
+    </filter>
+  </defs>
+  <rect x="35" y="35" width="1530" height="880" rx="30" class="panel" filter="url(#shadow)"/>
+  <text x="75" y="110" class="title">Sistema de coordenadas local</text>
+  <text x="75" y="152" class="subtitle">Cada objeto tiene sus propios ejes, que se desplazan y giran junto con él.</text>
+  <g transform="translate(730,575)">
+    <g opacity="0.9">
+      <line x1="-520" y1="185" x2="280" y2="-275" class="grid"/>
+      <line x1="-440" y1="225" x2="360" y2="-235" class="grid"/>
+      <line x1="-360" y1="265" x2="440" y2="-195" class="grid"/>
+      <line x1="-280" y1="305" x2="520" y2="-155" class="grid"/>
+      <line x1="-200" y1="345" x2="600" y2="-115" class="grid"/>
+      <line x1="-120" y1="385" x2="680" y2="-75" class="grid"/>
+      <line x1="-40" y1="425" x2="760" y2="-35" class="grid"/>
+      <line x1="-520" y1="185" x2="-40" y2="425" class="grid"/>
+      <line x1="-420" y1="130" x2="60" y2="370" class="grid"/>
+      <line x1="-320" y1="75" x2="160" y2="315" class="grid"/>
+      <line x1="-220" y1="20" x2="260" y2="260" class="grid"/>
+      <line x1="-120" y1="-35" x2="360" y2="205" class="grid"/>
+      <line x1="-20" y1="-90" x2="460" y2="150" class="grid"/>
+      <line x1="80" y1="-145" x2="560" y2="95" class="grid"/>
+      <line x1="180" y1="-200" x2="660" y2="40" class="grid"/>
+      <line x1="280" y1="-275" x2="760" y2="-35" class="grid"/>
+    </g>
+    <circle cx="0" cy="0" r="10" class="origin"/>
+    <line x1="0" y1="0" x2="440" y2="0" class="axis-x" marker-end="url(#arrowX)" opacity="0.35"/>
+    <line x1="0" y1="0" x2="-310" y2="185" class="axis-y" marker-end="url(#arrowY)" opacity="0.35"/>
+    <line x1="0" y1="0" x2="0" y2="-320" class="axis-z" marker-end="url(#arrowZ)" opacity="0.35"/>
+    <text x="465" y="12" class="label" fill="#E53935" opacity="0.45">X global</text>
+    <text x="-410" y="225" class="label" fill="#43A047" opacity="0.45">Y global</text>
+    <text x="-18" y="-352" class="label" fill="#1565C0" opacity="0.45">Z</text>
+    <g transform="translate(290,-115)">
+      <line x1="0" y1="0" x2="-290" y2="115" class="dash"/>
+      <circle cx="0" cy="0" r="15" class="point"/>
+      <text x="32" y="-70" class="coord">Origen local del robot</text>
+      <line x1="0" y1="0" x2="190" y2="-90" class="local-x" marker-end="url(#arrowX)"/>
+      <line x1="0" y1="0" x2="-105" y2="-150" class="local-y" marker-end="url(#arrowY)"/>
+      <text x="205" y="-92" class="label" fill="#E53935">X local</text>
+      <text x="-180" y="-160" class="label" fill="#43A047">Y local</text>
+      <g transform="translate(0,-35) rotate(-25) scale(0.9)">
+        <rect x="-70" y="-28" width="140" height="68" rx="18" class="robot-body"/>
+        <ellipse cx="0" cy="-35" rx="86" ry="24" class="robot-top"/>
+        <circle cx="-48" cy="48" r="22" class="wheel"/>
+        <circle cx="-48" cy="48" r="11" class="wheel-inner"/>
+        <circle cx="48" cy="48" r="22" class="wheel"/>
+        <circle cx="48" cy="48" r="11" class="wheel-inner"/>
+      </g>
+    </g>
+  </g>
+  <rect x="95" y="745" width="1410" height="92" rx="18" class="info"/>
+  <text x="130" y="787" class="label">Idea clave</text>
+  <text x="130" y="820" class="small">El sistema local se mueve con el robot: avanzar “hacia delante” significa avanzar siguiendo su eje X local, no necesariamente el eje X global.</text>
+  <text x="80" y="900" class="small">Figura 5.5. Sistema de coordenadas local asociado a un robot dentro de una escena.</text>
+</svg>
