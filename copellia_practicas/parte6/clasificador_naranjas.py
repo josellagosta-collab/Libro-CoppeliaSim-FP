@@ -245,8 +245,16 @@ def inicializar_postgresql():
             n_naranjas_procesadas INTEGER NOT NULL,
             n_naranjas_mesa INTEGER NOT NULL,
             n_naranjas_zumo INTEGER NOT NULL,
-            n_naranjas_rechazo INTEGER NOT NULL
+            n_naranjas_rechazo INTEGER NOT NULL,
+            porcentaje_mesa NUMERIC(5, 2) NOT NULL DEFAULT 0.00,
+            porcentaje_zumo NUMERIC(5, 2) NOT NULL DEFAULT 0.00,
+            porcentaje_rechazo NUMERIC(5, 2) NOT NULL DEFAULT 0.00
         );
+
+        ALTER TABLE {POSTGRES_TABLA_DATOS}
+            ADD COLUMN IF NOT EXISTS porcentaje_mesa NUMERIC(5, 2) NOT NULL DEFAULT 0.00,
+            ADD COLUMN IF NOT EXISTS porcentaje_zumo NUMERIC(5, 2) NOT NULL DEFAULT 0.00,
+            ADD COLUMN IF NOT EXISTS porcentaje_rechazo NUMERIC(5, 2) NOT NULL DEFAULT 0.00;
         """,
     )
     print(f"Tabla {POSTGRES_TABLA_DATOS} preparada.")
@@ -286,13 +294,19 @@ def registrar_datos_naranja_postgresql(control_bd, tipo):
             n_naranjas_procesadas,
             n_naranjas_mesa,
             n_naranjas_zumo,
-            n_naranjas_rechazo
+            n_naranjas_rechazo,
+            porcentaje_mesa,
+            porcentaje_zumo,
+            porcentaje_rechazo
         )
         SELECT
             procesadas + 1,
             mesa + {incremento_mesa},
             zumo + {incremento_zumo},
-            rechazo + {incremento_rechazo}
+            rechazo + {incremento_rechazo},
+            ROUND(((mesa + {incremento_mesa}) * 100.0) / (procesadas + 1), 2),
+            ROUND(((zumo + {incremento_zumo}) * 100.0) / (procesadas + 1), 2),
+            ROUND(((rechazo + {incremento_rechazo}) * 100.0) / (procesadas + 1), 2)
         FROM acumulado;
         """,
     )
