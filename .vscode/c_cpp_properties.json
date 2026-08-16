@@ -1,0 +1,51 @@
+{
+    "configurations": [
+        {
+            "name": "PlatformIO-Arduino-Uno",
+            "includePath": [
+                "${workspaceFolder}/PlatformIO/Projects/Smart_Car_2WD/include",
+                "${workspaceFolder}/PlatformIO/Projects/Smart_Car_2WD/src",
+                "${workspaceFolder}/PlatformIO/Projects/Smart_Car_2WD/programas",
+                "${workspaceFolder}/PlatformIO/Projects/Smart_Car_2WD/.pio/libdeps/uno/Servo/src",
+                "C:/Users/josea/.platformio/packages/framework-arduino-avr/cores/arduino",
+                "C:/Users/josea/.platformio/packages/framework-arduino-avr/variants/standard",
+                "C:/Users/josea/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
+                "C:/Users/josea/.platformio/packages/framework-arduino-avr/libraries/HID/src",
+                "C:/Users/josea/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                "C:/Users/josea/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
+                "C:/Users/josea/.platformio/packages/framework-arduino-avr/libraries/Wire/src"
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "${workspaceFolder}/PlatformIO/Projects/Smart_Car_2WD/include",
+                    "${workspaceFolder}/PlatformIO/Projects/Smart_Car_2WD/src",
+                    "${workspaceFolder}/PlatformIO/Projects/Smart_Car_2WD/programas",
+                    "${workspaceFolder}/PlatformIO/Projects/Smart_Car_2WD/.pio/libdeps/uno/Servo/src",
+                    "C:/Users/josea/.platformio/packages/framework-arduino-avr/cores/arduino",
+                    "C:/Users/josea/.platformio/packages/framework-arduino-avr/variants/standard",
+                    "C:/Users/josea/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
+                    "C:/Users/josea/.platformio/packages/framework-arduino-avr/libraries/HID/src",
+                    "C:/Users/josea/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                    "C:/Users/josea/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
+                    "C:/Users/josea/.platformio/packages/framework-arduino-avr/libraries/Wire/src"
+                ]
+            },
+            "defines": [
+                "PLATFORMIO=60119",
+                "ARDUINO_AVR_UNO",
+                "F_CPU=16000000L",
+                "ARDUINO_ARCH_AVR",
+                "ARDUINO=10808",
+                "__AVR_ATmega328P__"
+            ],
+            "cStandard": "gnu11",
+            "cppStandard": "gnu++11",
+            "compilerPath": "C:/Users/josea/.platformio/packages/toolchain-atmelavr/bin/avr-gcc.exe",
+            "compilerArgs": [
+                "-mmcu=atmega328p"
+            ]
+        }
+    ],
+    "version": 4
+}

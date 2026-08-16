@@ -1,0 +1,22 @@
+{
+    "python.defaultInterpreterPath": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}"
+    ],
+    "python.analysis.exclude": [
+        "**/.git",
+        "**/.venv",
+        "**/__pycache__",
+        "site",
+        "output",
+        "PlatformIO/**/.pio"
+    ],
+    "files.watcherExclude": {
+        "**/.git/**": true,
+        "**/.venv/**": true,
+        "**/__pycache__/**": true,
+        "**/site/**": true,
+        "**/output/**": true,
+        "**/.pio/**": true
+    }
+}
